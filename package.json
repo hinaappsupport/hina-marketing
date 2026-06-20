@@ -1,0 +1,16 @@
+{
+  "name": "hina-marketing",
+  "version": "1.0.0",
+  "description": "Hina - Child Constipation Tracker Marketing Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["hina", "marketing", "child", "constipation"],
+  "author": "Hina Team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

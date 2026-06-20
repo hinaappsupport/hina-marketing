@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hina - Child Constipation Tracker. Track your child's health with expert tips and doctor records.">
+    <meta name="keywords" content="child health, constipation tracker, pediatric care, doctor records">
+    <meta name="author" content="Hina Team">
+    <title>Hina - Child Constipation Tracker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 60px 20px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .benefits {
+            background-color: #f0f4ff;
+            padding: 60px 20px;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 40px;
+            font-size: 36px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .benefit-item {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .benefit-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .benefit-item p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .features {
+                padding: 40px 20px;
+            }
+
+            .benefits h2 {
+                font-size: 28px;
+            }
+
+            .cta-section h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">🌟 Hina</div>
+            <div class="tagline">Child Constipation Tracker</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Track Your Child's Health</h1>
+            <p>Expert tips, daily tracking, and doctor records all in one app</p>
+            <a href="#" class="btn">Download Now</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container" style="grid-column: 1 / -1;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Daily Tracking</h3>
+                    <p>Monitor your child's daily habits with easy-to-use tracking tools and detailed charts</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Expert Tips</h3>
+                    <p>Get expert advice and tips from healthcare professionals to support your child's health</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍⚕️</div>
+                    <h3>Doctor Information</h3>
+                    <p>Save doctor details, appointment dates, and medical visit notes for easy reference</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Health Analytics</h3>
+                    <p>View comprehensive reports and analytics to understand your child's health patterns</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure & Private</h3>
+                    <p>Your child's data is encrypted and stored securely with your complete privacy</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Available Worldwide</h3>
+                    <p>Access Hina from anywhere, anytime on iOS and Android devices</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="container">
+            <h2>Why Choose Hina?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h4>✓ Easy to Use</h4>
+                    <p>Simple and intuitive interface designed for busy parents</p>
+                </div>
+
+                <div class="benefit-item">
+                    <h4>✓ Doctor Records</h4>
+                    <p>Store and manage doctor information and medical visit notes</p>
+                </div>
+
+                <div class="benefit-item">
+                    <h4>✓ Bilingual Support</h4>
+                    <p>Available in both Arabic and English for your convenience</p>
+                </div>
+
+                <div class="benefit-item">
+                    <h4>✓ Real-time Alerts</h4>
+                    <p>Get notifications and reminders for important health tracking</p>
+                </div>
+
+                <div class="benefit-item">
+                    <h4>✓ Data Security</h4>
+                    <p>Your information is protected with industry-standard encryption</p>
+                </div>
+
+                <div class="benefit-item">
+                    <h4>✓ Free to Use</h4>
+                    <p>Download and use Hina completely free with no hidden charges</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Start Tracking Today</h2>
+            <p>Join thousands of parents using Hina to monitor their children's health</p>
+            <a href="#" class="btn">Download the App</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Hina - Child Constipation Tracker. All rights reserved.</p>
+            <p>
+                <a href="/privacy-policy">Privacy Policy</a> | 
+                <a href="mailto:hinaapp.support@gmail.com">Contact Support</a>
+            </p>
+            <p>Email: <strong>hinaapp.support@gmail.com</strong></p>
+        </div>
+    </footer>
+</body>
+</html>

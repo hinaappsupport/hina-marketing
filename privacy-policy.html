@@ -1,229 +1,273 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hina Privacy Policy - How we protect your child's data">
-    <title>Privacy Policy - Hina</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.8;
-            color: #333;
-            background-color: #f8f9fa;
-        }
-
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header h1 {
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
-
-        .content {
-            background: white;
-            padding: 40px 20px;
-            margin: 30px 0;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #667eea;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-size: 24px;
-            border-bottom: 2px solid #667eea;
-            padding-bottom: 10px;
-        }
-
-        h3 {
-            color: #764ba2;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
-
-        p {
-            margin-bottom: 15px;
-            line-height: 1.8;
-            color: #555;
-        }
-
-        ul, ol {
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-
-        li {
-            margin-bottom: 10px;
-            color: #555;
-        }
-
-        .highlight {
-            background-color: #f0f4ff;
-            padding: 15px;
-            border-left: 4px solid #667eea;
-            margin: 20px 0;
-            border-radius: 5px;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 40px;
-        }
-
-        footer a {
-            color: #667eea;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        .last-updated {
-            color: #999;
-            font-size: 14px;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 24px;
-            }
-
-            .content {
-                padding: 20px;
-            }
-
-            h2 {
-                font-size: 20px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سياسة الخصوصية | Privacy Policy — حِنا | Hina</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --orange: #F97316; --orange-light: #FFF7ED; --orange-dark: #EA580C;
+      --text: #1C1917; --muted: #78716C; --border: #E7E5E4;
+      --bg: #FAFAF9; --white: #FFFFFF; --radius: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Cairo','Inter',sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; direction: rtl; }
+    body.en { direction: ltr; font-family: 'Inter','Cairo',sans-serif; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo span { font-size: 22px; font-weight: 900; color: var(--orange); }
+    .lang-btn {
+      background: var(--orange-light); color: var(--orange); border: none;
+      padding: 6px 14px; border-radius: 8px; font-size: 14px; font-weight: 700;
+      cursor: pointer; transition: all 0.2s; font-family: inherit;
+    }
+    .lang-btn:hover { background: var(--orange); color: white; }
+    .hero { background: linear-gradient(135deg, #FFF7ED, #F5F3FF); padding: 60px 24px 40px; text-align: center; }
+    .hero h1 { font-size: clamp(28px,5vw,44px); font-weight: 900; margin-bottom: 12px; }
+    .hero p { color: var(--muted); font-size: 16px; }
+    .content { max-width: 780px; margin: 0 auto; padding: 48px 24px 80px; }
+    .lang-block { display: none; }
+    .lang-block.active { display: block; }
+    h2 { font-size: 22px; font-weight: 800; color: var(--orange); margin: 36px 0 12px; padding-bottom: 8px; border-bottom: 2px solid var(--orange-light); }
+    h3 { font-size: 17px; font-weight: 700; margin: 20px 0 8px; }
+    p { font-size: 15px; color: #44403C; margin-bottom: 14px; }
+    ul { padding-right: 24px; margin-bottom: 14px; }
+    body.en ul { padding-right: 0; padding-left: 24px; }
+    li { font-size: 15px; color: #44403C; margin-bottom: 8px; }
+    .highlight-box {
+      background: var(--orange-light); border: 1px solid #FED7AA;
+      border-radius: 12px; padding: 20px 24px; margin: 24px 0;
+    }
+    .highlight-box p { color: #9A3412; margin: 0; font-weight: 600; }
+    .info-box {
+      background: #F0FDF4; border: 1px solid #BBF7D0;
+      border-radius: 12px; padding: 20px 24px; margin: 24px 0;
+    }
+    .info-box p { color: #166534; margin: 0; font-weight: 600; }
+    footer { background: #1C1917; color: #A8A29E; padding: 32px 24px; text-align: center; font-size: 14px; }
+    footer a { color: var(--orange); text-decoration: none; }
+    .last-updated { font-size: 13px; color: var(--muted); margin-top: 8px; }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Privacy Policy</h1>
-            <p>How Hina protects your child's data</p>
-        </div>
-    </header>
+<nav>
+  <a class="nav-logo" href="/">
+    <span data-ar="← حِنا" data-en="← Hina">← حِنا</span>
+  </a>
+  <button class="lang-btn" onclick="toggleLang()" id="langBtn">English</button>
+</nav>
 
-    <div class="container">
-        <div class="content">
-            <h2>1. Introduction</h2>
-            <p>Welcome to Hina ("we," "us," "our," or "Company"). Hina is committed to protecting your privacy and ensuring you have a positive experience on our platform. This Privacy Policy explains our online information practices and the choices you can make about how your information is used.</p>
+<div class="hero">
+  <h1 data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</h1>
+  <p data-ar="نلتزم بحماية خصوصيتك وخصوصية بيانات طفلك" data-en="We are committed to protecting your privacy and your child's data">نلتزم بحماية خصوصيتك وخصوصية بيانات طفلك</p>
+  <p class="last-updated" data-ar="آخر تحديث: يوليو 2026" data-en="Last updated: July 2026">آخر تحديث: يوليو 2026</p>
+</div>
 
-            <h2>2. Information We Collect</h2>
-            <p>We collect information you provide directly to us, such as:</p>
-            <ul>
-                <li>Parent/Guardian name, email address, and phone number</li>
-                <li>Child's name, age, and health information</li>
-                <li>Doctor information and medical visit notes</li>
-                <li>Daily tracking data (meals, health observations)</li>
-                <li>Photos and health records you choose to upload</li>
-            </ul>
+<div class="content">
 
-            <h2>3. How We Use Your Information</h2>
-            <p>We use the information we collect to:</p>
-            <ul>
-                <li>Provide and improve our services</li>
-                <li>Send you notifications and reminders</li>
-                <li>Generate health reports and analytics</li>
-                <li>Respond to your inquiries and support requests</li>
-                <li>Ensure the security and integrity of our platform</li>
-            </ul>
+  <!-- ══ ARABIC ══ -->
+  <div class="lang-block active" id="ar-block">
 
-            <h2>4. Data Storage and Security</h2>
-            <p>Your data is stored securely on encrypted servers. We implement industry-standard security measures to protect your information from unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet is 100% secure.</p>
-
-            <div class="highlight">
-                <strong>Important:</strong> We do not sell, trade, or rent your personal information to third parties.
-            </div>
-
-            <h2>5. Children's Privacy (COPPA Compliance)</h2>
-            <p>Hina is designed for parents and guardians to track their children's health. We comply with the Children's Online Privacy Protection Act (COPPA) and do not knowingly collect personal information directly from children under 13. Parents/guardians provide all information on behalf of their children.</p>
-
-            <h2>6. Legal Compliance</h2>
-            <p>Hina complies with applicable privacy laws and regulations, including:</p>
-            <ul>
-                <li><strong>GDPR</strong> (General Data Protection Regulation) - EU</li>
-                <li><strong>COPPA</strong> (Children's Online Privacy Protection Act) - USA</li>
-                <li><strong>CCPA</strong> (California Consumer Privacy Act) - USA</li>
-                <li><strong>Local privacy laws in Saudi Arabia</strong></li>
-            </ul>
-
-            <h2>7. Your Rights</h2>
-            <p>You have the right to:</p>
-            <ul>
-                <li>Access your personal information</li>
-                <li>Request correction of inaccurate data</li>
-                <li>Request deletion of your data</li>
-                <li>Opt-out of marketing communications</li>
-                <li>Data portability (receive your data in a structured format)</li>
-            </ul>
-
-            <h2>8. Third-Party Services</h2>
-            <p>Hina may use third-party services for analytics, hosting, and support. These services have their own privacy policies and are bound by confidentiality agreements. We do not authorize them to use your information for any purpose other than providing services to us.</p>
-
-            <h2>9. Cookies and Tracking</h2>
-            <p>We use cookies and similar tracking technologies to enhance your experience. You can control cookie settings through your browser preferences. However, disabling cookies may affect the functionality of our application.</p>
-
-            <h2>10. Data Retention</h2>
-            <p>We retain your information for as long as your account is active or as needed to provide our services. You can request deletion of your account and associated data at any time by contacting us.</p>
-
-            <h2>11. Changes to This Privacy Policy</h2>
-            <p>We may update this Privacy Policy from time to time. We will notify you of any significant changes by posting the new Privacy Policy on this page and updating the "Last Updated" date below. Your continued use of Hina after changes constitutes your acceptance of the updated Privacy Policy.</p>
-
-            <h2>12. Contact Us</h2>
-            <p>If you have questions or concerns about this Privacy Policy or our privacy practices, please contact us at:</p>
-            <div class="highlight">
-                <p><strong>Email:</strong> hinaapp.support@gmail.com</p>
-                <p><strong>Company:</strong> Hina - Child Constipation Tracker</p>
-            </div>
-
-            <h2>13. Important Disclaimer</h2>
-            <p>Hina is a tracking and information management tool. It does not provide medical diagnosis, treatment, or professional medical advice. For medical concerns, please consult with a qualified healthcare professional. The information provided in Hina is for informational purposes only.</p>
-
-            <div class="last-updated">
-                <p><strong>Last Updated:</strong> June 2026</p>
-                <p>This Privacy Policy is effective immediately for new users and will be effective 30 days after posting for existing users.</p>
-            </div>
-        </div>
+    <div class="info-box">
+      <p>✅ جميع بيانات طفلك تُحفظ محلياً على جهازك فقط — لا تُرفع إلى أي خادم خارجي ولا تُشارك مع أي طرف ثالث.</p>
     </div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Hina - Child Constipation Tracker. All rights reserved.</p>
-            <p>
-                <a href="/">Back to Homepage</a> | 
-                <a href="mailto:hinaapp.support@gmail.com">Contact Support</a>
-            </p>
-        </div>
-    </footer>
+    <div class="highlight-box">
+      <p>⚠️ تطبيق حِنا أداة متابعة وتوثيق صحي فقط — وليس بديلاً عن الطبيب أو التشخيص الطبي. استشيري طبيب طفلك دائماً.</p>
+    </div>
+
+    <h2>1. مقدمة</h2>
+    <p>تصف سياسة الخصوصية هذه كيفية تعامل تطبيق <strong>حِنا — متابعة صحة الأطفال</strong> مع بياناتك وبيانات طفلك. نحن نأخذ خصوصيتك على محمل الجد ونلتزم بحمايتها بشكل كامل.</p>
+
+    <h2>2. البيانات التي يجمعها التطبيق</h2>
+    <h3>بيانات تُحفظ محلياً على جهازك</h3>
+    <p>يحفظ التطبيق البيانات التالية على جهازك مباشرةً دون رفعها إلى أي خادم:</p>
+    <ul>
+      <li>معلومات الطفل: الاسم، تاريخ الميلاد، الجنس، الصورة الشخصية</li>
+      <li>السجلات الصحية اليومية: التبرز، التبول، التغذية، السوائل</li>
+      <li>قياسات النمو: الوزن، الطول، مؤشر كتلة الجسم</li>
+      <li>سجلات الأدوية والجرعات والمواعيد</li>
+      <li>مواعيد الطبيب والملاحظات الطبية</li>
+      <li>الصور الصحية المرفقة بالسجلات</li>
+      <li>إعدادات التطبيق والتفضيلات الشخصية</li>
+    </ul>
+
+    <h3>بيانات حساب المستخدم</h3>
+    <p>عند إنشاء حساب، يُحفظ اسم المستخدم وكلمة المرور (مشفرة) على جهازك لتمكين ميزة تعدد الملفات الشخصية وحماية بياناتك.</p>
+
+    <h2>3. كيف نستخدم بياناتك</h2>
+    <p>البيانات التي تدخلينها في التطبيق تُستخدم حصراً لـ:</p>
+    <ul>
+      <li>عرض السجلات والتقارير الصحية داخل التطبيق</li>
+      <li>توليد التقارير الأسبوعية والشهرية وتقارير النمو</li>
+      <li>إرسال التذكيرات والإشعارات المحلية التي تختارينها</li>
+      <li>حساب مؤشرات النمو ومقارنتها بالمعايير الصحية</li>
+    </ul>
+    <p><strong>لا نستخدم بياناتك لأي غرض آخر.</strong></p>
+
+    <h2>4. مشاركة البيانات مع أطراف ثالثة</h2>
+    <p>نحن <strong>لا نبيع ولا نشارك ولا ننقل</strong> أي بيانات شخصية إلى أطراف ثالثة لأي غرض كان، سواء كان تجارياً أو تسويقياً أو بحثياً.</p>
+    <p>التطبيق لا يحتوي على أي أدوات تتبع إعلانية أو تحليلية خارجية تجمع بياناتك.</p>
+
+    <h2>5. ميزة الملاحظات والتغذية الراجعة</h2>
+    <p>إذا اخترت إرسال ملاحظات أو اقتراحات عبر ميزة "الملاحظات" في التطبيق، فأنت توافقين على:</p>
+    <ul>
+      <li>استخدام هذه الملاحظات لتحسين التطبيق وتطويره</li>
+      <li>لن تتضمن الملاحظات المرسلة أي بيانات شخصية أو بيانات طفلك تلقائياً</li>
+      <li>لن تُستخدم الملاحظات لأي غرض آخر ولن تُشارك مع أطراف ثالثة</li>
+    </ul>
+
+    <h2>6. أمان البيانات</h2>
+    <p>نحرص على حماية بياناتك من خلال:</p>
+    <ul>
+      <li>تخزين جميع البيانات محلياً على جهازك فقط</li>
+      <li>تشفير كلمات المرور وبيانات الحساب</li>
+      <li>عزل بيانات كل مستخدم عن الآخر في حالة تعدد الحسابات على نفس الجهاز</li>
+      <li>عدم إرسال أي بيانات عبر الإنترنت دون موافقتك الصريحة (مثل مشاركة التقارير)</li>
+    </ul>
+
+    <h2>7. حقوقك في بياناتك</h2>
+    <p>أنت تمتلكين بياناتك بالكامل وفي جميع الأوقات. يمكنك:</p>
+    <ul>
+      <li><strong>تصدير بياناتك</strong> في أي وقت عبر ميزة النسخ الاحتياطي في الإعدادات</li>
+      <li><strong>حذف بيانات طفل بعينه</strong> من داخل ملف الطفل</li>
+      <li><strong>حذف حسابك وجميع بياناتك نهائياً</strong> من إعدادات الملف الشخصي</li>
+      <li><strong>استيراد نسخة احتياطية</strong> سابقة في أي وقت</li>
+    </ul>
+
+    <h2>8. بيانات الأطفال</h2>
+    <p>نحن ندرك حساسية بيانات الأطفال ونلتزم بحمايتها بأعلى مستوى. التطبيق مصمم للآباء والأمهات والمسؤولين عن رعاية الأطفال، ولا يجمع أي بيانات من الأطفال مباشرةً.</p>
+
+    <h2>9. إخلاء المسؤولية الطبية</h2>
+    <p>المعلومات والتنبيهات والتوصيات المقدمة في حِنا هي لأغراض المتابعة والتوثيق فقط، ولا تُعدّ تشخيصاً طبياً أو وصفة علاجية أو استشارة طبية متخصصة. استشيري طبيب طفلك دائماً قبل اتخاذ أي قرار طبي.</p>
+
+    <h2>10. التعديلات على سياسة الخصوصية</h2>
+    <p>نحتفظ بحق تعديل هذه السياسة في أي وقت. سيتم إشعارك بأي تغييرات جوهرية عبر التطبيق. استمرارك في استخدام التطبيق بعد نشر التعديلات يُعدّ قبولاً لها.</p>
+
+    <h2>11. التواصل معنا</h2>
+    <p>لأي استفسارات أو مخاوف بخصوص سياسة الخصوصية أو بياناتك، تواصلي معنا على:</p>
+    <p><a href="mailto:support@hinacare.com" style="color:#F97316;font-weight:700;">support@hinacare.com</a></p>
+    <p>سنرد على استفساراتك في غضون 48 ساعة.</p>
+
+  </div>
+
+  <!-- ══ ENGLISH ══ -->
+  <div class="lang-block" id="en-block">
+
+    <div class="info-box">
+      <p>✅ All your child's data is stored locally on your device only — it is never uploaded to any external server or shared with any third party.</p>
+    </div>
+
+    <div class="highlight-box">
+      <p>⚠️ Hina is a health tracking and documentation tool only — it is not a substitute for a doctor or medical diagnosis. Always consult your child's doctor.</p>
+    </div>
+
+    <h2>1. Introduction</h2>
+    <p>This Privacy Policy describes how the <strong>Hina — Child Health Tracker</strong> app handles your data and your child's data. We take your privacy seriously and are fully committed to protecting it.</p>
+
+    <h2>2. Data the App Collects</h2>
+    <h3>Data Stored Locally on Your Device</h3>
+    <p>The app saves the following data directly on your device without uploading it to any server:</p>
+    <ul>
+      <li>Child information: name, date of birth, gender, profile photo</li>
+      <li>Daily health records: bowel movements, urination, nutrition, fluids</li>
+      <li>Growth measurements: weight, height, BMI</li>
+      <li>Medication records, dosages, and schedules</li>
+      <li>Doctor appointments and medical notes</li>
+      <li>Health photos attached to records</li>
+      <li>App settings and personal preferences</li>
+    </ul>
+
+    <h3>User Account Data</h3>
+    <p>When you create an account, your username and password (encrypted) are stored on your device to enable the multi-profile feature and protect your data.</p>
+
+    <h2>3. How We Use Your Data</h2>
+    <p>The data you enter into the app is used exclusively to:</p>
+    <ul>
+      <li>Display health records and reports within the app</li>
+      <li>Generate weekly, monthly, and growth reports</li>
+      <li>Send local reminders and notifications you choose to enable</li>
+      <li>Calculate growth indicators and compare them to health standards</li>
+    </ul>
+    <p><strong>We do not use your data for any other purpose.</strong></p>
+
+    <h2>4. Sharing Data with Third Parties</h2>
+    <p>We <strong>do not sell, share, or transfer</strong> any personal data to third parties for any purpose — commercial, marketing, or research.</p>
+    <p>The app does not contain any external advertising or analytics tracking tools that collect your data.</p>
+
+    <h2>5. Feedback Feature</h2>
+    <p>If you choose to send feedback or suggestions through the app's "Feedback" feature, you agree that:</p>
+    <ul>
+      <li>This feedback may be used to improve and develop the app</li>
+      <li>Submitted feedback does not automatically include any personal data or your child's data</li>
+      <li>Feedback will not be used for any other purpose and will not be shared with third parties</li>
+    </ul>
+
+    <h2>6. Data Security</h2>
+    <p>We protect your data by:</p>
+    <ul>
+      <li>Storing all data locally on your device only</li>
+      <li>Encrypting passwords and account data</li>
+      <li>Isolating each user's data from others when multiple accounts exist on the same device</li>
+      <li>Not transmitting any data over the internet without your explicit consent (e.g., when sharing reports)</li>
+    </ul>
+
+    <h2>7. Your Data Rights</h2>
+    <p>You own your data completely and at all times. You can:</p>
+    <ul>
+      <li><strong>Export your data</strong> at any time via the backup feature in Settings</li>
+      <li><strong>Delete a specific child's data</strong> from within that child's profile</li>
+      <li><strong>Permanently delete your account and all data</strong> from Profile Settings</li>
+      <li><strong>Import a previous backup</strong> at any time</li>
+    </ul>
+
+    <h2>8. Children's Data</h2>
+    <p>We recognize the sensitivity of children's data and are committed to protecting it at the highest level. The app is designed for parents and caregivers and does not collect any data directly from children.</p>
+
+    <h2>9. Medical Disclaimer</h2>
+    <p>The information, alerts, and recommendations provided in Hina are for tracking and documentation purposes only. They do not constitute medical diagnosis, prescription, or specialized medical advice. Always consult your child's doctor before making any medical decision.</p>
+
+    <h2>10. Changes to This Privacy Policy</h2>
+    <p>We reserve the right to modify this policy at any time. You will be notified of any material changes through the app. Continued use of the app after changes are posted constitutes acceptance of the updated policy.</p>
+
+    <h2>11. Contact Us</h2>
+    <p>For any questions or concerns about this Privacy Policy or your data, contact us at:</p>
+    <p><a href="mailto:support@hinacare.com" style="color:#F97316;font-weight:700;">support@hinacare.com</a></p>
+    <p>We will respond to your inquiries within 48 hours.</p>
+
+  </div>
+
+</div>
+
+<footer>
+  <p data-ar="© 2026 حِنا. جميع الحقوق محفوظة." data-en="© 2026 Hina. All rights reserved.">© 2026 حِنا. جميع الحقوق محفوظة.</p>
+  <p style="margin-top:8px;">
+    <a href="/" data-ar="الرئيسية" data-en="Home">الرئيسية</a> ·
+    <a href="/terms" data-ar="اتفاقية الاستخدام" data-en="Terms of Use">اتفاقية الاستخدام</a>
+  </p>
+</footer>
+
+<script>
+  let isEn = false;
+  function toggleLang() {
+    isEn = !isEn;
+    document.body.classList.toggle('en', isEn);
+    document.documentElement.setAttribute('lang', isEn ? 'en' : 'ar');
+    document.documentElement.setAttribute('dir', isEn ? 'ltr' : 'rtl');
+    document.getElementById('langBtn').textContent = isEn ? 'العربية' : 'English';
+    document.getElementById('ar-block').classList.toggle('active', !isEn);
+    document.getElementById('en-block').classList.toggle('active', isEn);
+    document.querySelectorAll('[data-ar][data-en]').forEach(el => {
+      el.textContent = isEn ? el.getAttribute('data-en') : el.getAttribute('data-ar');
+    });
+  }
+</script>
 </body>
 </html>

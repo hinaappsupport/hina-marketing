@@ -38,6 +38,90 @@
     }
     body.en { direction: ltr; font-family: 'Inter', 'Cairo', sans-serif; }
 
+    /* ── LOGO HERO ── */
+    .logo-hero {
+      background: linear-gradient(160deg, #FFF7ED 0%, #F5F3FF 50%, #F0FDF4 100%);
+      padding: 56px 24px 40px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+    .logo-hero img {
+      width: min(320px, 72vw);
+      border-radius: 32px;
+      box-shadow: 0 24px 64px rgba(249,115,22,0.18), 0 8px 24px rgba(0,0,0,0.10);
+      display: block;
+    }
+    .logo-hero .slogan {
+      font-size: clamp(16px, 3vw, 22px);
+      font-weight: 700;
+      color: var(--muted);
+      margin-top: 20px;
+      letter-spacing: 0.01em;
+    }
+
+    /* ── MARKETING BANNER ── */
+    .marketing-banner {
+      background: white;
+      padding: 64px 24px;
+    }
+    .banner-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.10);
+      background: linear-gradient(135deg, #EFF6FF 0%, #FFF7ED 100%);
+    }
+    .banner-img {
+      flex: 1.2;
+      min-width: 0;
+    }
+    .banner-img img {
+      width: 100%;
+      display: block;
+      border-radius: 0;
+    }
+    .banner-text {
+      flex: 1;
+      padding: 40px 40px 40px 0;
+      min-width: 0;
+    }
+    body:not(.en) .banner-text { padding: 40px 0 40px 40px; }
+    .banner-text .badge {
+      display: inline-block;
+      background: var(--orange-light);
+      color: var(--orange);
+      font-size: 13px; font-weight: 700;
+      padding: 5px 14px; border-radius: 100px;
+      margin-bottom: 16px;
+      border: 1px solid #FED7AA;
+    }
+    .banner-text h2 {
+      font-size: clamp(22px, 3.5vw, 34px);
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+    .banner-text h2 .hl { color: var(--orange); }
+    .banner-text p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+    @media (max-width: 768px) {
+      .banner-inner { flex-direction: column; gap: 0; }
+      .banner-text { padding: 28px 24px !important; }
+      .logo-hero img { width: min(260px, 80vw); }
+    }
+
     /* ── NAV ── */
     nav {
       position: sticky; top: 0; z-index: 100;
@@ -300,7 +384,7 @@
 <!-- ══ NAV ══ -->
 <nav>
   <a class="nav-logo" href="/">
-    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/UNUxMvoQauIOqAvf.jpg" alt="Hina Logo" />
+    <img src="https://raw.githubusercontent.com/hinaappsupport/hina-marketing/main/logo.jpeg" alt="Hina Logo" style="width:36px;height:36px;border-radius:10px;object-fit:cover;" />
     <span data-ar="حِنا" data-en="Hina">حِنا</span>
   </a>
   <div class="nav-links">
@@ -313,8 +397,14 @@
   <button class="lang-btn" onclick="toggleLang()" id="langBtn">English</button>
 </nav>
 
+<!-- ══ LOGO HERO ══ -->
+<div class="logo-hero">
+  <img src="https://raw.githubusercontent.com/hinaappsupport/hina-marketing/main/logo.jpeg" alt="حِنا - Hina" />
+  <p class="slogan" data-ar="معاً... نرعى طفولتهم ونهتم بصحتهم" data-en="Together... nurturing their childhood and caring for their health">معاً... نرعى طفولتهم ونهتم بصحتهم</p>
+</div>
+
 <!-- ══ HERO ══ -->
-<section class="hero">
+<section class="hero" style="padding-top: 48px; background: linear-gradient(160deg, #F5F3FF 0%, #FFF7ED 50%, #F0FDF4 100%);">
   <div class="hero-badge" data-ar="🌟 تطبيق متابعة صحة الطفل الشامل" data-en="🌟 The Complete Child Health Tracker">🌟 تطبيق متابعة صحة الطفل الشامل</div>
   <h1>
     <span data-ar="رفيقتك في رحلة" data-en="Your trusted companion">رفيقتك في رحلة</span><br/>
@@ -340,6 +430,24 @@
     </div>
   </div>
 </section>
+
+<!-- ══ MARKETING BANNER ══ -->
+<div class="marketing-banner">
+  <div class="banner-inner">
+    <div class="banner-img">
+      <img src="https://raw.githubusercontent.com/hinaappsupport/hina-marketing/main/banner.jpeg" alt="Hina - Child Health Tracker" loading="lazy" />
+    </div>
+    <div class="banner-text">
+      <span class="badge" data-ar="تطبيق متابعة صحة الأطفال" data-en="Child Health Tracker App">تطبيق متابعة صحة الأطفال</span>
+      <h2>
+        <span data-ar="رفيقتك لمتابعة" data-en="Your trusted companion">رفيقتك لمتابعة</span><br/>
+        <span class="hl" data-ar="صحة طفلك" data-en="for child health">صحة طفلك</span>
+      </h2>
+      <p data-ar="حِنا تجمع كل ما تحتاجينه في مكان واحد — من التغذية والنمو إلى الأدوية والمواعيد الطبية — مع تقارير احترافية جاهزة لطبيبك." data-en="Hina brings everything you need in one place — from nutrition and growth to medications and doctor visits — with professional reports ready for your doctor.">حِنا تجمع كل ما تحتاجينه في مكان واحد — من التغذية والنمو إلى الأدوية والمواعيد الطبية — مع تقارير احترافية جاهزة لطبيبك.</p>
+      <a href="#download" class="btn-primary" data-ar="⬇️ حمّلي التطبيق مجاناً" data-en="⬇️ Download Free">⬇️ حمّلي التطبيق مجاناً</a>
+    </div>
+  </div>
+</div>
 
 <!-- ══ STATS ══ -->
 <section style="padding: 40px 24px;">

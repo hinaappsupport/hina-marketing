@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>اتفاقية الاستخدام | Terms of Use — حِنا | Hina</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --orange: #F97316; --orange-light: #FFF7ED; --orange-dark: #EA580C;
+      --text: #1C1917; --muted: #78716C; --border: #E7E5E4;
+      --bg: #FAFAF9; --white: #FFFFFF; --radius: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Cairo','Inter',sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; direction: rtl; }
+    body.en { direction: ltr; font-family: 'Inter','Cairo',sans-serif; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo span { font-size: 22px; font-weight: 900; color: var(--orange); }
+    .lang-btn {
+      background: var(--orange-light); color: var(--orange); border: none;
+      padding: 6px 14px; border-radius: 8px; font-size: 14px; font-weight: 700;
+      cursor: pointer; transition: all 0.2s; font-family: inherit;
+    }
+    .lang-btn:hover { background: var(--orange); color: white; }
+    .hero { background: linear-gradient(135deg, #FFF7ED, #F5F3FF); padding: 60px 24px 40px; text-align: center; }
+    .hero h1 { font-size: clamp(28px,5vw,44px); font-weight: 900; margin-bottom: 12px; }
+    .hero p { color: var(--muted); font-size: 16px; }
+    .content { max-width: 780px; margin: 0 auto; padding: 48px 24px 80px; }
+    .lang-block { display: none; }
+    .lang-block.active { display: block; }
+    h2 { font-size: 22px; font-weight: 800; color: var(--orange); margin: 36px 0 12px; padding-bottom: 8px; border-bottom: 2px solid var(--orange-light); }
+    h3 { font-size: 17px; font-weight: 700; margin: 20px 0 8px; }
+    p { font-size: 15px; color: #44403C; margin-bottom: 14px; }
+    ul { padding-right: 24px; margin-bottom: 14px; }
+    body.en ul { padding-right: 0; padding-left: 24px; }
+    li { font-size: 15px; color: #44403C; margin-bottom: 8px; }
+    .highlight-box {
+      background: var(--orange-light); border: 1px solid #FED7AA;
+      border-radius: 12px; padding: 20px 24px; margin: 24px 0;
+    }
+    .highlight-box p { color: #9A3412; margin: 0; font-weight: 600; }
+    footer { background: #1C1917; color: #A8A29E; padding: 32px 24px; text-align: center; font-size: 14px; }
+    footer a { color: var(--orange); text-decoration: none; }
+    .last-updated { font-size: 13px; color: var(--muted); margin-top: 8px; }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/">
+    <span data-ar="← حِنا" data-en="← Hina">← حِنا</span>
+  </a>
+  <button class="lang-btn" onclick="toggleLang()" id="langBtn">English</button>
+</nav>
+
+<div class="hero">
+  <h1 data-ar="اتفاقية الاستخدام" data-en="Terms of Use">اتفاقية الاستخدام</h1>
+  <p data-ar="يرجى قراءة هذه الاتفاقية بعناية قبل استخدام تطبيق حِنا" data-en="Please read these terms carefully before using the Hina app">يرجى قراءة هذه الاتفاقية بعناية قبل استخدام تطبيق حِنا</p>
+  <p class="last-updated" data-ar="آخر تحديث: يوليو 2026" data-en="Last updated: July 2026">آخر تحديث: يوليو 2026</p>
+</div>
+
+<div class="content">
+
+  <!-- ══ ARABIC ══ -->
+  <div class="lang-block active" id="ar-block">
+    <div class="highlight-box">
+      <p>⚠️ تطبيق حِنا أداة متابعة وتوثيق صحي فقط — وليس بديلاً عن الطبيب أو التشخيص الطبي. استشيري طبيب طفلك دائماً.</p>
+    </div>
+
+    <h2>1. القبول بالاتفاقية</h2>
+    <p>باستخدامك لتطبيق حِنا، فإنك توافقين على الالتزام بهذه الاتفاقية. إذا كنت لا توافقين على أي من بنودها، يرجى التوقف عن استخدام التطبيق.</p>
+
+    <h2>2. وصف الخدمة</h2>
+    <p>حِنا هو تطبيق لمتابعة صحة الأطفال يتيح للوالدين والمسؤولين عن رعاية الأطفال تسجيل ومتابعة:</p>
+    <ul>
+      <li>عادات التبرز والتبول اليومية</li>
+      <li>التغذية والوجبات والسوائل</li>
+      <li>الوزن والطول ومنحنيات النمو</li>
+      <li>الأدوية والجرعات والمواعيد</li>
+      <li>زيارات الطبيب والملاحظات الطبية</li>
+      <li>الصور الصحية وسجلات التطور</li>
+    </ul>
+
+    <h2>3. إخلاء المسؤولية الطبية</h2>
+    <p>المعلومات والتنبيهات والتوصيات المقدمة في حِنا هي لأغراض المعلومات والمتابعة فقط، ولا تُعدّ تشخيصاً طبياً أو وصفة علاجية أو استشارة طبية متخصصة. لا تعتمدي على التطبيق وحده لاتخاذ أي قرار طبي يخص طفلك.</p>
+
+    <h2>4. جمع البيانات واستخدامها</h2>
+    <h3>البيانات المحلية</h3>
+    <p>جميع بيانات طفلك (الاسم، تاريخ الميلاد، السجلات الصحية) تُحفظ محلياً على جهازك فقط ولا تُرفع إلى أي خادم خارجي.</p>
+    <h3>الملاحظات والتغذية الراجعة</h3>
+    <p>إذا اخترت إرسال ملاحظات أو اقتراحات عبر ميزة "الملاحظات" في التطبيق، فأنت توافقين على استخدام هذه الملاحظات لتحسين التطبيق وتطويره. لن تُستخدم هذه الملاحظات لأي غرض آخر ولن تُشارك مع أطراف ثالثة.</p>
+    <h3>عدم مشاركة البيانات</h3>
+    <p>لا نبيع بياناتك ولا نشاركها مع أي طرف ثالث لأغراض تجارية أو تسويقية.</p>
+
+    <h2>5. مسؤولية المستخدم</h2>
+    <p>أنت المسؤولة الكاملة عن:</p>
+    <ul>
+      <li>دقة المعلومات التي تدخلينها في التطبيق</li>
+      <li>حماية جهازك وبيانات التطبيق</li>
+      <li>عدم الاعتماد على التطبيق كبديل عن الرعاية الطبية</li>
+      <li>الحفاظ على نسخ احتياطية من بياناتك</li>
+    </ul>
+
+    <h2>6. الملكية الفكرية</h2>
+    <p>تطبيق حِنا وجميع محتوياته من تصميم وأكواد ونصوص وصور هي ملكية فكرية خالصة لفريق حِنا. يُحظر نسخ أو توزيع أو تعديل أي جزء من التطبيق دون إذن كتابي مسبق.</p>
+    <p>البيانات التي تدخلينها في التطبيق تبقى ملكيتك الخاصة في جميع الأوقات.</p>
+
+    <h2>7. حدود المسؤولية</h2>
+    <p>لا يتحمل فريق حِنا أي مسؤولية عن:</p>
+    <ul>
+      <li>أي قرارات طبية تُتخذ بناءً على معلومات التطبيق</li>
+      <li>فقدان البيانات نتيجة عطل في الجهاز أو حذف التطبيق</li>
+      <li>أي أضرار مباشرة أو غير مباشرة ناتجة عن استخدام التطبيق</li>
+    </ul>
+
+    <h2>8. التعديلات على الاتفاقية</h2>
+    <p>نحتفظ بحق تعديل هذه الاتفاقية في أي وقت. سيتم إشعارك بأي تغييرات جوهرية عبر التطبيق. استمرارك في استخدام التطبيق بعد نشر التعديلات يُعدّ قبولاً لها.</p>
+
+    <h2>9. إنهاء الاستخدام</h2>
+    <p>يمكنك إيقاف استخدام التطبيق وحذف جميع بياناتك في أي وقت من إعدادات التطبيق. لا توجد أي التزامات مالية أو قانونية عند الإيقاف.</p>
+
+    <h2>10. التواصل معنا</h2>
+    <p>لأي استفسارات بخصوص هذه الاتفاقية، تواصلي معنا على: <a href="mailto:hinaapp.support@gmail.com" style="color:#F97316">hinaapp.support@gmail.com</a></p>
+  </div>
+
+  <!-- ══ ENGLISH ══ -->
+  <div class="lang-block" id="en-block">
+    <div class="highlight-box">
+      <p>⚠️ Hina is a health tracking and documentation tool only — it is not a substitute for a doctor or medical diagnosis. Always consult your child's doctor.</p>
+    </div>
+
+    <h2>1. Acceptance of Terms</h2>
+    <p>By using the Hina app, you agree to be bound by these Terms of Use. If you do not agree with any part of these terms, please stop using the app.</p>
+
+    <h2>2. Description of Service</h2>
+    <p>Hina is a child health tracking app that allows parents and caregivers to record and monitor:</p>
+    <ul>
+      <li>Daily bowel and urination habits</li>
+      <li>Nutrition, meals, and fluid intake</li>
+      <li>Weight, height, and growth curves</li>
+      <li>Medications, dosages, and schedules</li>
+      <li>Doctor visits and medical notes</li>
+      <li>Health photos and developmental records</li>
+    </ul>
+
+    <h2>3. Medical Disclaimer</h2>
+    <p>The information, alerts, and recommendations provided in Hina are for informational and tracking purposes only. They do not constitute medical diagnosis, prescription, or specialized medical advice. Do not rely solely on the app for any medical decision regarding your child.</p>
+
+    <h2>4. Data Collection and Use</h2>
+    <h3>Local Data</h3>
+    <p>All your child's data (name, date of birth, health records) is stored locally on your device only and is never uploaded to any external server.</p>
+    <h3>Feedback and Suggestions</h3>
+    <p>If you choose to send feedback or suggestions through the app's "Feedback" feature, you agree that this feedback may be used to improve and develop the app. It will not be used for any other purpose and will not be shared with third parties.</p>
+    <h3>No Data Sharing</h3>
+    <p>We do not sell or share your data with any third party for commercial or marketing purposes.</p>
+
+    <h2>5. User Responsibility</h2>
+    <p>You are solely responsible for:</p>
+    <ul>
+      <li>The accuracy of information you enter into the app</li>
+      <li>Protecting your device and app data</li>
+      <li>Not relying on the app as a substitute for medical care</li>
+      <li>Maintaining backups of your data</li>
+    </ul>
+
+    <h2>6. Intellectual Property</h2>
+    <p>The Hina app and all its contents — design, code, text, and images — are the exclusive intellectual property of the Hina team. Copying, distributing, or modifying any part of the app without prior written permission is prohibited.</p>
+    <p>The data you enter into the app remains your property at all times.</p>
+
+    <h2>7. Limitation of Liability</h2>
+    <p>The Hina team is not responsible for:</p>
+    <ul>
+      <li>Any medical decisions made based on app information</li>
+      <li>Data loss due to device failure or app deletion</li>
+      <li>Any direct or indirect damages resulting from use of the app</li>
+    </ul>
+
+    <h2>8. Modifications to Terms</h2>
+    <p>We reserve the right to modify these terms at any time. You will be notified of any material changes through the app. Continued use of the app after changes are posted constitutes acceptance of the updated terms.</p>
+
+    <h2>9. Termination</h2>
+    <p>You can stop using the app and delete all your data at any time from the app settings. There are no financial or legal obligations upon termination.</p>
+
+    <h2>10. Contact Us</h2>
+    <p>For any questions about these terms, contact us at: <a href="mailto:hinaapp.support@gmail.com" style="color:#F97316">hinaapp.support@gmail.com</a></p>
+  </div>
+
+</div>
+
+<footer>
+  <p data-ar="© 2026 حِنا. جميع الحقوق محفوظة." data-en="© 2026 Hina. All rights reserved.">© 2026 حِنا. جميع الحقوق محفوظة.</p>
+  <p style="margin-top:8px;">
+    <a href="/" data-ar="الرئيسية" data-en="Home">الرئيسية</a> ·
+    <a href="/privacy-policy" data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</a>
+  </p>
+</footer>
+
+<script>
+  let isEn = false;
+  function toggleLang() {
+    isEn = !isEn;
+    document.body.classList.toggle('en', isEn);
+    document.documentElement.setAttribute('lang', isEn ? 'en' : 'ar');
+    document.documentElement.setAttribute('dir', isEn ? 'ltr' : 'rtl');
+    document.getElementById('langBtn').textContent = isEn ? 'العربية' : 'English';
+    document.getElementById('ar-block').classList.toggle('active', !isEn);
+    document.getElementById('en-block').classList.toggle('active', isEn);
+    document.querySelectorAll('[data-ar][data-en]').forEach(el => {
+      el.textContent = isEn ? el.getAttribute('data-en') : el.getAttribute('data-ar');
+    });
+  }
+</script>
+</body>
+</html>

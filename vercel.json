@@ -1,7 +1,5 @@
 {
   "version": 2,
-  "buildCommand": "npm install",
-  "installCommand": "npm install",
   "builds": [
     {
       "src": "server.js",
@@ -10,11 +8,20 @@
   ],
   "routes": [
     {
+      "src": "/health",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/privacy-policy",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/terms",
+      "dest": "/server.js"
+    },
+    {
       "src": "/(.*)",
-      "dest": "server.js"
+      "dest": "/server.js"
     }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  }
+  ]
 }

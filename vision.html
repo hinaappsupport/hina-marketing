@@ -400,8 +400,8 @@
 <script>
   let isEn = false;
 
-  function toggleLang() {
-    isEn = !isEn;
+  function applyLang(en) {
+    isEn = en;
     document.body.classList.toggle('en', isEn);
     document.documentElement.setAttribute('lang', isEn ? 'en' : 'ar');
     document.documentElement.setAttribute('dir', isEn ? 'ltr' : 'rtl');
@@ -426,6 +426,14 @@
       }
     }
   }
+
+  function toggleLang() {
+    applyLang(!isEn);
+    localStorage.setItem('hina_lang', isEn ? 'en' : 'ar');
+  }
+
+  // Restore saved language on page load
+  if (localStorage.getItem('hina_lang') === 'en') applyLang(true);
 </script>
 
 </body>

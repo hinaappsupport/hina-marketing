@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>رؤيتنا | Our Vision — حِنا | Hina</title>
+  <meta name="description" content="رؤية حِنا — تطبيق متابعة صحة الأطفال. تعرّف على قصة التأسيس، رسالتنا، وقيمنا في رعاية صحة طفلك.">
+  <meta property="og:title" content="رؤيتنا | Our Vision — حِنا | Hina">
+  <meta property="og:description" content="The story behind Hina — a pediatric surgeon's vision to bridge the gap between parents and doctors through smart child health tracking.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --orange: #F97316;
+      --orange-light: #FFF7ED;
+      --orange-dark: #EA580C;
+      --purple: #7C3AED;
+      --purple-light: #F5F3FF;
+      --green: #16A34A;
+      --green-light: #F0FDF4;
+      --text: #1C1917;
+      --muted: #78716C;
+      --border: #E7E5E4;
+      --bg: #FAFAF9;
+      --white: #FFFFFF;
+      --radius: 16px;
+      --shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Cairo', 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      direction: rtl;
+    }
+    body.en { direction: ltr; font-family: 'Inter', 'Cairo', sans-serif; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo span { font-size: 22px; font-weight: 900; color: var(--orange); }
+    .lang-btn {
+      background: var(--orange-light); color: var(--orange); border: none;
+      padding: 6px 14px; border-radius: 8px; font-size: 14px; font-weight: 700;
+      cursor: pointer; transition: all 0.2s; font-family: inherit;
+    }
+    .lang-btn:hover { background: var(--orange); color: white; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #FFF7ED 0%, #F5F3FF 50%, #F0FDF4 100%);
+      padding: 72px 24px 56px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--orange-light); color: var(--orange);
+      font-size: 13px; font-weight: 700;
+      padding: 6px 16px; border-radius: 100px;
+      margin-bottom: 24px;
+      border: 1px solid #FED7AA;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 6vw, 52px);
+      font-weight: 900; line-height: 1.2;
+      color: var(--text); margin-bottom: 16px;
+    }
+    .hero h1 .highlight { color: var(--orange); }
+    .hero p {
+      font-size: clamp(16px, 2.5vw, 19px);
+      color: var(--muted); max-width: 580px;
+      margin: 0 auto;
+    }
+
+    /* ── SECTIONS ── */
+    .section { padding: 80px 24px; }
+    .section-alt { background: white; }
+    .max-w { max-width: 1100px; margin: 0 auto; }
+    .max-w-narrow { max-width: 780px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 13px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--orange);
+      margin-bottom: 12px; text-align: center;
+    }
+    .section-title {
+      font-size: clamp(26px, 4vw, 40px);
+      font-weight: 900; text-align: center;
+      margin-bottom: 16px; line-height: 1.25;
+    }
+    .section-sub {
+      font-size: 17px; color: var(--muted);
+      text-align: center; max-width: 560px;
+      margin: 0 auto 56px;
+    }
+
+    /* ── NAME CARD ── */
+    .name-card {
+      background: linear-gradient(135deg, #FFF7ED 0%, #F5F3FF 100%);
+      border: 2px solid #FED7AA;
+      border-radius: 24px;
+      padding: 48px 40px;
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+    .name-card::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 160px; height: 160px;
+      background: radial-gradient(circle, rgba(249,115,22,0.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .name-arabic {
+      font-size: clamp(56px, 10vw, 88px);
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 8px;
+      font-family: 'Cairo', sans-serif;
+    }
+    .name-meaning {
+      font-size: 15px;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 24px;
+    }
+    .name-text {
+      font-size: 16px;
+      color: var(--text);
+      line-height: 1.9;
+    }
+    body.en .name-text { text-align: left; }
+    body:not(.en) .name-text { text-align: right; }
+
+    /* ── MISSION ── */
+    .mission-block {
+      background: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
+      border-radius: 24px;
+      padding: 56px 48px;
+      color: white;
+      text-align: center;
+    }
+    .mission-block h2 {
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+    .mission-block p {
+      font-size: 17px;
+      opacity: 0.92;
+      line-height: 1.9;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    @media (max-width: 600px) {
+      .mission-block { padding: 36px 24px; }
+    }
+
+    /* ── STORY ── */
+    .story-content {
+      font-size: 16px;
+      color: #44403C;
+      line-height: 2;
+    }
+    .story-content p { margin-bottom: 20px; }
+    .story-content .quote {
+      background: var(--orange-light);
+      border-right: 4px solid var(--orange);
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      margin: 32px 0;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--orange-dark);
+      font-style: italic;
+    }
+    body.en .story-content .quote {
+      border-right: none;
+      border-left: 4px solid var(--orange);
+      border-radius: 12px 0 0 12px;
+    }
+
+    /* ── VALUES ── */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .value-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 28px;
+      border: 1px solid var(--border);
+      transition: all 0.25s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .value-card:hover { box-shadow: var(--shadow); transform: translateY(-4px); }
+    .value-icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px;
+    }
+    .icon-orange { background: var(--orange-light); }
+    .icon-purple { background: var(--purple-light); }
+    .icon-green { background: var(--green-light); }
+    .icon-blue { background: #EFF6FF; }
+    .icon-teal { background: #F0FDFA; }
+    .value-card h3 { font-size: 18px; font-weight: 700; }
+    .value-card p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text); color: #A8A29E;
+      padding: 48px 24px 32px;
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; gap: 32px;
+      justify-content: space-between; align-items: flex-start;
+    }
+    .footer-brand .logo-text { font-size: 24px; font-weight: 900; color: var(--orange); }
+    .footer-brand p { font-size: 14px; margin-top: 8px; max-width: 260px; }
+    .footer-links h4 { color: white; font-size: 15px; font-weight: 700; margin-bottom: 12px; }
+    .footer-links a { display: block; color: #A8A29E; text-decoration: none; font-size: 14px; margin-bottom: 8px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--orange); }
+    .footer-bottom {
+      border-top: 1px solid #292524;
+      margin-top: 40px; padding-top: 24px;
+      text-align: center; font-size: 13px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .section { padding: 56px 20px; }
+      .name-card { padding: 36px 24px; }
+      .values-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <a class="nav-logo" href="/">
+    <span data-ar="حِنا →" data-en="← Hina">حِنا →</span>
+  </a>
+  <button class="lang-btn" onclick="toggleLang()" id="langBtn">English</button>
+</nav>
+
+<!-- ══ HERO ══ -->
+<div class="hero">
+  <div class="hero-badge" data-ar="💚 رؤيتنا وقصتنا" data-en="💚 Our Vision & Story">💚 رؤيتنا وقصتنا</div>
+  <h1>
+    <span data-ar="لماذا حِنا؟" data-en="Why ">لماذا حِنا؟</span><span class="en-only" style="display:none;" data-en="Hina?"></span>
+  </h1>
+  <p data-ar="من غرفة العمليات إلى يدَي كل أم — قصة تطبيق وُلد من قلب الرعاية الطبية" data-en="From the operating room to every mother's hands — the story of an app born from the heart of medical care">من غرفة العمليات إلى يدَي كل أم — قصة تطبيق وُلد من قلب الرعاية الطبية</p>
+</div>
+
+<!-- ══ NAME MEANING ══ -->
+<section class="section section-alt">
+  <div class="max-w">
+    <div class="section-label" data-ar="الاسم" data-en="THE NAME">الاسم</div>
+    <h2 class="section-title" data-ar="ما معنى حِنا؟" data-en="What does Hina mean?">ما معنى حِنا؟</h2>
+    <div class="name-card">
+      <div class="name-arabic">حِنا</div>
+      <div class="name-meaning" data-ar="Ḥanān — الحنان والعطف والمحبة" data-en="Ḥanān — tenderness, compassion, and love">Ḥanān — الحنان والعطف والمحبة</div>
+      <p class="name-text" data-ar='"حِنا" مشتقة من الحَنان — ذلك الشعور العميق بالعطف والرحمة والمحبة الذي تحمله الأم في قلبها تجاه طفلها. اخترنا هذا الاسم لأنه يعبّر عن جوهر ما نؤمن به: أن الرعاية الحقيقية تبدأ من القلب.' data-en='"Hina" is derived from the Arabic word Ḥanān — meaning tenderness, compassion, and the deep love a mother carries for her child. We chose this name because true care begins from the heart.'>"حِنا" مشتقة من الحَنان — ذلك الشعور العميق بالعطف والرحمة والمحبة الذي تحمله الأم في قلبها تجاه طفلها. اخترنا هذا الاسم لأنه يعبّر عن جوهر ما نؤمن به: أن الرعاية الحقيقية تبدأ من القلب.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MISSION ══ -->
+<section class="section">
+  <div class="max-w">
+    <div class="section-label" data-ar="رسالتنا" data-en="OUR MISSION">رسالتنا</div>
+    <h2 class="section-title" data-ar="لماذا نفعل ما نفعله؟" data-en="Why do we do what we do?">لماذا نفعل ما نفعله؟</h2>
+    <div class="mission-block">
+      <h2 data-ar="الأطفال هم لبنة المجتمع وبناة مستقبله" data-en="Children are the foundation of every society">الأطفال هم لبنة المجتمع وبناة مستقبله</h2>
+      <p data-ar="الاهتمام بصحتهم وتغذيتهم في سنواتهم الأولى ليس مجرد رعاية آنية — بل هو استثمار في إنسان كامل. ما يعيشه الطفل اليوم يصنع الإنسان الذي سيكون عليه غداً. مهمتنا في حِنا أن نكون الرفيق اليومي للأم في هذه الرحلة؛ نجعل المتابعة سهلة، والمعلومة دقيقة، والطبيب قادراً على المساعدة الحقيقية." data-en="Caring for children's health and nutrition in their early years is not just immediate care — it is an investment in a complete human being. What a child experiences today shapes the person they will become tomorrow. Our mission at Hina is to be the daily companion for every mother on this journey; making follow-up easy, information accurate, and doctors empowered to provide real help.">الاهتمام بصحتهم وتغذيتهم في سنواتهم الأولى ليس مجرد رعاية آنية — بل هو استثمار في إنسان كامل. ما يعيشه الطفل اليوم يصنع الإنسان الذي سيكون عليه غداً. مهمتنا في حِنا أن نكون الرفيق اليومي للأم في هذه الرحلة؛ نجعل المتابعة سهلة، والمعلومة دقيقة، والطبيب قادراً على المساعدة الحقيقية.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STORY ══ -->
+<section class="section section-alt">
+  <div class="max-w-narrow">
+    <div class="section-label" data-ar="قصتنا" data-en="OUR STORY">قصتنا</div>
+    <h2 class="section-title" data-ar="كيف بدأت حِنا؟" data-en="How did Hina begin?">كيف بدأت حِنا؟</h2>
+
+    <!-- Arabic Story -->
+    <div class="story-content lang-block active" id="story-ar">
+      <p>كنا نرى كل يوم في عيادة جراحة الأطفال حالات متكررة من الإمساك المزمن، والشروخ الشرجية، وصعوبات التحكم في الإخراج. كانت هذه الحالات تحتاج متابعة دقيقة ومستمرة — لكن الأدوات المتاحة لم تكن كافية.</p>
+
+      <p>كنا نحتاج من الأم أن تصف لنا التغذية اليومية، وكمية السوائل، والأيام التي حدث فيها تسريب أو اتساخ للملابس الداخلية، وأوقاتها بالضبط. كنا نحتاج تقويماً شهرياً حقيقياً يعكس ما يعيشه الطفل يومياً — وليس ما تتذكره الأم في لحظة الزيارة.</p>
+
+      <div class="quote">في السابق، كنا نعطي الأم ورقة مرسوماً عليها 30 يوماً، ونطلب منها أن تسجّل كل شيء بالقلم. كانت تعود بورقة ممزقة، أو منسية في الحقيبة، أو فارغة تماماً.</div>
+
+      <p>أدركنا أن المشكلة ليست في الأم — بل في الأداة. الأم مشغولة، ومرهقة، وتحمل طفلاً وتدير منزلاً. ما تحتاجه هو شيء بسيط، سريع، وموجود دائماً في يدها.</p>
+
+      <p>من هنا وُلدت فكرة حِنا. بدأنا بمشكلة الإمساك لأننا عشناها يومياً في غرفة العمليات وفي العيادة. ثم توسّعنا لتغطية التغذية الشاملة، ومتابعة النمو، والأدوية، والمواعيد الطبية. ورأينا أن التطبيق قادر على أن يكون أكثر من ذلك — منصة متكاملة لصحة الطفل منذ الولادة حتى سن المدرسة.</p>
+
+      <p>الهدف لم يتغير: أن يصل الطبيب إلى بيانات حقيقية، وأن تشعر الأم بأنها ليست وحدها في هذه الرحلة.</p>
+    </div>
+
+    <!-- English Story -->
+    <div class="story-content lang-block" id="story-en" style="display:none; text-align:left;">
+      <p>Every day in the pediatric surgery clinic, we saw recurring cases of chronic constipation, anal fissures, and difficulties with bowel control. These cases required precise, continuous follow-up — but the available tools were simply not enough.</p>
+
+      <p>We needed mothers to describe their child's daily nutrition, fluid intake, and the exact days and times of any soiling or accidents. We needed a real monthly calendar reflecting what the child actually experienced daily — not what the mother could recall during a brief clinic visit.</p>
+
+      <div class="quote" style="border-right:none; border-left:4px solid var(--orange); border-radius:12px 0 0 12px;">In the past, we would hand mothers a paper with 30 days drawn on it and ask them to write everything down. They would return with a torn page, one forgotten in a bag, or one left completely blank.</div>
+
+      <p>We realized the problem was not with the mother — it was with the tool. Mothers are busy, exhausted, caring for a child while managing a household. What they need is something simple, fast, and always in their hands.</p>
+
+      <p>That is where the idea for Hina was born. We started with constipation because we lived it daily in the operating room and clinic. Then we expanded to cover comprehensive nutrition, growth tracking, medications, and medical appointments. We saw that the app could be much more — a complete platform for child health from birth to school age.</p>
+
+      <p>The goal has never changed: to give doctors access to real data, and to make every mother feel she is not alone on this journey.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VALUES ══ -->
+<section class="section">
+  <div class="max-w">
+    <div class="section-label" data-ar="قيمنا" data-en="OUR VALUES">قيمنا</div>
+    <h2 class="section-title" data-ar="ما الذي يقودنا؟" data-en="What drives us?">ما الذي يقودنا؟</h2>
+    <p class="section-sub" data-ar="خمس قيم تشكّل كل قرار نتخذه في حِنا" data-en="Five values that shape every decision we make at Hina">خمس قيم تشكّل كل قرار نتخذه في حِنا</p>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon icon-orange">💚</div>
+        <h3 data-ar="الحنان" data-en="Tenderness">الحنان</h3>
+        <p data-ar="نصمم كل تفصيلة في حِنا بعين الأم وقلبها — لأننا نعرف كم هي مشغولة وكم تهتم." data-en="We design every detail in Hina with a mother's eyes and heart — because we know how busy she is and how deeply she cares.">نصمم كل تفصيلة في حِنا بعين الأم وقلبها — لأننا نعرف كم هي مشغولة وكم تهتم.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon icon-blue">🎯</div>
+        <h3 data-ar="الدقة" data-en="Accuracy">الدقة</h3>
+        <p data-ar="معلومة صحيحة تصنع قراراً طبياً أفضل. نلتزم بأن تكون كل بيانات التطبيق موثوقة وقابلة للاستخدام الطبي الفعلي." data-en="Correct information leads to better medical decisions. We are committed to ensuring every piece of data in the app is reliable and clinically usable.">معلومة صحيحة تصنع قراراً طبياً أفضل. نلتزم بأن تكون كل بيانات التطبيق موثوقة وقابلة للاستخدام الطبي الفعلي.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon icon-purple">✨</div>
+        <h3 data-ar="البساطة" data-en="Simplicity">البساطة</h3>
+        <p data-ar="الأم لا تحتاج تعقيداً — تحتاج وضوحاً وسرعة. كل شاشة في حِنا مصممة لتكون بديهية وسهلة الاستخدام." data-en="Mothers need clarity and speed, not complexity. Every screen in Hina is designed to be intuitive and effortless.">الأم لا تحتاج تعقيداً — تحتاج وضوحاً وسرعة. كل شاشة في حِنا مصممة لتكون بديهية وسهلة الاستخدام.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon icon-green">🤝</div>
+        <h3 data-ar="الشراكة" data-en="Partnership">الشراكة</h3>
+        <p data-ar="نربط الأم بطبيبها بجسر من البيانات الحقيقية. حِنا ليست بديلاً عن الطبيب — بل أداة تجعل الطبيب أكثر قدرة على المساعدة." data-en="We bridge the gap between mother and doctor with real data. Hina is not a replacement for the doctor — it is a tool that empowers the doctor to help more effectively.">نربط الأم بطبيبها بجسر من البيانات الحقيقية. حِنا ليست بديلاً عن الطبيب — بل أداة تجعل الطبيب أكثر قدرة على المساعدة.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon icon-teal">🌱</div>
+        <h3 data-ar="المستقبل" data-en="The Future">المستقبل</h3>
+        <p data-ar="نبني اليوم لطفل أصحّ وإنسان أقوى. كل ميزة نضيفها تخدم هدفاً واحداً: مجتمع أكثر صحة يبدأ من رعاية أفضل للأطفال." data-en="We build today for a healthier child and a stronger human. Every feature we add serves one goal: a healthier society that begins with better care for children.">نبني اليوم لطفل أصحّ وإنسان أقوى. كل ميزة نضيفها تخدم هدفاً واحداً: مجتمع أكثر صحة يبدأ من رعاية أفضل للأطفال.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo-text" data-ar="حِنا" data-en="Hina">حِنا</div>
+      <p data-ar="تطبيقك الموثوق لمتابعة صحة طفلك — من الرضاعة حتى سن المدرسة." data-en="Your trusted app for tracking your child's health — from infancy to school age.">تطبيقك الموثوق لمتابعة صحة طفلك — من الرضاعة حتى سن المدرسة.</p>
+    </div>
+    <div class="footer-links">
+      <h4 data-ar="الصفحات" data-en="Pages">الصفحات</h4>
+      <a href="/" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+      <a href="/vision" data-ar="رؤيتنا" data-en="Our Vision">رؤيتنا</a>
+      <a href="/privacy-policy" data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</a>
+      <a href="/terms" data-ar="اتفاقية الاستخدام" data-en="Terms of Use">اتفاقية الاستخدام</a>
+    </div>
+    <div class="footer-links">
+      <h4 data-ar="التواصل" data-en="Contact">التواصل</h4>
+      <a href="mailto:support@hinacare.com">support@hinacare.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span data-ar="© 2026 حِنا. جميع الحقوق محفوظة." data-en="© 2026 Hina. All rights reserved.">© 2026 حِنا. جميع الحقوق محفوظة.</span>
+  </div>
+</footer>
+
+<script>
+  let isEn = false;
+
+  function toggleLang() {
+    isEn = !isEn;
+    document.body.classList.toggle('en', isEn);
+    document.documentElement.setAttribute('lang', isEn ? 'en' : 'ar');
+    document.documentElement.setAttribute('dir', isEn ? 'ltr' : 'rtl');
+    document.getElementById('langBtn').textContent = isEn ? 'العربية' : 'English';
+
+    // Toggle text content for all data-ar/data-en elements
+    document.querySelectorAll('[data-ar][data-en]').forEach(el => {
+      el.textContent = isEn ? el.getAttribute('data-en') : el.getAttribute('data-ar');
+    });
+
+    // Toggle story blocks
+    document.getElementById('story-ar').style.display = isEn ? 'none' : 'block';
+    document.getElementById('story-en').style.display = isEn ? 'block' : 'none';
+
+    // Fix hero h1 for English
+    const heroH1 = document.querySelector('.hero h1');
+    if (heroH1) {
+      if (isEn) {
+        heroH1.innerHTML = '<span>Why <span class="highlight">Hina?</span></span>';
+      } else {
+        heroH1.innerHTML = '<span data-ar="لماذا حِنا؟" data-en="Why Hina?">لماذا <span class="highlight">حِنا؟</span></span>';
+      }
+    }
+  }
+</script>
+
+</body>
+</html>

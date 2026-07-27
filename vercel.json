@@ -20,6 +20,10 @@
       "dest": "/server.js"
     },
     {
+      "src": "/vision",
+      "dest": "/server.js"
+    },
+    {
       "src": "/(.*)",
       "dest": "/server.js"
     }

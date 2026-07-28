@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="color-scheme" content="light only" />
   <title>رؤيتنا | Our Vision — حِنا | Hina</title>
   <meta name="description" content="رؤية حِنا — تطبيق متابعة صحة الأطفال. تعرّف على قصة التأسيس، رسالتنا، وقيمنا في رعاية صحة طفلك.">
   <meta property="og:title" content="رؤيتنا | Our Vision — حِنا | Hina">
@@ -12,28 +11,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      color-scheme: light only;
       --orange: #F97316;
-      --orange-light: #FFF7ED;
       --orange-dark: #EA580C;
-      --purple: #7C3AED;
-      --purple-light: #F5F3FF;
-      --green: #16A34A;
-      --green-light: #F0FDF4;
-      --text: #1C1917;
-      --muted: #78716C;
-      --border: #E7E5E4;
-      --bg: #FAFAF9;
+      --text: #FFFFFF;
+      --muted: rgba(255,255,255,0.5);
+      --border: #2A2A2A;
+      --bg: #0D0D0D;
       --white: #FFFFFF;
       --radius: 16px;
-      --shadow: 0 4px 24px rgba(0,0,0,0.08);
+      --shadow: 0 4px 24px rgba(0,0,0,0.4);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Cairo', 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      background: #0D0D0D;
+      color: #FFFFFF;
       line-height: 1.8;
       direction: rtl;
     }
@@ -86,8 +79,8 @@
     }
 
     /* ── SECTIONS ── */
-    .section { padding: 80px 24px; }
-    .section-alt { background: white; }
+    .section { padding: 64px 24px; background: #0D0D0D; }
+    .section-alt { background: #0F0F0F; }
     .max-w { max-width: 1100px; margin: 0 auto; }
     .max-w-narrow { max-width: 780px; margin: 0 auto; }
 
@@ -97,24 +90,24 @@
       margin-bottom: 12px; text-align: center;
     }
     .section-title {
-      font-size: clamp(26px, 4vw, 40px);
-      font-weight: 900; text-align: center;
-      margin-bottom: 16px; line-height: 1.25;
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 900; text-align: center; color: #FFFFFF;
+      margin-bottom: 14px; line-height: 1.25;
     }
     .section-sub {
-      font-size: 17px; color: var(--muted);
-      text-align: center; max-width: 560px;
-      margin: 0 auto 56px;
+      font-size: 15px; color: rgba(255,255,255,0.5);
+      text-align: center; max-width: 520px;
+      margin: 0 auto 44px;
     }
 
     /* ── NAME CARD ── */
     .name-card {
-      background: linear-gradient(135deg, #FFF7ED 0%, #F5F3FF 100%);
-      border: 2px solid #FED7AA;
-      border-radius: 24px;
-      padding: 48px 40px;
+      background: #1A1A1A;
+      border: 1px solid #2A2A2A;
+      border-radius: 20px;
+      padding: 36px 32px;
       text-align: center;
-      max-width: 680px;
+      max-width: 560px;
       margin: 0 auto;
       position: relative;
       overflow: hidden;
@@ -124,11 +117,11 @@
       position: absolute;
       top: -40px; right: -40px;
       width: 160px; height: 160px;
-      background: radial-gradient(circle, rgba(249,115,22,0.12) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(249,115,22,0.08) 0%, transparent 70%);
       border-radius: 50%;
     }
     .name-arabic {
-      font-size: clamp(56px, 10vw, 88px);
+      font-size: clamp(48px, 8vw, 72px);
       font-weight: 900;
       color: var(--orange);
       line-height: 1;
@@ -136,97 +129,102 @@
       font-family: 'Cairo', sans-serif;
     }
     .name-meaning {
-      font-size: 15px;
-      color: var(--muted);
+      font-size: 14px;
+      color: rgba(255,255,255,0.45);
       font-style: italic;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
     .name-text {
-      font-size: 16px;
-      color: var(--text);
-      line-height: 1.9;
+      font-size: 15px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.85;
     }
     body.en .name-text { text-align: left; }
     body:not(.en) .name-text { text-align: right; }
 
     /* ── MISSION ── */
     .mission-block {
-      background: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
-      border-radius: 24px;
-      padding: 56px 48px;
+      background: #1A1A1A;
+      border: 1px solid #2A2A2A;
+      border-left: 4px solid var(--orange);
+      border-radius: 16px;
+      padding: 40px 40px;
       color: white;
       text-align: center;
+      max-width: 820px;
+      margin: 0 auto;
     }
     .mission-block h2 {
-      font-size: clamp(22px, 3.5vw, 32px);
+      font-size: clamp(18px, 2.8vw, 26px);
       font-weight: 900;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
+      color: #FFFFFF;
     }
     .mission-block p {
-      font-size: 17px;
-      opacity: 0.92;
+      font-size: 15px;
+      color: rgba(255,255,255,0.65);
       line-height: 1.9;
       max-width: 680px;
       margin: 0 auto;
     }
     @media (max-width: 600px) {
-      .mission-block { padding: 36px 24px; }
+      .mission-block { padding: 28px 20px; border-left-width: 3px; }
     }
 
     /* ── STORY ── */
     .story-content {
-      font-size: 16px;
-      color: #44403C;
-      line-height: 2;
+      font-size: 15px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.95;
     }
-    .story-content p { margin-bottom: 20px; }
+    .story-content p { margin-bottom: 18px; }
     .story-content .quote {
-      background: var(--orange-light);
-      border-right: 4px solid var(--orange);
-      border-radius: 0 12px 12px 0;
-      padding: 20px 24px;
-      margin: 32px 0;
-      font-size: 17px;
+      background: rgba(249,115,22,0.08);
+      border-right: 3px solid var(--orange);
+      border-radius: 0 10px 10px 0;
+      padding: 18px 22px;
+      margin: 28px 0;
+      font-size: 15px;
       font-weight: 600;
-      color: var(--orange-dark);
+      color: rgba(249,115,22,0.9);
       font-style: italic;
     }
     body.en .story-content .quote {
       border-right: none;
-      border-left: 4px solid var(--orange);
-      border-radius: 12px 0 0 12px;
+      border-left: 3px solid var(--orange);
+      border-radius: 10px 0 0 10px;
     }
 
     /* ── VALUES ── */
     .values-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
     }
     .value-card {
-      background: #1A1A1A;
-      border-radius: var(--radius);
-      padding: 24px;
-      border: 1px solid #2A2A2A;
+      background: #141414;
+      border-radius: 14px;
+      padding: 20px;
+      border: 1px solid #242424;
       transition: all 0.25s;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
     }
-    .value-card:hover { border-color: var(--orange); transform: translateY(-4px); background: #1F1F1F; }
+    .value-card:hover { border-color: var(--orange); transform: translateY(-3px); background: #1A1A1A; }
     .value-icon {
-      width: 52px; height: 52px;
-      border-radius: 14px;
+      width: 42px; height: 42px;
+      border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 26px;
+      font-size: 20px;
     }
-    .icon-orange { background: rgba(249,115,22,0.15); }
-    .icon-purple { background: rgba(124,58,237,0.15); }
-    .icon-green { background: rgba(22,163,74,0.15); }
-    .icon-blue { background: rgba(59,130,246,0.15); }
-    .icon-teal { background: rgba(20,184,166,0.15); }
-    .value-card h3 { font-size: 17px; font-weight: 700; color: #FFFFFF; }
-    .value-card p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+    .icon-orange { background: rgba(249,115,22,0.12); }
+    .icon-purple { background: rgba(124,58,237,0.12); }
+    .icon-green { background: rgba(22,163,74,0.12); }
+    .icon-blue { background: rgba(59,130,246,0.12); }
+    .icon-teal { background: rgba(20,184,166,0.12); }
+    .value-card h3 { font-size: 15px; font-weight: 700; color: #FFFFFF; }
+    .value-card p { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.65; }
 
     /* ── FOOTER (deep black) ── */
     footer {
@@ -251,8 +249,12 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      .section { padding: 56px 20px; }
-      .name-card { padding: 36px 24px; }
+      .section { padding: 48px 16px; }
+      .name-card { padding: 28px 20px; }
+      .mission-block { padding: 24px 18px; }
+      .values-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    }
+    @media (max-width: 480px) {
       .values-grid { grid-template-columns: 1fr; }
     }
   </style>
@@ -349,8 +351,8 @@ They came back torn. Forgotten. Blank.</div>
 <section class="section" style="background:#0F0F0F;">
   <div class="max-w">
     <div class="section-label" data-ar="قيمنا" data-en="OUR VALUES">قيمنا</div>
-    <h2 class="section-title" style="color:#FFFFFF;" data-ar="ما الذي يقودنا؟" data-en="What drives us?">ما الذي يقودنا؟</h2>
-    <p class="section-sub" style="color:rgba(255,255,255,0.5);" data-ar="خمس قيم تشكّل كل قرار نتخذه في حِنا" data-en="Five values that shape every decision we make at Hina">خمس قيم تشكّل كل قرار نتخذه في حِنا</p>
+    <h2 class="section-title" data-ar="ما الذي يقودنا؟" data-en="What drives us?">ما الذي يقودنا؟</h2>
+    <p class="section-sub" data-ar="خمس قيم تشكّل كل قرار نتخذه في حِنا" data-en="Five values that shape every decision we make at Hina">خمس قيم تشكّل كل قرار نتخذه في حِنا</p>
 
     <div class="values-grid">
       <div class="value-card">

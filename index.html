@@ -44,13 +44,13 @@
     /* ── NAV ── */
     nav {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(44,26,14,0.98);
+      background: rgba(253,246,238,0.98);
       backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid #E8D9C8;
       padding: 0 32px;
       display: flex; align-items: center; justify-content: space-between;
       height: 68px;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+      box-shadow: 0 2px 16px rgba(180,120,60,0.12);
       transition: background 0.3s, border-color 0.3s;
     }
     .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
@@ -58,7 +58,7 @@
     .nav-logo span { font-size: 22px; font-weight: 900; color: var(--orange); }
     .nav-links { display: flex; align-items: center; gap: 8px; }
     .nav-links a {
-      text-decoration: none; color: rgba(255,255,255,0.65); font-size: 14px; font-weight: 600;
+      text-decoration: none; color: #5C3D1E; font-size: 14px; font-weight: 600;
       padding: 6px 14px; border-radius: 8px; transition: all 0.2s;
     }
     .nav-links a:hover { color: var(--orange); background: rgba(249,115,22,0.12); }
@@ -69,9 +69,9 @@
     }
     .lang-btn:hover { background: var(--orange); color: white; border-color: var(--orange); }
 
-    /* ── HERO (NEW: split layout, dark bg) ── */
+    /* ── HERO (NEW: split layout, light beige bg) ── */
     .hero-section {
-      background: #2C1A0E;
+      background: #FDF6EE;
       padding: 0;
       min-height: 580px;
       display: flex;
@@ -83,8 +83,8 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 70% 50%, rgba(249,115,22,0.12) 0%, transparent 60%),
-                  radial-gradient(ellipse at 20% 80%, rgba(22,163,74,0.06) 0%, transparent 50%);
+      background: radial-gradient(ellipse at 70% 50%, rgba(249,115,22,0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse at 20% 80%, rgba(22,163,74,0.04) 0%, transparent 50%);
       z-index: 0;
     }
     .hero-inner {
@@ -135,12 +135,12 @@
     .hero-text-col h1 {
       font-size: clamp(26px, 3.8vw, 46px);
       font-weight: 900; line-height: 1.2;
-      color: #FFFFFF; margin-bottom: 20px;
+      color: #1C1917; margin-bottom: 20px;
     }
     .hero-text-col h1 .highlight { color: var(--orange); }
     .hero-text-col p {
       font-size: clamp(14px, 2vw, 18px);
-      color: rgba(255,255,255,0.65);
+      color: #78716C;
       max-width: 480px;
       margin-bottom: 36px;
       line-height: 1.8;
@@ -155,17 +155,17 @@
     }
     .btn-primary:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(249,115,22,0.45); }
     .btn-secondary {
-      background: rgba(255,255,255,0.08); color: #FFFFFF;
+      background: rgba(249,115,22,0.08); color: #C2410C;
       padding: 14px 32px; border-radius: 12px;
       font-size: 16px; font-weight: 700;
       text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
-      border: 2px solid rgba(255,255,255,0.25); transition: all 0.25s;
+      border: 2px solid rgba(249,115,22,0.35); transition: all 0.25s;
     }
     .btn-secondary:hover { border-color: var(--orange); color: var(--orange); background: rgba(249,115,22,0.1); }
 
     /* ── HERO SCREENSHOTS (kept below hero) ── */
     .hero-screenshots-bar {
-      background: #2C1A0E;
+      background: #FDF6EE;
       padding: 40px 24px 56px;
       display: flex;
       justify-content: center;
@@ -194,13 +194,13 @@
     }
     .section-divider-soft {
       height: 1px;
-      background: linear-gradient(90deg, transparent 0%, #C4A882 20%, #C4A882 80%, transparent 100%);
+      background: linear-gradient(90deg, transparent 0%, #E8D9C8 20%, #E8D9C8 80%, transparent 100%);
       margin: 0;
     }
 
-    /* ── STATS BAR (black bg, compact cards) ── */
+    /* ── STATS BAR (light beige bg) ── */
     .stats-section {
-      background: #2C1A0E;
+      background: #FDF6EE;
       padding: 56px 24px;
       position: relative;
     }
@@ -217,7 +217,7 @@
     }
     .stats-section-label {
       text-align: center;
-      color: rgba(255,255,255,0.45);
+      color: #A87C52;
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 0.1em;
@@ -241,7 +241,7 @@
       position: absolute;
       left: 0; top: 20%; height: 60%;
       width: 1px;
-      background: rgba(255,255,255,0.1);
+      background: rgba(180,120,60,0.2);
     }
     body.en .stat-card:not(:last-child)::after { left: auto; right: 0; }
     .stat-card:hover .stat-num { transform: scale(1.05); }
@@ -256,14 +256,14 @@
     .stat-percent { font-size: 0.6em; font-weight: 700; }
     .stat-label {
       font-size: 13px;
-      color: rgba(255,255,255,0.8);
+      color: #44403C;
       font-weight: 600;
       line-height: 1.5;
       margin-bottom: 8px;
     }
     .stat-source {
       font-size: 10px;
-      color: rgba(255,255,255,0.35);
+      color: #A87C52;
       font-style: italic;
     }
 
@@ -441,9 +441,9 @@
     }
     .contact-email-btn:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(249,115,22,0.45); }
 
-    /* ── CTA BANNER (dark-to-orange gradient) ── */
+    /* ── CTA BANNER (beige-to-orange gradient) ── */
     .cta-banner {
-      background: linear-gradient(135deg, #2C1A0E 0%, #3D2010 35%, var(--orange-dark) 70%, var(--orange) 100%);
+      background: linear-gradient(135deg, #C2410C 0%, var(--orange-dark) 40%, var(--orange) 100%);
       border-radius: 24px; padding: 56px 40px;
       text-align: center; color: white;
       box-shadow: 0 16px 48px rgba(249,115,22,0.2), 0 0 0 1px rgba(249,115,22,0.15);
@@ -471,7 +471,7 @@
 
     /* ── FOOTER ── */
     footer {
-      background: #2C1A0E; color: #C4A882;
+      background: #FDF6EE; color: #78716C;
       padding: 56px 24px 32px;
     }
     .footer-inner {
@@ -481,11 +481,11 @@
     }
     .footer-brand .logo-text { font-size: 26px; font-weight: 900; color: var(--orange); }
     .footer-brand p { font-size: 14px; margin-top: 10px; max-width: 260px; line-height: 1.7; }
-    .footer-links h4 { color: white; font-size: 15px; font-weight: 700; margin-bottom: 14px; }
-    .footer-links a { display: block; color: #A8A29E; text-decoration: none; font-size: 14px; margin-bottom: 10px; transition: color 0.2s; }
+    .footer-links h4 { color: #1C1917; font-size: 15px; font-weight: 700; margin-bottom: 14px; }
+    .footer-links a { display: block; color: #78716C; text-decoration: none; font-size: 14px; margin-bottom: 10px; transition: color 0.2s; }
     .footer-links a:hover { color: var(--orange); }
     .footer-bottom {
-      border-top: 1px solid #3D2B1F;
+      border-top: 1px solid #E8D9C8;
       margin-top: 48px; padding-top: 24px;
       text-align: center; font-size: 13px;
     }
@@ -618,7 +618,7 @@
 </div>
 
 <!-- ══ HERO BANNER IMAGE ══ -->
-<div style="background:#2C1A0E; padding: 0 0 40px;">
+<div style="background:#FDF6EE; padding: 0 0 40px;">
   <div style="max-width:1100px; margin:0 auto; padding:0 24px;">
     <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/fwRhzYHweInpFMBC.jpeg"
          alt="حِنا — رفيقك لمتابعة صحة طفلك"

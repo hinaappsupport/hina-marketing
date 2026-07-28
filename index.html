@@ -80,12 +80,7 @@
       position: relative;
     }
     .hero-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 70% 50%, rgba(249,115,22,0.08) 0%, transparent 60%),
-                  radial-gradient(ellipse at 20% 80%, rgba(22,163,74,0.04) 0%, transparent 50%);
-      z-index: 0;
+      display: none;
     }
     .hero-inner {
       max-width: 1200px;
@@ -618,11 +613,11 @@
 </div>
 
 <!-- ══ HERO BANNER IMAGE ══ -->
-<div style="background:#FDF6EE; padding:0;">
+<div style="background:#FDF6EE; padding:0; overflow:hidden; max-height:420px;">
     <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/ylOIuNfNQYYGjFGp.png"
          alt="حِنا — رفيقك لمتابعة صحة طفلك"
          loading="eager"
-         style="width:100%; display:block; border-radius:0; box-shadow:none;" />
+         style="width:100%; display:block; border-radius:0; box-shadow:none; object-fit:cover; max-height:420px;" />
 </div>
 
 <!-- ══ SECTION DIVIDER ══ -->

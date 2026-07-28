@@ -44,29 +44,30 @@
     /* ── NAV ── */
     nav {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,0.97);
+      background: rgba(13,13,13,0.98);
       backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
       padding: 0 32px;
       display: flex; align-items: center; justify-content: space-between;
       height: 68px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+      transition: background 0.3s, border-color 0.3s;
     }
     .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .nav-logo img { width: 40px; height: 40px; border-radius: 10px; object-fit: cover; }
     .nav-logo span { font-size: 22px; font-weight: 900; color: var(--orange); }
     .nav-links { display: flex; align-items: center; gap: 8px; }
     .nav-links a {
-      text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 600;
+      text-decoration: none; color: rgba(255,255,255,0.65); font-size: 14px; font-weight: 600;
       padding: 6px 14px; border-radius: 8px; transition: all 0.2s;
     }
-    .nav-links a:hover { color: var(--orange); background: var(--orange-light); }
+    .nav-links a:hover { color: var(--orange); background: rgba(249,115,22,0.12); }
     .lang-btn {
-      background: var(--orange-light); color: var(--orange); border: none;
+      background: rgba(249,115,22,0.15); color: var(--orange); border: 1px solid rgba(249,115,22,0.3);
       padding: 6px 16px; border-radius: 8px; font-size: 14px; font-weight: 700;
       cursor: pointer; transition: all 0.2s; font-family: inherit;
     }
-    .lang-btn:hover { background: var(--orange); color: white; }
+    .lang-btn:hover { background: var(--orange); color: white; border-color: var(--orange); }
 
     /* ── HERO (NEW: split layout, dark bg) ── */
     .hero-section {
@@ -197,10 +198,18 @@
       margin: 0;
     }
 
-    /* ── STATS BAR (new: animated counters, orange bg) ── */
+    /* ── STATS BAR (black bg, compact cards) ── */
     .stats-section {
-      background: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
+      background: #0D0D0D;
       padding: 56px 24px;
+      position: relative;
+    }
+    .stats-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--orange) 30%, var(--orange-dark) 70%, transparent 100%);
     }
     .stats-inner {
       max-width: 1100px;
@@ -208,47 +217,46 @@
     }
     .stats-section-label {
       text-align: center;
-      color: rgba(255,255,255,0.85);
-      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      font-size: 12px;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      margin-bottom: 40px;
+      margin-bottom: 32px;
     }
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
+      gap: 16px;
     }
     .stat-card {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 20px;
-      padding: 32px 20px;
+      background: #161616;
+      border: 1px solid #2A2A2A;
+      border-radius: 16px;
+      padding: 24px 16px;
       text-align: center;
-      backdrop-filter: blur(8px);
-      transition: transform 0.3s, background 0.3s;
+      transition: transform 0.3s, border-color 0.3s, background 0.3s;
     }
-    .stat-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.18); }
+    .stat-card:hover { transform: translateY(-4px); border-color: var(--orange); background: #1A1A1A; }
     .stat-num {
-      font-size: clamp(40px, 5vw, 56px);
+      font-size: clamp(34px, 4vw, 48px);
       font-weight: 900;
-      color: white;
+      color: var(--orange);
       line-height: 1;
       margin-bottom: 8px;
       display: block;
     }
     .stat-percent { font-size: 0.6em; font-weight: 700; }
     .stat-label {
-      font-size: 14px;
-      color: rgba(255,255,255,0.9);
+      font-size: 13px;
+      color: rgba(255,255,255,0.8);
       font-weight: 600;
       line-height: 1.5;
       margin-bottom: 8px;
     }
     .stat-source {
-      font-size: 11px;
-      color: rgba(255,255,255,0.6);
+      font-size: 10px;
+      color: rgba(255,255,255,0.35);
       font-style: italic;
     }
 
@@ -475,8 +483,10 @@
       .section-sub { font-size: 15px; }
       .feature-card h3 { font-size: 16px; }
       .feature-card p { font-size: 13px; }
-      .stat-num { font-size: 38px; }
-      .stat-label { font-size: 13px; }
+      .stat-num { font-size: 32px; }
+      .stat-label { font-size: 12px; }
+      .stats-grid { gap: 10px; }
+      .stat-card { padding: 20px 12px; }
       .contact-inner h2 { font-size: 22px; }
       .contact-inner p { font-size: 15px; }
       .cta-banner h2 { font-size: 22px; }

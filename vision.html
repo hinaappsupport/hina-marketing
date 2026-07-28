@@ -39,12 +39,12 @@
     }
     body.en { direction: ltr; font-family: 'Inter', 'Cairo', sans-serif; }
 
-    /* ── NAV ── */
+    /* ── NAV (always dark) ── */
     nav {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,0.95);
+      background: #0D0D0D;
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid #1F1F1F;
       padding: 0 24px;
       display: flex; align-items: center; justify-content: space-between;
       height: 64px;
@@ -52,35 +52,36 @@
     .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .nav-logo span { font-size: 22px; font-weight: 900; color: var(--orange); direction: ltr; display: inline-block; }
     .lang-btn {
-      background: var(--orange-light); color: var(--orange); border: none;
+      background: rgba(249,115,22,0.15); color: var(--orange); border: 1px solid rgba(249,115,22,0.3);
       padding: 6px 14px; border-radius: 8px; font-size: 14px; font-weight: 700;
       cursor: pointer; transition: all 0.2s; font-family: inherit;
     }
     .lang-btn:hover { background: var(--orange); color: white; }
 
-    /* ── HERO ── */
+    /* ── HERO (dark) ── */
     .hero {
-      background: linear-gradient(135deg, #FFF7ED 0%, #F5F3FF 50%, #F0FDF4 100%);
+      background: #0D0D0D;
       padding: 72px 24px 56px;
       text-align: center;
+      border-bottom: 3px solid var(--orange);
     }
     .hero-badge {
       display: inline-block;
-      background: var(--orange-light); color: var(--orange);
+      background: rgba(249,115,22,0.15); color: var(--orange);
       font-size: 13px; font-weight: 700;
       padding: 6px 16px; border-radius: 100px;
       margin-bottom: 24px;
-      border: 1px solid #FED7AA;
+      border: 1px solid rgba(249,115,22,0.3);
     }
     .hero h1 {
-      font-size: clamp(32px, 6vw, 52px);
+      font-size: clamp(28px, 4.5vw, 44px);
       font-weight: 900; line-height: 1.2;
-      color: var(--text); margin-bottom: 16px;
+      color: #FFFFFF; margin-bottom: 16px;
     }
     .hero h1 .highlight { color: var(--orange); }
     .hero p {
-      font-size: clamp(16px, 2.5vw, 19px);
-      color: var(--muted); max-width: 580px;
+      font-size: clamp(15px, 2vw, 17px);
+      color: rgba(255,255,255,0.6); max-width: 580px;
       margin: 0 auto;
     }
 
@@ -203,33 +204,33 @@
       gap: 20px;
     }
     .value-card {
-      background: white;
+      background: #1A1A1A;
       border-radius: var(--radius);
-      padding: 28px;
-      border: 1px solid var(--border);
+      padding: 24px;
+      border: 1px solid #2A2A2A;
       transition: all 0.25s;
       display: flex;
       flex-direction: column;
       gap: 12px;
     }
-    .value-card:hover { box-shadow: var(--shadow); transform: translateY(-4px); }
+    .value-card:hover { border-color: var(--orange); transform: translateY(-4px); background: #1F1F1F; }
     .value-icon {
       width: 52px; height: 52px;
       border-radius: 14px;
       display: flex; align-items: center; justify-content: center;
       font-size: 26px;
     }
-    .icon-orange { background: var(--orange-light); }
-    .icon-purple { background: var(--purple-light); }
-    .icon-green { background: var(--green-light); }
-    .icon-blue { background: #EFF6FF; }
-    .icon-teal { background: #F0FDFA; }
-    .value-card h3 { font-size: 18px; font-weight: 700; }
-    .value-card p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+    .icon-orange { background: rgba(249,115,22,0.15); }
+    .icon-purple { background: rgba(124,58,237,0.15); }
+    .icon-green { background: rgba(22,163,74,0.15); }
+    .icon-blue { background: rgba(59,130,246,0.15); }
+    .icon-teal { background: rgba(20,184,166,0.15); }
+    .value-card h3 { font-size: 17px; font-weight: 700; color: #FFFFFF; }
+    .value-card p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; }
 
-    /* ── FOOTER ── */
+    /* ── FOOTER (deep black) ── */
     footer {
-      background: var(--text); color: #A8A29E;
+      background: #0D0D0D; color: #A8A29E;
       padding: 48px 24px 32px;
     }
     .footer-inner {
@@ -345,11 +346,11 @@ They came back torn. Forgotten. Blank.</div>
 </section>
 
 <!-- ══ VALUES ══ -->
-<section class="section">
+<section class="section" style="background:#0F0F0F;">
   <div class="max-w">
     <div class="section-label" data-ar="قيمنا" data-en="OUR VALUES">قيمنا</div>
-    <h2 class="section-title" data-ar="ما الذي يقودنا؟" data-en="What drives us?">ما الذي يقودنا؟</h2>
-    <p class="section-sub" data-ar="خمس قيم تشكّل كل قرار نتخذه في حِنا" data-en="Five values that shape every decision we make at Hina">خمس قيم تشكّل كل قرار نتخذه في حِنا</p>
+    <h2 class="section-title" style="color:#FFFFFF;" data-ar="ما الذي يقودنا؟" data-en="What drives us?">ما الذي يقودنا؟</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.5);" data-ar="خمس قيم تشكّل كل قرار نتخذه في حِنا" data-en="Five values that shape every decision we make at Hina">خمس قيم تشكّل كل قرار نتخذه في حِنا</p>
 
     <div class="values-grid">
       <div class="value-card">

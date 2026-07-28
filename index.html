@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light only" />
   <title>حِنا | Hina — متابعة صحة طفلك</title>
   <meta name="description" content="حِنا — تطبيق متابعة صحة الطفل الشامل. تتبع التغذية، التبرز، التبول، النمو، الأدوية، والمواعيد. تقارير احترافية لمشاركتها مع طبيبك." />
   <meta property="og:title" content="حِنا | Hina — Child Health Tracker" />
@@ -12,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
+      color-scheme: light only;
       --orange: #F97316;
       --orange-light: #FFF7ED;
       --orange-dark: #EA580C;
@@ -26,6 +28,7 @@
       --white: #FFFFFF;
       --radius: 16px;
       --shadow: 0 4px 24px rgba(0,0,0,0.08);
+      --shadow-lg: 0 12px 48px rgba(0,0,0,0.12);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -38,102 +41,19 @@
     }
     body.en { direction: ltr; font-family: 'Inter', 'Cairo', sans-serif; }
 
-    /* ── LOGO HERO ── */
-    .logo-hero {
-      background: linear-gradient(160deg, #FFF7ED 0%, #F5F3FF 50%, #F0FDF4 100%);
-      padding: 56px 24px 40px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0;
-    }
-    .logo-hero img {
-      width: min(320px, 72vw);
-      border-radius: 32px;
-      box-shadow: 0 24px 64px rgba(249,115,22,0.18), 0 8px 24px rgba(0,0,0,0.10);
-      display: block;
-    }
-    .logo-hero .slogan {
-      font-size: clamp(16px, 3vw, 22px);
-      font-weight: 700;
-      color: var(--muted);
-      margin-top: 20px;
-      letter-spacing: 0.01em;
-    }
-
-    /* ── MARKETING BANNER ── */
-    .marketing-banner {
-      background: white;
-      padding: 64px 24px;
-    }
-    .banner-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      gap: 48px;
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: 0 12px 48px rgba(0,0,0,0.10);
-      background: linear-gradient(135deg, #EFF6FF 0%, #FFF7ED 100%);
-    }
-    .banner-img {
-      flex: 1.2;
-      min-width: 0;
-    }
-    .banner-img img {
-      width: 100%;
-      display: block;
-      border-radius: 0;
-    }
-    .banner-text {
-      flex: 1;
-      padding: 40px 40px 40px 0;
-      min-width: 0;
-    }
-    body:not(.en) .banner-text { padding: 40px 0 40px 40px; }
-    .banner-text .badge {
-      display: inline-block;
-      background: var(--orange-light);
-      color: var(--orange);
-      font-size: 13px; font-weight: 700;
-      padding: 5px 14px; border-radius: 100px;
-      margin-bottom: 16px;
-      border: 1px solid #FED7AA;
-    }
-    .banner-text h2 {
-      font-size: clamp(22px, 3.5vw, 34px);
-      font-weight: 900;
-      line-height: 1.25;
-      margin-bottom: 12px;
-      color: var(--text);
-    }
-    .banner-text h2 .hl { color: var(--orange); }
-    .banner-text p {
-      font-size: 15px;
-      color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 28px;
-    }
-    @media (max-width: 768px) {
-      .banner-inner { flex-direction: column; gap: 0; }
-      .banner-text { padding: 28px 24px !important; }
-      .logo-hero img { width: min(260px, 80vw); }
-    }
-
     /* ── NAV ── */
     nav {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
-      padding: 0 24px;
+      padding: 0 32px;
       display: flex; align-items: center; justify-content: space-between;
-      height: 64px;
+      height: 68px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
     }
     .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-logo img { width: 40px; height: 40px; border-radius: 10px; }
+    .nav-logo img { width: 40px; height: 40px; border-radius: 10px; object-fit: cover; }
     .nav-logo span { font-size: 22px; font-weight: 900; color: var(--orange); }
     .nav-links { display: flex; align-items: center; gap: 8px; }
     .nav-links a {
@@ -143,81 +63,203 @@
     .nav-links a:hover { color: var(--orange); background: var(--orange-light); }
     .lang-btn {
       background: var(--orange-light); color: var(--orange); border: none;
-      padding: 6px 14px; border-radius: 8px; font-size: 14px; font-weight: 700;
+      padding: 6px 16px; border-radius: 8px; font-size: 14px; font-weight: 700;
       cursor: pointer; transition: all 0.2s; font-family: inherit;
     }
     .lang-btn:hover { background: var(--orange); color: white; }
 
-    /* ── HERO ── */
-    .hero {
-      padding: 80px 24px 60px;
-      text-align: center;
-      background: linear-gradient(160deg, #FFF7ED 0%, #F5F3FF 50%, #F0FDF4 100%);
+    /* ── HERO (NEW: split layout) ── */
+    .hero-section {
+      background: #FFFFFF;
+      padding: 0;
+      min-height: 580px;
+      display: flex;
+      align-items: stretch;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #FFF7ED 0%, #FFFFFF 55%, #F0FDF4 100%);
+      z-index: 0;
+    }
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      position: relative;
+      z-index: 1;
+      padding: 0 32px;
+    }
+    /* RTL: text on left, image on right */
+    .hero-text-col {
+      flex: 1.1;
+      padding: 72px 40px 72px 0;
+      min-width: 0;
+    }
+    body.en .hero-text-col { padding: 72px 0 72px 40px; }
+    .hero-image-col {
+      flex: 0.9;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      min-width: 0;
+      padding-top: 32px;
+    }
+    .hero-image-col img {
+      width: min(380px, 90%);
+      display: block;
+      filter: drop-shadow(0 24px 48px rgba(249,115,22,0.18));
+      border-radius: 24px 24px 0 0;
+      object-fit: cover;
+      object-position: top;
     }
     .hero-badge {
-      display: inline-block;
-      background: var(--orange-light); color: var(--orange);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--orange-light);
+      color: var(--orange);
       font-size: 13px; font-weight: 700;
       padding: 6px 16px; border-radius: 100px;
       margin-bottom: 24px;
       border: 1px solid #FED7AA;
     }
-    .hero h1 {
-      font-size: clamp(32px, 6vw, 56px);
+    .hero-text-col h1 {
+      font-size: clamp(32px, 4.5vw, 54px);
       font-weight: 900; line-height: 1.2;
       color: var(--text); margin-bottom: 20px;
     }
-    .hero h1 .highlight { color: var(--orange); }
-    .hero p {
-      font-size: clamp(16px, 2.5vw, 20px);
-      color: var(--muted); max-width: 600px;
-      margin: 0 auto 40px;
+    .hero-text-col h1 .highlight { color: var(--orange); }
+    .hero-text-col p {
+      font-size: clamp(15px, 2vw, 18px);
+      color: var(--muted);
+      max-width: 480px;
+      margin-bottom: 36px;
+      line-height: 1.8;
     }
-    .hero-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
     .btn-primary {
       background: var(--orange); color: white;
       padding: 14px 32px; border-radius: 12px;
       font-size: 16px; font-weight: 700;
       text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
-      transition: all 0.2s; box-shadow: 0 4px 16px rgba(249,115,22,0.35);
+      transition: all 0.25s; box-shadow: 0 6px 20px rgba(249,115,22,0.38);
     }
-    .btn-primary:hover { background: var(--orange-dark); transform: translateY(-2px); }
+    .btn-primary:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(249,115,22,0.45); }
     .btn-secondary {
       background: white; color: var(--text);
       padding: 14px 32px; border-radius: 12px;
       font-size: 16px; font-weight: 700;
       text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
-      border: 2px solid var(--border); transition: all 0.2s;
+      border: 2px solid var(--border); transition: all 0.25s;
     }
     .btn-secondary:hover { border-color: var(--orange); color: var(--orange); }
 
-    /* ── SCREENSHOTS HERO ── */
-    .hero-screenshots {
-      display: flex; gap: 16px; justify-content: center;
-      align-items: flex-end; margin-top: 56px;
-      overflow: hidden; padding: 0 16px;
+    /* ── HERO SCREENSHOTS (kept below hero) ── */
+    .hero-screenshots-bar {
+      background: linear-gradient(160deg, #F5F3FF 0%, #FFF7ED 50%, #F0FDF4 100%);
+      padding: 40px 24px 56px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      align-items: flex-end;
+      overflow: hidden;
     }
-    .hero-screenshots .phone-frame {
-      width: 180px; flex-shrink: 0;
-      border-radius: 28px;
+    .hero-screenshots-bar .phone-frame {
+      width: 160px; flex-shrink: 0;
+      border-radius: 24px;
       box-shadow: 0 20px 60px rgba(0,0,0,0.18);
       overflow: hidden;
       transition: transform 0.3s;
     }
-    .hero-screenshots .phone-frame:hover { transform: translateY(-8px); }
-    .hero-screenshots .phone-frame.center { width: 200px; transform: translateY(-16px); }
-    .hero-screenshots .phone-frame.center:hover { transform: translateY(-24px); }
-    .hero-screenshots img { width: 100%; display: block; }
+    .hero-screenshots-bar .phone-frame:hover { transform: translateY(-8px); }
+    .hero-screenshots-bar .phone-frame.center { width: 180px; transform: translateY(-16px); }
+    .hero-screenshots-bar .phone-frame.center:hover { transform: translateY(-24px); }
+    .hero-screenshots-bar img { width: 100%; display: block; }
+
+    /* ── SECTION DIVIDER ── */
+    .section-divider {
+      height: 6px;
+      background: linear-gradient(90deg, var(--orange-light) 0%, var(--orange) 30%, var(--orange-dark) 60%, var(--green) 100%);
+      border: none;
+      margin: 0;
+    }
+    .section-divider-soft {
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--border) 20%, var(--border) 80%, transparent 100%);
+      margin: 0;
+    }
+
+    /* ── STATS BAR (new: animated counters, orange bg) ── */
+    .stats-section {
+      background: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
+      padding: 56px 24px;
+    }
+    .stats-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .stats-section-label {
+      text-align: center;
+      color: rgba(255,255,255,0.85);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .stat-card {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 20px;
+      padding: 32px 20px;
+      text-align: center;
+      backdrop-filter: blur(8px);
+      transition: transform 0.3s, background 0.3s;
+    }
+    .stat-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.18); }
+    .stat-num {
+      font-size: clamp(40px, 5vw, 56px);
+      font-weight: 900;
+      color: white;
+      line-height: 1;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .stat-percent { font-size: 0.6em; font-weight: 700; }
+    .stat-label {
+      font-size: 14px;
+      color: rgba(255,255,255,0.9);
+      font-weight: 600;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+    .stat-source {
+      font-size: 11px;
+      color: rgba(255,255,255,0.6);
+      font-style: italic;
+    }
 
     /* ── SECTION COMMON ── */
-    section { padding: 80px 24px; }
+    section { padding: 88px 24px; }
     .section-label {
       font-size: 13px; font-weight: 700; letter-spacing: 0.08em;
       text-transform: uppercase; color: var(--orange);
       margin-bottom: 12px; text-align: center;
     }
     .section-title {
-      font-size: clamp(26px, 4vw, 40px);
+      font-size: clamp(26px, 4vw, 42px);
       font-weight: 900; text-align: center;
       margin-bottom: 16px; line-height: 1.25;
     }
@@ -228,41 +270,43 @@
     }
     .max-w { max-width: 1100px; margin: 0 auto; }
 
-    /* ── STATS BAR ── */
-    .stats-bar {
+    /* ── APP INFO BAR (was stats-bar) ── */
+    .app-info-bar {
       background: white;
       border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-lg);
       display: flex; flex-wrap: wrap;
       padding: 32px;
       gap: 24px;
+      border: 1px solid var(--border);
     }
-    .stat-item {
+    .app-info-item {
       flex: 1; min-width: 140px;
       text-align: center;
     }
-    .stat-num { font-size: 36px; font-weight: 900; color: var(--orange); }
-    .stat-label { font-size: 14px; color: var(--muted); margin-top: 4px; }
+    .app-info-num { font-size: 36px; font-weight: 900; color: var(--orange); }
+    .app-info-label { font-size: 14px; color: var(--muted); margin-top: 4px; }
 
     /* ── FEATURES GRID ── */
     .features-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 22px;
     }
     .feature-card {
       background: white; border-radius: var(--radius);
-      padding: 28px; border: 1px solid var(--border);
-      transition: all 0.25s;
+      padding: 30px; border: 1px solid var(--border);
+      transition: all 0.3s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
-    .feature-card:hover { box-shadow: var(--shadow); transform: translateY(-4px); }
+    .feature-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.12); transform: translateY(-5px); border-color: #FED7AA; }
     .feature-icon {
-      width: 52px; height: 52px; border-radius: 14px;
+      width: 56px; height: 56px; border-radius: 16px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 26px; margin-bottom: 16px;
+      font-size: 28px; margin-bottom: 18px;
     }
-    .feature-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
-    .feature-card p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+    .feature-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+    .feature-card p { font-size: 14px; color: var(--muted); line-height: 1.75; }
     .icon-orange { background: var(--orange-light); }
     .icon-purple { background: var(--purple-light); }
     .icon-green { background: var(--green-light); }
@@ -292,14 +336,18 @@
     .step {
       display: flex; flex-direction: row-reverse; gap: 20px; align-items: flex-start;
       background: white; border-radius: var(--radius);
-      padding: 24px; border: 1px solid var(--border);
+      padding: 28px; border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      transition: box-shadow 0.3s;
     }
+    .step:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.10); }
     .step-num {
-      width: 44px; height: 44px; flex-shrink: 0;
+      width: 48px; height: 48px; flex-shrink: 0;
       background: var(--orange); color: white;
-      border-radius: 12px; display: flex;
+      border-radius: 14px; display: flex;
       align-items: center; justify-content: center;
-      font-size: 20px; font-weight: 900;
+      font-size: 22px; font-weight: 900;
+      box-shadow: 0 4px 12px rgba(249,115,22,0.35);
     }
     .step > div:last-child { flex: 1; }
     .step h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; text-align: right; }
@@ -314,63 +362,118 @@
     }
     .trust-card {
       background: var(--bg); border-radius: var(--radius);
-      padding: 28px; text-align: center;
+      padding: 32px; text-align: center;
       border: 1px solid var(--border);
+      transition: all 0.3s;
     }
-    .trust-card .icon { font-size: 36px; margin-bottom: 12px; }
+    .trust-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
+    .trust-card .icon { font-size: 40px; margin-bottom: 14px; }
     .trust-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
     .trust-card p { font-size: 14px; color: var(--muted); }
+
+    /* ── CONTACT SECTION ── */
+    .contact-section {
+      background: linear-gradient(135deg, #F5F3FF 0%, #FFF7ED 100%);
+      padding: 80px 24px;
+    }
+    .contact-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .contact-inner .section-label { margin-bottom: 12px; }
+    .contact-inner h2 {
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 900;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+    .contact-inner p {
+      font-size: 17px;
+      color: var(--muted);
+      margin-bottom: 36px;
+      line-height: 1.8;
+    }
+    .contact-email-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--orange);
+      color: white;
+      padding: 16px 40px;
+      border-radius: 14px;
+      font-size: 17px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s;
+      box-shadow: 0 6px 20px rgba(249,115,22,0.38);
+    }
+    .contact-email-btn:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(249,115,22,0.45); }
 
     /* ── CTA BANNER ── */
     .cta-banner {
       background: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
-      border-radius: 24px; padding: 56px 40px;
+      border-radius: 28px; padding: 64px 40px;
       text-align: center; color: white;
+      box-shadow: 0 16px 48px rgba(249,115,22,0.3);
     }
-    .cta-banner h2 { font-size: clamp(24px, 4vw, 38px); font-weight: 900; margin-bottom: 16px; }
-    .cta-banner p { font-size: 17px; opacity: 0.9; margin-bottom: 32px; }
+    .cta-banner h2 { font-size: clamp(24px, 4vw, 40px); font-weight: 900; margin-bottom: 16px; }
+    .cta-banner p { font-size: 17px; opacity: 0.9; margin-bottom: 36px; }
     .btn-white {
       background: white; color: var(--orange);
-      padding: 14px 36px; border-radius: 12px;
-      font-size: 16px; font-weight: 700;
+      padding: 16px 40px; border-radius: 14px;
+      font-size: 17px; font-weight: 700;
       text-decoration: none; display: inline-block;
-      transition: all 0.2s;
+      transition: all 0.25s;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
     }
-    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,0.2); }
 
     /* ── FOOTER ── */
     footer {
       background: var(--text); color: #A8A29E;
-      padding: 48px 24px 32px;
+      padding: 56px 24px 32px;
     }
     .footer-inner {
       max-width: 1100px; margin: 0 auto;
-      display: flex; flex-wrap: wrap; gap: 32px;
+      display: flex; flex-wrap: wrap; gap: 40px;
       justify-content: space-between; align-items: flex-start;
     }
-    .footer-brand .logo-text { font-size: 24px; font-weight: 900; color: var(--orange); }
-    .footer-brand p { font-size: 14px; margin-top: 8px; max-width: 260px; }
-    .footer-links h4 { color: white; font-size: 15px; font-weight: 700; margin-bottom: 12px; }
-    .footer-links a { display: block; color: #A8A29E; text-decoration: none; font-size: 14px; margin-bottom: 8px; transition: color 0.2s; }
+    .footer-brand .logo-text { font-size: 26px; font-weight: 900; color: var(--orange); }
+    .footer-brand p { font-size: 14px; margin-top: 10px; max-width: 260px; line-height: 1.7; }
+    .footer-links h4 { color: white; font-size: 15px; font-weight: 700; margin-bottom: 14px; }
+    .footer-links a { display: block; color: #A8A29E; text-decoration: none; font-size: 14px; margin-bottom: 10px; transition: color 0.2s; }
     .footer-links a:hover { color: var(--orange); }
     .footer-bottom {
       border-top: 1px solid #292524;
-      margin-top: 40px; padding-top: 24px;
+      margin-top: 48px; padding-top: 24px;
       text-align: center; font-size: 13px;
     }
 
     /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-inner { flex-direction: column; padding: 48px 24px 0; }
+      .hero-text-col { padding: 0 0 32px 0 !important; text-align: center; }
+      .hero-text-col p { margin-left: auto; margin-right: auto; }
+      .hero-cta { justify-content: center; }
+      .hero-image-col { width: 100%; justify-content: center; padding-top: 0; }
+      .hero-image-col img { width: min(300px, 80vw); border-radius: 20px 20px 0 0; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    }
     @media (max-width: 768px) {
-      .hero-screenshots .phone-frame { width: 130px; }
-      .hero-screenshots .phone-frame.center { width: 148px; }
+      nav { padding: 0 16px; }
       nav .nav-links a { display: none; }
-      .stats-bar { flex-direction: column; }
+      .hero-screenshots-bar .phone-frame { width: 110px; }
+      .hero-screenshots-bar .phone-frame.center { width: 128px; }
+      .app-info-bar { flex-direction: column; }
       .cta-banner { padding: 40px 24px; }
     }
     @media (max-width: 480px) {
-      .hero-screenshots { gap: 8px; }
-      .hero-screenshots .phone-frame { width: 100px; border-radius: 18px; }
-      .hero-screenshots .phone-frame.center { width: 116px; }
+      .hero-screenshots-bar { gap: 8px; }
+      .hero-screenshots-bar .phone-frame { width: 90px; border-radius: 16px; }
+      .hero-screenshots-bar .phone-frame.center { width: 106px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .stat-card { padding: 24px 12px; }
     }
 
     /* ── RTL/LTR FLIP ── */
@@ -378,6 +481,18 @@
     body.en .step h3, body.en .step p { text-align: left; }
     body.en .footer-inner { direction: ltr; }
     body:not(.en) .footer-inner { direction: rtl; }
+    body.en .hero-cta { justify-content: flex-start; }
+    body:not(.en) .hero-cta { justify-content: flex-start; }
+
+    /* ── COUNTER ANIMATION ── */
+    @keyframes countUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .stat-card.visible { animation: countUp 0.6s ease forwards; }
+    .stat-card:nth-child(2) { animation-delay: 0.1s; }
+    .stat-card:nth-child(3) { animation-delay: 0.2s; }
+    .stat-card:nth-child(4) { animation-delay: 0.3s; }
   </style>
 </head>
 <body>
@@ -385,7 +500,7 @@
 <!-- ══ NAV ══ -->
 <nav>
   <a class="nav-logo" href="/">
-    <img src="https://raw.githubusercontent.com/hinaappsupport/hina-marketing/main/logo.jpeg" alt="Hina Logo" style="width:36px;height:36px;border-radius:10px;object-fit:cover;" />
+    <img src="https://raw.githubusercontent.com/hinaappsupport/hina-marketing/main/logo.jpeg" alt="Hina Logo" />
     <span data-ar="حِنا" data-en="Hina">حِنا</span>
   </a>
   <div class="nav-links">
@@ -393,85 +508,112 @@
     <a href="#screenshots" data-ar="الشاشات" data-en="Screenshots">الشاشات</a>
     <a href="#privacy" data-ar="الخصوصية" data-en="Privacy">الخصوصية</a>
     <a href="/vision" data-ar="رؤيتنا" data-en="Our Vision">رؤيتنا</a>
+    <a href="#contact" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</a>
     <a href="/privacy-policy" data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</a>
     <a href="/terms" data-ar="اتفاقية الاستخدام" data-en="Terms of Use">اتفاقية الاستخدام</a>
   </div>
   <button class="lang-btn" onclick="toggleLang()" id="langBtn">English</button>
 </nav>
 
-<!-- ══ LOGO HERO ══ -->
-<div class="logo-hero">
-  <img src="https://raw.githubusercontent.com/hinaappsupport/hina-marketing/main/logo.jpeg" alt="حِنا - Hina" />
-
-</div>
-
-<!-- ══ HERO ══ -->
-<section class="hero" style="padding-top: 48px; background: linear-gradient(160deg, #F5F3FF 0%, #FFF7ED 50%, #F0FDF4 100%);">
-  <div class="hero-badge" data-ar="🌟 تطبيق متابعة صحة الطفل الشامل" data-en="🌟 The Complete Child Health Tracker">🌟 تطبيق متابعة صحة الطفل الشامل</div>
-  <h1>
-          <span data-ar="نساعدك في رحلة" data-en="We help you on your">نساعدك في رحلة</span><br/>
-    <span class="highlight" data-ar="صحة طفلك" data-en="child's health journey">صحة طفلك</span>
-  </h1>
-  <p data-ar="حِنا يساعدك على متابعة تغذية طفلك، عادات التبرز والتبول، النمو، الأدوية، والمواعيد الطبية — كل شيء في مكان واحد، مع تقارير احترافية جاهزة." data-en="Hina helps you track your child's nutrition, bowel and urination habits, growth, medications, and doctor visits — all in one place, with professional reports ready.">حِنا يساعدك على متابعة تغذية طفلك، عادات التبرز والتبول، النمو، الأدوية، والمواعيد الطبية — كل شيء في مكان واحد، مع تقارير احترافية جاهزة.</p>
-  <div class="hero-cta">
-    <a href="#download" class="btn-primary" data-ar="⬇️ حمّلي التطبيق مجاناً" data-en="⬇️ Download Free">⬇️ حمّلي التطبيق مجاناً</a>
-    <a href="#features" class="btn-secondary" data-ar="اكتشفي المميزات" data-en="Explore Features">اكتشفي المميزات</a>
-  </div>
-
-  <div class="hero-screenshots">
-    <div class="phone-frame">
-      <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/BvTZoMnBOHfOlTln.jpg" alt="Daily Log" loading="lazy" />
+<!-- ══ HERO (NEW SPLIT LAYOUT) ══ -->
+<div class="hero-section">
+  <div class="hero-inner">
+    <!-- Text column (right in RTL, left in LTR) -->
+    <div class="hero-text-col">
+      <div class="hero-badge" data-ar="🌟 تطبيق متابعة صحة الطفل الشامل" data-en="🌟 The Complete Child Health Tracker">🌟 تطبيق متابعة صحة الطفل الشامل</div>
+      <h1>
+        <span data-ar="نساعدك في رحلة" data-en="We help you on your">نساعدك في رحلة</span><br/>
+        <span class="highlight" data-ar="صحة طفلك" data-en="child's health journey">صحة طفلك</span>
+      </h1>
+      <p data-ar="حِنا يساعدك على متابعة تغذية طفلك، عادات التبرز والتبول، النمو، الأدوية، والمواعيد الطبية — كل شيء في مكان واحد، مع تقارير احترافية جاهزة." data-en="Hina helps you track your child's nutrition, bowel and urination habits, growth, medications, and doctor visits — all in one place, with professional reports ready.">حِنا يساعدك على متابعة تغذية طفلك، عادات التبرز والتبول، النمو، الأدوية، والمواعيد الطبية — كل شيء في مكان واحد، مع تقارير احترافية جاهزة.</p>
+      <div class="hero-cta">
+        <a href="#download" class="btn-primary" data-ar="⬇️ حمّلي التطبيق مجاناً" data-en="⬇️ Download Free">⬇️ حمّلي التطبيق مجاناً</a>
+        <a href="#features" class="btn-secondary" data-ar="اكتشفي المميزات" data-en="Explore Features">اكتشفي المميزات</a>
+      </div>
     </div>
-    <div class="phone-frame center">
-      <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/UNUxMvoQauIOqAvf.jpg" alt="Home Screen" loading="lazy" />
-    </div>
-    <div class="phone-frame">
-      <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/lqrfWUUDwTTXMnfL.jpg" alt="Monthly Report" loading="lazy" />
-    </div>
-  </div>
-</section>
-
-<!-- ══ MARKETING BANNER ══ -->
-<div class="marketing-banner">
-  <div class="banner-inner">
-    <div class="banner-img">
-      <img src="https://raw.githubusercontent.com/hinaappsupport/hina-marketing/main/banner.jpeg" alt="Hina - Child Health Tracker" loading="lazy" />
-    </div>
-    <div class="banner-text">
-      <span class="badge" data-ar="تطبيق متابعة صحة الأطفال" data-en="Child Health Tracker App">تطبيق متابعة صحة الأطفال</span>
-      <h2>
-        <span data-ar="رفيقك لمتابعة" data-en="Your trusted companion">رفيقك لمتابعة</span><br/>
-        <span class="hl" data-ar="صحة طفلك" data-en="for child health">صحة طفلك</span>
-      </h2>
-      <p data-ar="حِنا يجمع كل ما تحتاجينه في مكان واحد — من التغذية والنمو إلى الأدوية والمواعيد الطبية — مع تقارير احترافية جاهزة." data-en="Hina brings everything you need in one place — from nutrition and growth to medications and doctor visits — with professional reports ready.">حِنا يجمع كل ما تحتاجينه في مكان واحد — من التغذية والنمو إلى الأدوية والمواعيد الطبية — مع تقارير احترافية جاهزة.</p>
-      <a href="#download" class="btn-primary" data-ar="⬇️ حمّلي التطبيق مجاناً" data-en="⬇️ Download Free">⬇️ حمّلي التطبيق مجاناً</a>
+    <!-- Image column (left in RTL = right side visually) -->
+    <div class="hero-image-col">
+      <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/ywyDjHUgqDXOoZqa.jpeg"
+           alt="أم تحمل طفلها بحنان — حِنا لمتابعة صحة طفلك"
+           loading="eager" />
     </div>
   </div>
 </div>
 
-<!-- ══ STATS ══ -->
-<section style="padding: 40px 24px;">
+<!-- ══ HERO SCREENSHOTS BAR ══ -->
+<div class="hero-screenshots-bar">
+  <div class="phone-frame">
+    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/BvTZoMnBOHfOlTln.jpg" alt="Daily Log" loading="lazy" />
+  </div>
+  <div class="phone-frame center">
+    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/UNUxMvoQauIOqAvf.jpg" alt="Home Screen" loading="lazy" />
+  </div>
+  <div class="phone-frame">
+    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/lqrfWUUDwTTXMnfL.jpg" alt="Monthly Report" loading="lazy" />
+  </div>
+</div>
+
+<!-- ══ SECTION DIVIDER ══ -->
+<div class="section-divider"></div>
+
+<!-- ══ STATS (ANIMATED COUNTERS — DOCUMENTED NUMBERS) ══ -->
+<div class="stats-section" id="stats">
+  <div class="stats-inner">
+    <div class="stats-section-label" data-ar="أرقام موثّقة عن صحة الأطفال" data-en="Documented Child Health Statistics">أرقام موثّقة عن صحة الأطفال</div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-num" data-target="30" data-suffix="%">0%</span>
+        <div class="stat-label" data-ar="من أطفال السعودية يعانون من الإمساك" data-en="of Saudi children suffer from constipation">من أطفال السعودية يعانون من الإمساك</div>
+        <div class="stat-source">El Mouzan et al., PMC 2024</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num" data-target="15" data-suffix="%">0%</span>
+        <div class="stat-label" data-ar="من الأطفال يعانون من سلس البول" data-en="of children experience urinary incontinence">من الأطفال يعانون من سلس البول</div>
+        <div class="stat-source">StatPearls, NIH 2024</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num" data-target="23" data-suffix="%">0%</span>
+        <div class="stat-label" data-ar="معدل السمنة لدى الأطفال في المملكة" data-en="childhood obesity rate in Saudi Arabia">معدل السمنة لدى الأطفال في المملكة</div>
+        <div class="stat-source">Al Dossary et al., WHO EMHJ</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num" data-target="90" data-suffix="%">0%</span>
+        <div class="stat-label" data-ar="من حالات الإمساك وظيفية وقابلة للمتابعة" data-en="of constipation cases are functional &amp; manageable">من حالات الإمساك وظيفية وقابلة للمتابعة</div>
+        <div class="stat-source">ESPGHAN / Medscape 2023</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECTION DIVIDER ══ -->
+<div class="section-divider"></div>
+
+<!-- ══ APP INFO BAR (original stats: 5+ stages, free, local, 2 languages) ══ -->
+<section style="padding: 48px 24px; background: white;">
   <div class="max-w">
-    <div class="stats-bar">
-      <div class="stat-item">
-        <div class="stat-num">5+</div>
-        <div class="stat-label" data-ar="مراحل عمرية مدعومة" data-en="Age stages supported">مراحل عمرية مدعومة</div>
+    <div class="app-info-bar">
+      <div class="app-info-item">
+        <div class="app-info-num">5+</div>
+        <div class="app-info-label" data-ar="مراحل عمرية مدعومة" data-en="Age stages supported">مراحل عمرية مدعومة</div>
       </div>
-      <div class="stat-item">
-        <div class="stat-num">🆓</div>
-        <div class="stat-label" data-ar="مجاني تماماً" data-en="Completely free">مجاني تماماً</div>
+      <div class="app-info-item">
+        <div class="app-info-num">🆓</div>
+        <div class="app-info-label" data-ar="مجاني تماماً" data-en="Completely free">مجاني تماماً</div>
       </div>
-      <div class="stat-item">
-        <div class="stat-num">🔒</div>
-        <div class="stat-label" data-ar="بياناتك محلية وآمنة" data-en="Data stored locally & securely">بياناتك محلية وآمنة</div>
+      <div class="app-info-item">
+        <div class="app-info-num">🔒</div>
+        <div class="app-info-label" data-ar="بياناتك محلية وآمنة" data-en="Data stored locally &amp; securely">بياناتك محلية وآمنة</div>
       </div>
-      <div class="stat-item">
-        <div class="stat-num">2</div>
-        <div class="stat-label" data-ar="لغتان: عربي وإنجليزي" data-en="Languages: Arabic & English">لغتان: عربي وإنجليزي</div>
+      <div class="app-info-item">
+        <div class="app-info-num">2</div>
+        <div class="app-info-label" data-ar="لغتان: عربي وإنجليزي" data-en="Languages: Arabic &amp; English">لغتان: عربي وإنجليزي</div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- ══ SECTION DIVIDER SOFT ══ -->
+<div class="section-divider-soft"></div>
 
 <!-- ══ FEATURES ══ -->
 <section id="features">
@@ -483,7 +625,7 @@
 
       <div class="feature-card">
         <div class="feature-icon icon-orange">💩</div>
-        <h3 data-ar="متابعة التبرز والتبول" data-en="Bowel & Urination Tracking">متابعة التبرز والتبول</h3>
+        <h3 data-ar="متابعة التبرز والتبول" data-en="Bowel &amp; Urination Tracking">متابعة التبرز والتبول</h3>
         <p data-ar="سجّلي عادات التبرز بمقياس Bristol، وعدد مرات التبول اليومية، مع تنبيهات فورية عند الإمساك أو الجفاف." data-en="Log bowel habits using the Bristol Scale and daily urination frequency, with instant alerts for constipation or dehydration.">سجّلي عادات التبرز بمقياس Bristol، وعدد مرات التبول اليومية، مع تنبيهات فورية عند الإمساك أو الجفاف.</p>
       </div>
 
@@ -495,7 +637,7 @@
 
       <div class="feature-card">
         <div class="feature-icon icon-purple">⚖️</div>
-        <h3 data-ar="متابعة الوزن والسمنة" data-en="Weight & Obesity Monitoring">متابعة الوزن والسمنة</h3>
+        <h3 data-ar="متابعة الوزن والسمنة" data-en="Weight &amp; Obesity Monitoring">متابعة الوزن والسمنة</h3>
         <p data-ar="تتبع وزن طفلك وطوله مع منحنيات نمو WHO، وتنبيهات ملونة عند الخروج عن النطاق الطبيعي." data-en="Track your child's weight and height against WHO growth curves, with color-coded alerts when outside normal range.">تتبع وزن طفلك وطوله مع منحنيات نمو WHO، وتنبيهات ملونة عند الخروج عن النطاق الطبيعي.</p>
       </div>
 
@@ -513,13 +655,13 @@
 
       <div class="feature-card">
         <div class="feature-icon icon-green">📊</div>
-        <h3 data-ar="تقارير أسبوعية وشهرية" data-en="Weekly & Monthly Reports">تقارير أسبوعية وشهرية</h3>
+        <h3 data-ar="تقارير أسبوعية وشهرية" data-en="Weekly &amp; Monthly Reports">تقارير أسبوعية وشهرية</h3>
         <p data-ar="تقارير PDF احترافية تشمل إحصائيات التبرز، التغذية، النمو، والأدوية — جاهزة للمشاركة مع الجهات الطبية." data-en="Professional PDF reports covering bowel stats, nutrition, growth, and medications — ready to share with your medical team.">تقارير PDF احترافية تشمل إحصائيات التبرز، التغذية، النمو، والأدوية — جاهزة للمشاركة مع الجهات الطبية.</p>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon icon-purple">👨‍⚕️</div>
-        <h3 data-ar="سجل الجهات الطبية" data-en="Medical Contacts & Visits">سجل الجهات الطبية</h3>
+        <h3 data-ar="سجل الجهات الطبية" data-en="Medical Contacts &amp; Visits">سجل الجهات الطبية</h3>
         <p data-ar="احفظي بيانات الأطباء والأخصائيين، سجّلي ملاحظات الزيارة، وتتبعي مواعيد المتابعة القادمة." data-en="Save doctor and specialist details, log visit notes, and track upcoming follow-up appointments.">احفظي بيانات الأطباء والأخصائيين، سجّلي ملاحظات الزيارة، وتتبعي مواعيد المتابعة القادمة.</p>
       </div>
 
@@ -539,6 +681,9 @@
   </div>
 </section>
 
+<!-- ══ SECTION DIVIDER ══ -->
+<div class="section-divider"></div>
+
 <!-- ══ SCREENSHOTS ══ -->
 <section id="screenshots" style="background: white;">
   <div class="max-w">
@@ -556,7 +701,7 @@
       </div>
       <div class="screenshot-card">
         <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/juxbhkmXOvlhmyir.jpg" alt="Bowel Tracking" loading="lazy" />
-        <div class="screenshot-label" data-ar="متابعة التبرز والتبول" data-en="Bowel & Urination">متابعة التبرز والتبول</div>
+        <div class="screenshot-label" data-ar="متابعة التبرز والتبول" data-en="Bowel &amp; Urination">متابعة التبرز والتبول</div>
       </div>
       <div class="screenshot-card">
         <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/lqrfWUUDwTTXMnfL.jpg" alt="Monthly Report AR" loading="lazy" />
@@ -575,20 +720,23 @@
         <div class="screenshot-label" data-ar="السجل اليومي (إنجليزي)" data-en="Daily Log (English)">السجل اليومي (إنجليزي)</div>
       </div>
       <div class="screenshot-card">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/FIAnLEKXYMUFqTSK.jpg" alt="Weight & Obesity" loading="lazy" />
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/FIAnLEKXYMUFqTSK.jpg" alt="Weight &amp; Obesity" loading="lazy" />
         <div class="screenshot-label" data-ar="متابعة الوزن والسمنة" data-en="Weight &amp; Obesity">متابعة الوزن والسمنة</div>
       </div>
       <div class="screenshot-card">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/RLNhxltfeycysDAg.jpg" alt="Medications & Appointments" loading="lazy" />
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/RLNhxltfeycysDAg.jpg" alt="Medications &amp; Appointments" loading="lazy" />
         <div class="screenshot-label" data-ar="الأدوية والمواعيد" data-en="Medications &amp; Appointments">الأدوية والمواعيد</div>
       </div>
       <div class="screenshot-card">
         <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/XuAoZweuCZcFLzme.jpg" alt="Privacy Settings" loading="lazy" />
-        <div class="screenshot-label" data-ar="الخصوصية والأمان" data-en="Privacy & Security">الخصوصية والأمان</div>
+        <div class="screenshot-label" data-ar="الخصوصية والأمان" data-en="Privacy &amp; Security">الخصوصية والأمان</div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- ══ SECTION DIVIDER ══ -->
+<div class="section-divider"></div>
 
 <!-- ══ HOW IT WORKS ══ -->
 <section id="how">
@@ -622,10 +770,13 @@
   </div>
 </section>
 
+<!-- ══ SECTION DIVIDER SOFT ══ -->
+<div class="section-divider-soft"></div>
+
 <!-- ══ PRIVACY / TRUST ══ -->
 <section id="privacy" class="trust-section">
   <div class="max-w">
-    <div class="section-label" data-ar="الخصوصية والأمان" data-en="Privacy & Security">الخصوصية والأمان</div>
+    <div class="section-label" data-ar="الخصوصية والأمان" data-en="Privacy &amp; Security">الخصوصية والأمان</div>
     <h2 class="section-title" data-ar="بياناتك ملكك وحدك" data-en="Your data belongs to you alone">بياناتك ملكك وحدك</h2>
     <p class="section-sub" data-ar="حِنا مصمم من الأساس لحماية خصوصية طفلك" data-en="Hina is built from the ground up to protect your child's privacy">حِنا مصمم من الأساس لحماية خصوصية طفلك</p>
     <div class="trust-grid">
@@ -653,6 +804,9 @@
   </div>
 </section>
 
+<!-- ══ SECTION DIVIDER ══ -->
+<div class="section-divider"></div>
+
 <!-- ══ CTA ══ -->
 <section id="download" style="padding: 80px 24px;">
   <div class="max-w">
@@ -663,6 +817,22 @@
     </div>
   </div>
 </section>
+
+<!-- ══ SECTION DIVIDER SOFT ══ -->
+<div class="section-divider-soft"></div>
+
+<!-- ══ CONTACT US ══ -->
+<div class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="section-label" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</div>
+    <h2 data-ar="نحن هنا للمساعدة" data-en="We're here to help">نحن هنا للمساعدة</h2>
+    <p data-ar="لديك سؤال أو اقتراح؟ تواصلي معنا في أي وقت — يسعدنا سماعك." data-en="Have a question or suggestion? Reach out to us anytime — we'd love to hear from you.">لديك سؤال أو اقتراح؟ تواصلي معنا في أي وقت — يسعدنا سماعك.</p>
+    <a href="mailto:support@hinacare.com" class="contact-email-btn">
+      <span>✉️</span>
+      <span>support@hinacare.com</span>
+    </a>
+  </div>
+</div>
 
 <!-- ══ FOOTER ══ -->
 <footer>
@@ -689,6 +859,7 @@
 </footer>
 
 <script>
+  // ── LANGUAGE SYSTEM (preserved exactly) ──
   let isEn = false;
 
   function applyLang(en) {
@@ -709,6 +880,41 @@
 
   // Restore saved language on page load
   if (localStorage.getItem('hina_lang') === 'en') applyLang(true);
+
+  // ── ANIMATED COUNTERS ──
+  function animateCounter(el) {
+    const target = parseInt(el.getAttribute('data-target'), 10);
+    const suffix = el.getAttribute('data-suffix') || '';
+    const duration = 1800;
+    const steps = 60;
+    const increment = target / steps;
+    let current = 0;
+    let step = 0;
+    const timer = setInterval(() => {
+      step++;
+      current = Math.min(Math.round(increment * step), target);
+      el.textContent = current + suffix;
+      if (current >= target) clearInterval(timer);
+    }, duration / steps);
+  }
+
+  // ── INTERSECTION OBSERVER for stats ──
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        const numEl = entry.target.querySelector('.stat-num[data-target]');
+        if (numEl && !numEl.dataset.animated) {
+          numEl.dataset.animated = 'true';
+          animateCounter(numEl);
+        }
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.stat-card').forEach(card => {
+    statsObserver.observe(card);
+  });
 </script>
 </body>
 </html>

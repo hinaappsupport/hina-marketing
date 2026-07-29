@@ -145,10 +145,11 @@
       margin-top: 24px;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
+      text-align: center;
       gap: 4px;
     }
-    body.en .hero-tagline { align-items: flex-start; }
+    body.en .hero-tagline { align-items: center; text-align: center; }
     @media (max-width: 768px) {
       .hero-tagline { align-items: center; }
     }
@@ -161,7 +162,7 @@
     .hero-tagline-name .name-sep { color: #C4B5A5; margin: 0 8px; font-weight: 300; }
     .hero-tagline-name .name-en { color: #1C1917; }
     .hero-tagline-slogan {
-      font-size: 14px;
+      font-size: 16px;
       color: #78716C;
       font-style: italic;
       line-height: 1.6;
@@ -616,7 +617,7 @@
       </div>
       <!-- ══ HERO TAGLINE ══ -->
       <div class="hero-tagline">
-        <div class="hero-tagline-name">
+        <div class="hero-tagline-name" id="tagline-name">
           <span class="name-ar">حِنا</span><span class="name-sep">|</span><span class="name-en">Hina</span>
         </div>
         <div class="hero-tagline-slogan"
@@ -972,6 +973,15 @@
     document.querySelectorAll('[data-ar][data-en]').forEach(el => {
       el.textContent = isEn ? el.getAttribute('data-en') : el.getAttribute('data-ar');
     });
+    // Tagline name: Arabic = حِنا | Hina, English = Hina | حِنا
+    const taglineName = document.getElementById('tagline-name');
+    if (taglineName) {
+      if (isEn) {
+        taglineName.innerHTML = '<span class="name-en" style="color:#1C1917">Hina</span><span class="name-sep" style="color:#C4B5A5;margin:0 8px;font-weight:300">|</span><span class="name-ar" style="color:var(--orange)">حِنا</span>';
+      } else {
+        taglineName.innerHTML = '<span class="name-ar" style="color:var(--orange)">حِنا</span><span class="name-sep" style="color:#C4B5A5;margin:0 8px;font-weight:300">|</span><span class="name-en" style="color:#1C1917">Hina</span>';
+      }
+    }
   }
 
   function toggleLang() {

@@ -140,16 +140,21 @@
       margin-bottom: 36px;
       line-height: 1.8;
     }
-    .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 0; }
+    .hero-cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 0;
+      align-items: center;
+    }
     .hero-tagline {
-      margin-top: 24px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 4px;
+      align-items: flex-start;
+      gap: 2px;
+      /* sits inline with the buttons */
     }
-    body.en .hero-tagline { align-items: center; text-align: center; }
+    body.en .hero-tagline { align-items: flex-start; }
     @media (max-width: 768px) {
       .hero-tagline { align-items: center; }
     }
@@ -614,15 +619,15 @@
       <div class="hero-cta">
         <a href="#download" class="btn-primary" data-ar="⬇️ حمّلي التطبيق مجاناً" data-en="⬇️ Download Free">⬇️ حمّلي التطبيق مجاناً</a>
         <a href="#features" class="btn-secondary" data-ar="اكتشفي المميزات" data-en="Explore Features">اكتشفي المميزات</a>
-      </div>
-      <!-- ══ HERO TAGLINE ══ -->
-      <div class="hero-tagline">
-        <div class="hero-tagline-name" id="tagline-name">
-          <span class="name-ar">حِنا</span><span class="name-sep">|</span><span class="name-en">Hina</span>
+        <!-- ══ HERO TAGLINE (inline with buttons) ══ -->
+        <div class="hero-tagline">
+          <div class="hero-tagline-name" id="tagline-name">
+            <span class="name-ar">حِنا</span>
+          </div>
+          <div class="hero-tagline-slogan"
+               data-ar="معاً... نرعى طفولتهم ونهتم بصحتهم"
+               data-en="Together, we nurture and care.">معاً... نرعى طفولتهم ونهتم بصحتهم</div>
         </div>
-        <div class="hero-tagline-slogan"
-             data-ar="معاً... نرعى طفولتهم ونهتم بصحتهم"
-             data-en="Together, we nurture and care.">معاً... نرعى طفولتهم ونهتم بصحتهم</div>
       </div>
     </div>
     <!-- Image column (left in RTL = right side visually) -->
@@ -973,13 +978,13 @@
     document.querySelectorAll('[data-ar][data-en]').forEach(el => {
       el.textContent = isEn ? el.getAttribute('data-en') : el.getAttribute('data-ar');
     });
-    // Tagline name: Arabic = حِنا | Hina, English = Hina | حِنا
+    // Tagline name: Arabic = حِنا only, English = Hina | حِنا
     const taglineName = document.getElementById('tagline-name');
     if (taglineName) {
       if (isEn) {
         taglineName.innerHTML = '<span class="name-en" style="color:#1C1917">Hina</span><span class="name-sep" style="color:#C4B5A5;margin:0 8px;font-weight:300">|</span><span class="name-ar" style="color:var(--orange)">حِنا</span>';
       } else {
-        taglineName.innerHTML = '<span class="name-ar" style="color:var(--orange)">حِنا</span><span class="name-sep" style="color:#C4B5A5;margin:0 8px;font-weight:300">|</span><span class="name-en" style="color:#1C1917">Hina</span>';
+        taglineName.innerHTML = '<span class="name-ar" style="color:var(--orange)">حِنا</span>';
       }
     }
   }

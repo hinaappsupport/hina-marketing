@@ -54,7 +54,7 @@
       transition: background 0.3s, border-color 0.3s;
     }
     .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-logo img { width: 40px; height: 40px; border-radius: 10px; object-fit: cover; }
+    .nav-logo img { width: 44px; height: 44px; border-radius: 10px; object-fit: contain; background: transparent; }
     .nav-logo span { font-size: 22px; font-weight: 900; color: var(--orange); }
     .nav-links { display: flex; align-items: center; gap: 8px; }
     .nav-links a {
@@ -140,7 +140,32 @@
       margin-bottom: 36px;
       line-height: 1.8;
     }
-    .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 0; }
+    .hero-tagline {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+    body.en .hero-tagline { align-items: flex-start; }
+    @media (max-width: 768px) {
+      .hero-tagline { align-items: center; }
+    }
+    .hero-tagline-name {
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+    .hero-tagline-name .name-ar { color: var(--orange); }
+    .hero-tagline-name .name-sep { color: #C4B5A5; margin: 0 8px; font-weight: 300; }
+    .hero-tagline-name .name-en { color: #1C1917; }
+    .hero-tagline-slogan {
+      font-size: 14px;
+      color: #78716C;
+      font-style: italic;
+      line-height: 1.6;
+    }
     .btn-primary {
       background: var(--orange); color: white;
       padding: 14px 32px; border-radius: 12px;
@@ -589,6 +614,15 @@
         <a href="#download" class="btn-primary" data-ar="⬇️ حمّلي التطبيق مجاناً" data-en="⬇️ Download Free">⬇️ حمّلي التطبيق مجاناً</a>
         <a href="#features" class="btn-secondary" data-ar="اكتشفي المميزات" data-en="Explore Features">اكتشفي المميزات</a>
       </div>
+      <!-- ══ HERO TAGLINE ══ -->
+      <div class="hero-tagline">
+        <div class="hero-tagline-name">
+          <span class="name-ar">حِنا</span><span class="name-sep">|</span><span class="name-en">Hina</span>
+        </div>
+        <div class="hero-tagline-slogan"
+             data-ar="معاً... نرعى طفولتهم ونهتم بصحتهم"
+             data-en="Together, we nurture and care.">معاً... نرعى طفولتهم ونهتم بصحتهم</div>
+      </div>
     </div>
     <!-- Image column (left in RTL = right side visually) -->
     <div class="hero-image-col">
@@ -699,7 +733,7 @@
       <div class="feature-card">
         <div class="feature-icon icon-green">🥗</div>
         <h3 data-ar="دليل التغذية الشامل" data-en="Comprehensive Nutrition Guide">دليل التغذية الشامل</h3>
-        <p data-ar="تغذية مخصصة لكل مرحلة عمرية من الرضاعة حتى سن المدرسة، مع اقتراحات غذائية ذكية وتنبيهات للأطعمة غير المناسبة." data-en="Age-specific nutrition from infancy to school age, with smart food suggestions and alerts for inappropriate foods.">تغذية مخصصة لكل مرحلة عمرية من الرضاعة حتى سن المدرسة، مع اقتراحات غذائية ذكية وتنبيهات للأطعمة غير المناسبة.</p>
+        <p data-ar="تغذية مخصصة لكل مرحلة عمرية من الرضاعة حتى سن المدرسة، مع اقتراحات غذائية ذكية، وتنبيهات فورية لمسببات الحساسية الـ 14 المعتمدة دولياً، وبدائل آمنة مقترحة." data-en="Age-specific nutrition from infancy to school age, with smart food suggestions, instant alerts for all 14 internationally recognized allergens, and safe alternatives.">تغذية مخصصة لكل مرحلة عمرية من الرضاعة حتى سن المدرسة، مع اقتراحات غذائية ذكية، وتنبيهات فورية لمسببات الحساسية الـ 14 المعتمدة دولياً، وبدائل آمنة مقترحة.</p>
       </div>
 
       <div class="feature-card">

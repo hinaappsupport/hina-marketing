@@ -145,18 +145,24 @@
       gap: 12px;
       flex-wrap: wrap;
       margin-bottom: 0;
+    }
+    /* Wrapper that holds both the CTA row and the tagline, sized to fit the buttons */
+    .hero-cta-wrap {
+      display: inline-flex;
+      flex-direction: column;
       align-items: center;
+      gap: 16px;
     }
     .hero-tagline {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
+      text-align: center;
       gap: 2px;
-      /* sits inline with the buttons */
+      width: 100%;
     }
-    body.en .hero-tagline { align-items: flex-start; }
     @media (max-width: 768px) {
-      .hero-tagline { align-items: center; }
+      .hero-cta-wrap { width: 100%; align-items: center; }
     }
     .hero-tagline-name {
       font-size: 22px;
@@ -571,8 +577,8 @@
     body.en .step h3, body.en .step p { text-align: left; }
     body.en .footer-inner { direction: ltr; }
     body:not(.en) .footer-inner { direction: rtl; }
-    body.en .hero-cta { justify-content: flex-start; }
-    body:not(.en) .hero-cta { justify-content: flex-start; }
+    body.en .hero-cta { justify-content: center; }
+    body:not(.en) .hero-cta { justify-content: center; }
 
     /* ── COUNTER ANIMATION ── */
     @keyframes countUp {
@@ -616,10 +622,12 @@
         <span class="highlight" data-ar="صحة طفلك" data-en="child's health journey">صحة طفلك</span>
       </h1>
       <p data-ar="حِنا يساعدك على متابعة تغذية طفلك، عادات التبرز والتبول، النمو، الأدوية، والمواعيد الطبية — كل شيء في مكان واحد، مع تقارير احترافية جاهزة." data-en="Hina helps you track your child's nutrition, bowel and urination habits, growth, medications, and doctor visits — all in one place, with professional reports ready.">حِنا يساعدك على متابعة تغذية طفلك، عادات التبرز والتبول، النمو، الأدوية، والمواعيد الطبية — كل شيء في مكان واحد، مع تقارير احترافية جاهزة.</p>
-      <div class="hero-cta">
-        <a href="#download" class="btn-primary" data-ar="⬇️ حمّلي التطبيق مجاناً" data-en="⬇️ Download Free">⬇️ حمّلي التطبيق مجاناً</a>
-        <a href="#features" class="btn-secondary" data-ar="اكتشفي المميزات" data-en="Explore Features">اكتشفي المميزات</a>
-        <!-- ══ HERO TAGLINE (inline with buttons) ══ -->
+      <div class="hero-cta-wrap">
+        <div class="hero-cta">
+          <a href="#download" class="btn-primary" data-ar="⬇️ حمّلي التطبيق مجاناً" data-en="⬇️ Download Free">⬇️ حمّلي التطبيق مجاناً</a>
+          <a href="#features" class="btn-secondary" data-ar="اكتشفي المميزات" data-en="Explore Features">اكتشفي المميزات</a>
+        </div>
+        <!-- ══ HERO TAGLINE (centered under buttons) ══ -->
         <div class="hero-tagline">
           <div class="hero-tagline-name" id="tagline-name">
             <span class="name-ar">حِنا</span>

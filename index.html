@@ -408,7 +408,7 @@
       font-size: 20px; font-weight: 900;
       box-shadow: 0 4px 12px rgba(249,115,22,0.35);
     }
-    .step > div:last-child { flex: 1; }
+    .step > div:first-child { flex: 1; }
     .step h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; text-align: right; color: var(--text); }
     .step p { font-size: 13px; color: var(--muted); text-align: right; line-height: 1.7; }
 
@@ -573,8 +573,7 @@
     }
 
     /* ── RTL/LTR FLIP ── */
-    body.en .step { flex-direction: row; }
-    body.en .step-num { order: -1; }
+    body:not(.en) .step { flex-direction: row-reverse; }
     body.en .step h3, body.en .step p { text-align: left; }
     body.en .footer-inner { direction: ltr; }
     body:not(.en) .footer-inner { direction: rtl; }

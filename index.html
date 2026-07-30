@@ -574,8 +574,7 @@
 
     /* ── RTL/LTR FLIP ── */
     body.en .step { flex-direction: row; }
-    body:not(.en) .step { flex-direction: row; direction: ltr; }
-    body:not(.en) .step h3, body:not(.en) .step p { direction: rtl; }
+    body:not(.en) .step-num { order: 1; }
     body.en .step h3, body.en .step p { text-align: left; }
     body.en .footer-inner { direction: ltr; }
     body:not(.en) .footer-inner { direction: rtl; }

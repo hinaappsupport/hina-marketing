@@ -199,8 +199,11 @@
     /* ── VALUES ── */
     .values-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 16px;
+    }
+    .value-card:last-child {
+      grid-column: 2 / 4;
     }
     .value-card {
       background: var(--white);
@@ -255,9 +258,11 @@
       .name-card { padding: 28px 20px; }
       .mission-block { padding: 24px 18px; }
       .values-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .values-grid .value-card:last-child { grid-column: 1 / 3; max-width: calc(50% - 6px); margin: 0 auto; width: 100%; }
     }
     @media (max-width: 480px) {
       .values-grid { grid-template-columns: 1fr; }
+      .values-grid .value-card:last-child { grid-column: 1; max-width: 100%; }
     }
   </style>
 </head>

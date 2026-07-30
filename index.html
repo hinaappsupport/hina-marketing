@@ -393,7 +393,7 @@
     .how-section .section-title { color: var(--text); }
     .steps { display: flex; flex-direction: column; gap: 16px; max-width: 640px; margin: 0 auto; }
     .step {
-      display: flex; flex-direction: row-reverse; gap: 20px; align-items: flex-start;
+      display: flex; flex-direction: row; gap: 20px; align-items: flex-start;
       background: var(--white); border-radius: var(--radius);
       padding: 24px 28px; border: 1px solid var(--border);
       transition: border-color 0.3s, box-shadow 0.3s;
@@ -574,6 +574,7 @@
 
     /* ── RTL/LTR FLIP ── */
     body.en .step { flex-direction: row; }
+    body:not(.en) .step { flex-direction: row-reverse; }
     body.en .step h3, body.en .step p { text-align: left; }
     body.en .footer-inner { direction: ltr; }
     body:not(.en) .footer-inner { direction: rtl; }
@@ -861,21 +862,21 @@
     <p class="section-sub" data-ar="" data-en=""></p>
     <div class="steps">
       <div class="step">
-        <div class="step-num">١</div>
+        <div class="step-num">1</div>
         <div>
           <h3 data-ar="أضيفي بيانات طفلك" data-en="Add your child's profile">أضيفي بيانات طفلك</h3>
           <p data-ar="أدخلي اسم طفلك وتاريخ ميلاده — التطبيق يتكيف تلقائياً مع مرحلته العمرية ويخصص التجربة له." data-en="Enter your child's name and date of birth — the app automatically adapts to their age stage and personalizes the experience.">أدخلي اسم طفلك وتاريخ ميلاده — التطبيق يتكيف تلقائياً مع مرحلته العمرية ويخصص التجربة له.</p>
         </div>
       </div>
       <div class="step">
-        <div class="step-num">٢</div>
+        <div class="step-num">2</div>
         <div>
           <h3 data-ar="سجّلي يومياً" data-en="Log daily">سجّلي يومياً</h3>
           <p data-ar="سجّلي الوجبات، التبرز، التبول، الأدوية، والسوائل — يستغرق الأمر دقيقتين فقط في اليوم." data-en="Log meals, bowel movements, urination, medications, and fluids — it takes just 2 minutes a day.">سجّلي الوجبات، التبرز، التبول، الأدوية، والسوائل — يستغرق الأمر دقيقتين فقط في اليوم.</p>
         </div>
       </div>
       <div class="step">
-        <div class="step-num">٣</div>
+        <div class="step-num">3</div>
         <div>
           <h3 style="text-align:right" data-ar="شاركي التقرير مع الجهات الطبية" data-en="Share the report with your medical team">شاركي التقرير مع الجهات الطبية</h3>
           <p style="text-align:right" data-ar="أنشئي تقريراً أسبوعياً أو شهرياً بضغطة واحدة لمتابعة أفضل." data-en="Generate a weekly or monthly report with one tap for better follow-up.">أنشئي تقريراً أسبوعياً أو شهرياً بضغطة واحدة لمتابعة أفضل.</p>

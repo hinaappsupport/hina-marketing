@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>فريق حِنا | Hina Team — حِنا | Hina</title>
+  <meta name="description" content="تعرّف على فريق حِنا — المؤسس والمستشارون الذين يقفون خلف تطبيق متابعة صحة الأطفال.">
+  <meta property="og:title" content="فريق حِنا | Hina Team — حِنا | Hina">
+  <meta property="og:description" content="Meet the team behind Hina — the founder and advisors dedicated to transforming child health tracking for families and doctors.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --orange: #F97316;
+      --orange-dark: #EA580C;
+      --text: #1C1917;
+      --muted: #78716C;
+      --border: #E7E5E4;
+      --bg: #FDF6EE;
+      --white: #FFFFFF;
+      --radius: 16px;
+      --shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Cairo', 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      direction: rtl;
+    }
+    body.en { direction: ltr; font-family: 'Inter', 'Cairo', sans-serif; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(253,246,238,0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #E8D9C8;
+      padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo span { font-size: 22px; font-weight: 900; color: var(--orange); direction: ltr; display: inline-block; }
+    .lang-btn {
+      background: rgba(249,115,22,0.15); color: var(--orange); border: 1px solid rgba(249,115,22,0.3);
+      padding: 6px 14px; border-radius: 8px; font-size: 14px; font-weight: 700;
+      cursor: pointer; transition: all 0.2s; font-family: inherit;
+    }
+    .lang-btn:hover { background: var(--orange); color: white; }
+
+    /* ── HERO ── */
+    .hero {
+      background: #FDF6EE;
+      padding: 72px 24px 56px;
+      text-align: center;
+      border-bottom: 3px solid var(--orange);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(249,115,22,0.15); color: var(--orange);
+      font-size: 13px; font-weight: 700;
+      padding: 6px 16px; border-radius: 100px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(249,115,22,0.3);
+    }
+    .hero h1 {
+      font-size: clamp(28px, 4.5vw, 44px);
+      font-weight: 900; line-height: 1.2;
+      color: #1C1917; margin-bottom: 16px;
+    }
+    .hero h1 .highlight { color: var(--orange); }
+    .hero p {
+      font-size: clamp(15px, 2vw, 17px);
+      color: #78716C; max-width: 580px;
+      margin: 0 auto;
+    }
+
+    /* ── SECTIONS ── */
+    .section { padding: 64px 24px; background: var(--bg); }
+    .section-alt { background: #FDF6EE; }
+    .max-w { max-width: 1100px; margin: 0 auto; }
+    .max-w-narrow { max-width: 780px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 13px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--orange);
+      margin-bottom: 12px; text-align: center;
+    }
+    .section-title {
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 900; text-align: center; color: var(--text);
+      margin-bottom: 14px; line-height: 1.25;
+    }
+    .section-sub {
+      font-size: 15px; color: var(--muted);
+      text-align: center; max-width: 520px;
+      margin: 0 auto 44px;
+    }
+
+    /* ── TEAM CARDS ── */
+    .team-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .team-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px 44px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .team-card:hover {
+      box-shadow: 0 8px 32px rgba(249,115,22,0.12);
+      transform: translateY(-2px);
+    }
+    .team-card::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 6px; height: 100%;
+      background: var(--orange);
+      border-radius: 0 20px 20px 0;
+    }
+    body.en .team-card::before {
+      right: auto; left: 0;
+      border-radius: 20px 0 0 20px;
+    }
+    .team-card-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    .team-avatar {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: rgba(249,115,22,0.12);
+      border: 2px solid rgba(249,115,22,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 32px;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .team-avatar img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .team-info { flex: 1; }
+    .team-name {
+      font-size: clamp(18px, 2.5vw, 22px);
+      font-weight: 900;
+      color: var(--text);
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+    .team-role {
+      display: inline-block;
+      background: rgba(249,115,22,0.12);
+      color: var(--orange-dark);
+      font-size: 13px; font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 100px;
+      border: 1px solid rgba(249,115,22,0.25);
+    }
+    .team-bio {
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.95;
+    }
+    .team-bio p { margin-bottom: 14px; }
+    .team-bio p:last-child { margin-bottom: 0; }
+    .team-bio .highlight-quote {
+      background: rgba(249,115,22,0.08);
+      border-right: 3px solid var(--orange);
+      border-radius: 0 10px 10px 0;
+      padding: 14px 18px;
+      margin: 20px 0;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--orange-dark);
+      font-style: italic;
+    }
+    body.en .team-bio .highlight-quote {
+      border-right: none;
+      border-left: 3px solid var(--orange);
+      border-radius: 10px 0 0 10px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #FDF6EE; color: #78716C;
+      padding: 48px 24px 32px;
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; gap: 32px;
+      justify-content: space-between; align-items: flex-start;
+    }
+    .footer-brand .logo-text { font-size: 24px; font-weight: 900; color: var(--orange); }
+    .footer-brand p { font-size: 14px; margin-top: 8px; max-width: 260px; }
+    .footer-links h4 { color: #1C1917; font-size: 15px; font-weight: 700; margin-bottom: 12px; }
+    .footer-links a { display: block; color: #78716C; text-decoration: none; font-size: 14px; margin-bottom: 8px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--orange); }
+    .footer-bottom {
+      border-top: 1px solid #E8D9C8;
+      margin-top: 40px; padding-top: 24px;
+      text-align: center; font-size: 13px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .section { padding: 48px 16px; }
+      .team-card { padding: 28px 24px; }
+      .team-card-header { gap: 14px; }
+      .team-avatar { width: 60px; height: 60px; font-size: 26px; }
+    }
+    @media (max-width: 480px) {
+      .team-card { padding: 24px 18px; }
+      .team-card-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <a class="nav-logo" href="/">
+    <span data-ar="حِنا →" data-en="← Hina">حِنا →</span>
+  </a>
+  <button class="lang-btn" onclick="toggleLang()" id="langBtn">English</button>
+</nav>
+
+<!-- ══ HERO ══ -->
+<div class="hero">
+  <div class="hero-badge" data-ar="👥 تعرّف على الفريق" data-en="👥 Meet the Team">👥 تعرّف على الفريق</div>
+  <h1>
+    <span data-ar="فريق " data-en="The ">فريق </span><span class="highlight" data-ar="حِنا" data-en="Hina">حِنا</span><span data-ar="" data-en=" Team"> </span>
+  </h1>
+  <p data-ar="خبرة طبية وعلمية متخصصة تقف خلف كل ميزة في التطبيق — لأن صحة طفلك تستحق الأفضل" data-en="Specialised medical and scientific expertise behind every feature in the app — because your child's health deserves the best">خبرة طبية وعلمية متخصصة تقف خلف كل ميزة في التطبيق — لأن صحة طفلك تستحق الأفضل</p>
+</div>
+
+<!-- ══ TEAM SECTION ══ -->
+<section class="section">
+  <div class="max-w">
+    <div class="section-label" data-ar="الفريق" data-en="THE TEAM">الفريق</div>
+    <h2 class="section-title" data-ar="من نحن؟" data-en="Who are we?">من نحن؟</h2>
+    <p class="section-sub" data-ar="فريق متخصص يجمع بين الجراحة والتغذية والجودة الطبية — لبناء تطبيق يثق به الأطباء وتعتمد عليه الأمهات" data-en="A specialised team combining surgery, nutrition, and medical quality — building an app trusted by doctors and relied upon by mothers">فريق متخصص يجمع بين الجراحة والتغذية والجودة الطبية — لبناء تطبيق يثق به الأطباء وتعتمد عليه الأمهات</p>
+
+    <div class="team-grid">
+
+      <!-- ── MAJID ── -->
+      <div class="team-card">
+        <div class="team-card-header">
+          <div class="team-avatar">👨‍⚕️</div>
+          <div class="team-info">
+            <div class="team-name" data-ar="د. ماجد الخميس" data-en="Dr. Majid Alkhamis">د. ماجد الخميس</div>
+            <span class="team-role" data-ar="المؤسس والرئيس التنفيذي" data-en="Founder & CEO">المؤسس والرئيس التنفيذي</span>
+          </div>
+        </div>
+        <div class="team-bio" id="bio-majid-ar">
+          <p>د. ماجد الخميس استشاري جراحة الأطفال وحديثي الولادة بخبرة تتجاوز 10 سنوات. حاصل على شهادة D.E.S.C. في جراحة الأطفال وحديثي الولادة من جامعة بيير وماري كوري بباريس — إحدى أعرق الجامعات الطبية في أوروبا. عضو في الجمعية الأوروبية لجراحة الأطفال بالمنظار، والجمعية الفرنسية لجراحة الأطفال، والجمعية السعودية لجراحة الأطفال.</p>
+          <div class="highlight-quote">من خلال سنوات من متابعة الأطفال في العيادة، أدرك كم يُحدث التوثيق الدقيق والمستمر فرقًا حقيقيًا في القرار الطبي — من هنا وُلدت فكرة حِنا.</div>
+          <p>يؤمن بأن الرعاية الصحية المثلى للطفل تبدأ من الأسرة، وأن دور الطبيب هو تمكين الأهل بالأدوات والمعرفة الصحيحة. يسعى من خلال حِنا إلى تحويل المتابعة اليومية من عبء إلى شراكة حقيقية بين الأم والفريق الطبي، تُبنى على بيانات موثوقة وتواصل مستمر.</p>
+          <p>يحمل د. ماجد رؤية واضحة: أن كل طفل يستحق رعاية مبنية على معلومات دقيقة، وأن كل أم تستحق أن تشعر بالثقة والاطمئنان في رحلة متابعة صحة طفلها.</p>
+        </div>
+        <div class="team-bio" id="bio-majid-en" style="display:none; text-align:left;">
+          <p>Majid Alkhamis is a Consultant Paediatric and Neonatal Surgeon with over 10 years of experience. He holds a D.E.S.C. in Paediatric and Neonatal Surgery from Pierre and Marie Curie University, Paris — one of Europe's most prestigious medical institutions. He is a member of the European Society of Endoscopic Paediatric Surgery, the French Society of Paediatric Surgery, and the Saudi Society of Paediatric Surgery.</p>
+          <div class="highlight-quote" style="border-right:none; border-left:3px solid var(--orange); border-radius:10px 0 0 10px;">Through years of following children in clinic, he recognised how accurate, continuous documentation makes a real difference in clinical decision-making — and that insight became the foundation of Hina.</div>
+          <p>He believes that optimal child healthcare begins with the family, and that the physician's role is to empower parents with the right tools and knowledge. Through Hina, he aims to transform daily monitoring from a burden into a true partnership between mothers and the medical team — built on reliable data and continuous communication.</p>
+          <p>Dr. Majid carries a clear vision: every child deserves care built on accurate information, and every mother deserves to feel confident and reassured on the journey of monitoring her child's health.</p>
+        </div>
+      </div>
+
+      <!-- ── HANIN ── -->
+      <div class="team-card">
+        <div class="team-card-header">
+          <div class="team-avatar">👩‍⚕️</div>
+          <div class="team-info">
+            <div class="team-name" data-ar="د. حنين عبدالعزيز قوماوي" data-en="Dr. Hanin Abdulaziz Qomawi">د. حنين عبدالعزيز قوماوي</div>
+            <span class="team-role" data-ar="مستشارة الجودة" data-en="Quality Advisor">مستشارة الجودة</span>
+          </div>
+        </div>
+        <div class="team-bio" id="bio-hanin-ar">
+          <p>د. حنين عبدالعزيز قوماوي أخصائية الجراحة العامة وجراحة الأطفال. تؤمن بأن أفضل رعاية لمرضى الأطفال تأتي من التعاون الحقيقي بين مقدمي الرعاية والأسرة، مدعومًا بالتكنولوجيا.</p>
+          <div class="highlight-quote">تُراجع د. حنين المسارات السريرية في التطبيق لضمان توافقها مع أفضل الممارسات الطبية في متابعة الأطفال.</div>
+          <p>كما تُسهم في تقييم دقة المعلومات الموجّهة للأمهات، لضمان أن كل ما يصل للأسرة يعكس معايير الرعاية الطبية الحديثة. تحرص على أن يكون التطبيق أداةً تُعزز ثقة الطبيب بالمعلومات الواردة من الأسرة، وتُقلّل الفجوة بين الزيارات الطبية.</p>
+        </div>
+        <div class="team-bio" id="bio-hanin-en" style="display:none; text-align:left;">
+          <p>Dr. Hanin Abdulaziz Qomawi is a Specialist in General Surgery and Paediatric Surgery. She firmly believes that the highest standard of care for paediatric patients is achieved through true partnership between healthcare providers and families, empowered by technology.</p>
+          <div class="highlight-quote" style="border-right:none; border-left:3px solid var(--orange); border-radius:10px 0 0 10px;">Dr. Hanin reviews the app's clinical pathways to ensure they align with best practices in paediatric follow-up care.</div>
+          <p>She also contributes to evaluating the accuracy of information presented to parents, ensuring that everything reaching families reflects current medical care standards. She is committed to making Hina a tool that strengthens physicians' confidence in family-reported data and bridges the gap between clinic visits.</p>
+        </div>
+      </div>
+
+      <!-- ── SADEEM ── -->
+      <div class="team-card">
+        <div class="team-card-header">
+          <div class="team-avatar">👩‍🔬</div>
+          <div class="team-info">
+            <div class="team-name" data-ar="سديم صالح الربيعان" data-en="Sadeem Saleh Alrubaian">سديم صالح الربيعان</div>
+            <span class="team-role" data-ar="مستشارة التغذية" data-en="Nutrition Advisor">مستشارة التغذية</span>
+          </div>
+        </div>
+        <div class="team-bio" id="bio-sadeem-ar">
+          <p>سديم صالح الربيعان أخصائية تغذية علاجية وباحثة، متخصصة في تغذية الأطفال والتغذية العلاجية والحلول القائمة على الأدلة العلمية. تجمع بين الخلفية الأكاديمية والتجربة السريرية المباشرة في متابعة الأطفال ذوي الاحتياجات الغذائية الخاصة، مما يمنحها نظرة عميقة لما تحتاجه الأم فعلًا في يومها.</p>
+          <div class="highlight-quote">تُشرف سديم على مراجعة كل توصية غذائية في التطبيق، بما فيها تحذيرات الحساسية والتوصيات المرحلية حسب عمر الطفل، لضمان أنها آمنة وقابلة للتطبيق فعليًا.</div>
+          <p>كما تُسهم في تطوير المحتوى الغذائي التعليمي الموجّه للأمهات، بما يعكس أحدث التوصيات العلمية في تغذية الأطفال. تؤمن سديم بأن التغذية السليمة منذ الأشهر الأولى تُشكّل أساسًا لصحة الطفل على المدى البعيد، وأن توجيه الأم بثقة وبساطة هو أقوى أداة وقائية.</p>
+          <p>لذلك تحرص على أن تكون كل نصيحة في حِنا مفهومة وقابلة للتطبيق — لا معقّدة ولا مُرهِقة — لأن الأم المطمئنة هي أفضل حليف لصحة طفلها.</p>
+        </div>
+        <div class="team-bio" id="bio-sadeem-en" style="display:none; text-align:left;">
+          <p>Sadeem Saleh Alrubaian is a Clinical Dietitian and researcher with a focus on paediatric nutrition, clinical nutrition therapy, and evidence-based practices. She combines academic expertise with direct clinical experience following children with special nutritional needs — giving her a deep understanding of what mothers truly need in their daily lives.</p>
+          <div class="highlight-quote" style="border-right:none; border-left:3px solid var(--orange); border-radius:10px 0 0 10px;">Sadeem oversees every nutritional recommendation in the app — including allergy alerts and age-appropriate feeding guidance — to ensure they are safe, practical, and evidence-based.</div>
+          <p>She also contributes to developing educational nutrition content for parents, reflecting the latest scientific recommendations in paediatric nutrition. Sadeem believes that proper nutrition from the earliest months lays the foundation for long-term child health, and that guiding mothers with confidence and simplicity is the most powerful preventive tool.</p>
+          <p>That is why she ensures every piece of advice in Hina is clear and actionable — never complicated or overwhelming — because a confident mother is her child's greatest health ally.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo-text" data-ar="حِنا" data-en="Hina">حِنا</div>
+      <p data-ar="تطبيقك الموثوق لمتابعة صحة طفلك — من الرضاعة حتى سن المدرسة." data-en="Your trusted app for tracking your child's health — from infancy to school age.">تطبيقك الموثوق لمتابعة صحة طفلك — من الرضاعة حتى سن المدرسة.</p>
+    </div>
+    <div class="footer-links">
+      <h4 data-ar="الصفحات" data-en="Pages">الصفحات</h4>
+      <a href="/" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+      <a href="/vision" data-ar="رؤيتنا" data-en="Our Vision">رؤيتنا</a>
+      <a href="/team" data-ar="فريق حِنا" data-en="Hina Team">فريق حِنا</a>
+      <a href="/privacy-policy" data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</a>
+      <a href="/terms" data-ar="اتفاقية الاستخدام" data-en="Terms of Use">اتفاقية الاستخدام</a>
+    </div>
+    <div class="footer-links">
+      <h4 data-ar="التواصل" data-en="Contact">التواصل</h4>
+      <a href="mailto:support@hinacare.com">support@hinacare.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span data-ar="© 2026 حِنا. جميع الحقوق محفوظة." data-en="© 2026 Hina. All rights reserved.">© 2026 حِنا. جميع الحقوق محفوظة.</span>
+  </div>
+</footer>
+
+<script>
+  let isEn = false;
+
+  function applyLang(en) {
+    isEn = en;
+    document.body.classList.toggle('en', isEn);
+    document.documentElement.setAttribute('lang', isEn ? 'en' : 'ar');
+    document.documentElement.setAttribute('dir', isEn ? 'ltr' : 'rtl');
+    document.getElementById('langBtn').textContent = isEn ? 'العربية' : 'English';
+
+    // Toggle text content for all data-ar/data-en elements
+    document.querySelectorAll('[data-ar][data-en]').forEach(el => {
+      el.textContent = isEn ? el.getAttribute('data-en') : el.getAttribute('data-ar');
+    });
+
+    // Toggle bio blocks
+    const bios = ['majid', 'hanin', 'sadeem'];
+    bios.forEach(name => {
+      const arBio = document.getElementById('bio-' + name + '-ar');
+      const enBio = document.getElementById('bio-' + name + '-en');
+      if (arBio) arBio.style.display = isEn ? 'none' : 'block';
+      if (enBio) enBio.style.display = isEn ? 'block' : 'none';
+    });
+
+    // Fix hero h1 for English
+    const heroH1 = document.querySelector('.hero h1');
+    if (heroH1) {
+      if (isEn) {
+        heroH1.innerHTML = 'The <span class="highlight">Hina</span> Team';
+      } else {
+        heroH1.innerHTML = 'فريق <span class="highlight">حِنا</span>';
+      }
+    }
+  }
+
+  function toggleLang() {
+    applyLang(!isEn);
+    localStorage.setItem('hina_lang', isEn ? 'en' : 'ar');
+  }
+
+  // Restore saved language on page load
+  if (localStorage.getItem('hina_lang') === 'en') applyLang(true);
+</script>
+
+</body>
+</html>

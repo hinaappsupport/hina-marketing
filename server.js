@@ -50,6 +50,10 @@ app.get('/vision', (req, res) => {
   res.sendFile(path.join(__dirname, 'vision.html'));
 });
 
+app.get('/team', (req, res) => {
+  res.sendFile(path.join(__dirname, 'team.html'));
+});
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });

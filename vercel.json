@@ -24,6 +24,10 @@
       "dest": "/server.js"
     },
     {
+      "src": "/team",
+      "dest": "/server.js"
+    },
+    {
       "src": "/(.*)",
       "dest": "/server.js"
     }

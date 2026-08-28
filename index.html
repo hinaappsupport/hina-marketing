@@ -68,6 +68,13 @@
       cursor: pointer; transition: all 0.2s; font-family: inherit;
     }
     .lang-btn:hover { background: var(--orange); color: white; border-color: var(--orange); }
+    .menu-toggle {
+      display: none; width: 40px; height: 40px; border: 1px solid rgba(249,115,22,0.3);
+      border-radius: 10px; background: rgba(249,115,22,0.10); color: var(--orange);
+      cursor: pointer; font: inherit; font-size: 22px; line-height: 1; transition: all 0.2s;
+    }
+    .menu-toggle:hover { background: var(--orange); color: white; border-color: var(--orange); }
+    .mobile-menu { display: none; }
 
     /* ── HERO (NEW: split layout, light beige bg) ── */
     .hero-section {
@@ -204,6 +211,7 @@
       gap: 16px;
       align-items: flex-end;
       overflow: hidden;
+      direction: ltr;
     }
     .hero-screenshots-bar .phone-frame {
       width: 160px; flex-shrink: 0;
@@ -546,7 +554,40 @@
     }
     @media (max-width: 768px) {
       nav { padding: 0 16px; }
-      nav .nav-links a { display: none; }
+      nav .nav-links, nav > .lang-btn { display: none; }
+      .menu-toggle { display: inline-flex; align-items: center; justify-content: center; }
+      .mobile-menu { display: block; }
+      .mobile-menu-backdrop {
+        position: fixed; inset: 0; z-index: 190; background: rgba(28,25,23,0.36);
+        opacity: 0; pointer-events: none; transition: opacity 0.2s ease;
+      }
+      .mobile-menu-panel {
+        position: fixed; inset: 0 0 0 auto; z-index: 200; width: min(84vw, 340px);
+        min-height: 100dvh; padding: 22px 18px 32px; overflow-y: auto;
+        background: #FDF6EE; border-left: 1px solid #E8D9C8;
+        box-shadow: -18px 0 48px rgba(28,25,23,0.18);
+        transform: translateX(105%); transition: transform 0.24s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      body.en .mobile-menu-panel {
+        inset: 0 auto 0 0; border-left: 0; border-right: 1px solid #E8D9C8;
+        transform: translateX(-105%); box-shadow: 18px 0 48px rgba(28,25,23,0.18);
+      }
+      body.mobile-menu-open { overflow: hidden; }
+      body.mobile-menu-open .mobile-menu-backdrop { opacity: 1; pointer-events: auto; }
+      body.mobile-menu-open .mobile-menu-panel { transform: translateX(0); }
+      .mobile-menu-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 26px; }
+      .mobile-menu-title { color: var(--orange); font-size: 23px; font-weight: 900; }
+      .mobile-menu-close {
+        width: 40px; height: 40px; border: 1px solid #E8D9C8; border-radius: 10px;
+        background: white; color: #5C3D1E; cursor: pointer; font-size: 26px; line-height: 1;
+      }
+      .mobile-menu-links { display: flex; flex-direction: column; gap: 6px; }
+      .mobile-menu-links a {
+        padding: 13px 14px; border-radius: 10px; color: #5C3D1E; background: rgba(255,255,255,0.72);
+        border: 1px solid rgba(232,217,200,0.8); text-decoration: none; font-size: 15px; font-weight: 700;
+      }
+      .mobile-menu-links a:hover { color: var(--orange); border-color: rgba(249,115,22,0.4); }
+      .mobile-menu .lang-btn { width: 100%; margin-top: 20px; padding: 11px 16px; }
       .hero-screenshots-bar .phone-frame { width: 110px; }
       .hero-screenshots-bar .phone-frame.center { width: 128px; }
       .app-info-bar { flex-direction: column; }
@@ -623,7 +664,29 @@
     <a href="/terms" data-ar="اتفاقية الاستخدام" data-en="Terms of Use">اتفاقية الاستخدام</a>
   </div>
   <button class="lang-btn" onclick="toggleLang()" id="langBtn">English</button>
+  <button class="menu-toggle" type="button" onclick="openMobileMenu()" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false" id="menuToggle">☰</button>
 </nav>
+
+<aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu-backdrop" onclick="closeMobileMenu()"></div>
+  <div class="mobile-menu-panel" role="dialog" aria-modal="true" aria-label="Site navigation">
+    <div class="mobile-menu-head">
+      <div class="mobile-menu-title" data-ar="حِنا" data-en="Hina">حِنا</div>
+      <button class="mobile-menu-close" type="button" onclick="closeMobileMenu()" aria-label="Close menu">×</button>
+    </div>
+    <div class="mobile-menu-links">
+      <a href="#features" onclick="closeMobileMenu()" data-ar="المميزات" data-en="Features">المميزات</a>
+      <a href="#screenshots" onclick="closeMobileMenu()" data-ar="الشاشات" data-en="Screenshots">الشاشات</a>
+      <a href="#privacy" onclick="closeMobileMenu()" data-ar="الخصوصية" data-en="Privacy">الخصوصية</a>
+      <a href="/vision" data-ar="رؤيتنا" data-en="Our Vision">رؤيتنا</a>
+      <a href="/team" data-ar="فريق حِنا" data-en="Hina Team">فريق حِنا</a>
+      <a href="#contact" onclick="closeMobileMenu()" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</a>
+      <a href="/privacy-policy" data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</a>
+      <a href="/terms" data-ar="اتفاقية الاستخدام" data-en="Terms of Use">اتفاقية الاستخدام</a>
+    </div>
+    <button class="lang-btn" type="button" onclick="toggleLang()" id="mobileLangBtn">English</button>
+  </div>
+</aside>
 
 <!-- ══ HERO (NEW SPLIT LAYOUT) ══ -->
 <div class="hero-section">
@@ -635,7 +698,7 @@
         <span data-ar="نساعدك في رحلة" data-en="We help you on your">نساعدك في رحلة</span><br/>
         <span class="highlight" data-ar="صحة طفلك" data-en="child's health journey">صحة طفلك</span>
       </h1>
-      <p data-ar="حِنا يساعدك على متابعة تغذية طفلك، عادات التبرز والتبول، النمو، الأدوية، والمواعيد الطبية — كل شيء في مكان واحد، مع تقارير احترافية جاهزة." data-en="Hina helps you track your child's nutrition, bowel and urination habits, growth, medications, and doctor visits — all in one place, with professional reports ready.">حِنا يساعدك على متابعة تغذية طفلك، عادات التبرز والتبول، النمو، الأدوية، والمواعيد الطبية — كل شيء في مكان واحد، مع تقارير احترافية جاهزة.</p>
+      <p data-ar="حِنا يساعدك على تنظيم سجل يوم طفلك، من التغذية والرضاعة والنوم إلى الإخراج والأدوية والتطعيمات والزيارات — في مكان واحد." data-en="Hina helps you organize your child's daily record — from nutrition, feeding and sleep to bowel habits, medications, vaccinations and visits — all in one place.">حِنا يساعدك على تنظيم سجل يوم طفلك، من التغذية والرضاعة والنوم إلى الإخراج والأدوية والتطعيمات والزيارات — في مكان واحد.</p>
       <div class="hero-cta-wrap">
         <div class="hero-cta">
           <a href="#download" class="btn-primary" data-ar="⬇️ حمّلي التطبيق مجاناً" data-en="⬇️ Download Free">⬇️ حمّلي التطبيق مجاناً</a>
@@ -664,13 +727,13 @@
 <!-- ══ HERO SCREENSHOTS BAR ══ -->
 <div class="hero-screenshots-bar">
   <div class="phone-frame">
-    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/BvTZoMnBOHfOlTln.jpg" alt="Daily Log" loading="lazy" />
+    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/ZhwjovoOipkMlkNN.jpg" alt="Hina home screen in English" loading="lazy" />
   </div>
   <div class="phone-frame center">
-    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/UNUxMvoQauIOqAvf.jpg" alt="Home Screen" loading="lazy" />
+    <img id="showcaseWelcome" src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/AKaPMfqQUUjQAGQL.jpg" data-src-ar="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/AKaPMfqQUUjQAGQL.jpg" data-src-en="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/BkeMJtKMBBcHnWBo.jpg" data-alt-ar="لقطة الترحيب في حِنا" data-alt-en="Hina welcome screen" alt="لقطة الترحيب في حِنا" loading="lazy" />
   </div>
   <div class="phone-frame">
-    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/lqrfWUUDwTTXMnfL.jpg" alt="Monthly Report" loading="lazy" />
+    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/SXQvCEUSokTQQjbN.jpg" alt="واجهة حِنا الرئيسية بالعربية" loading="lazy" />
   </div>
 </div>
 
@@ -749,61 +812,61 @@
   <div class="max-w">
     <div class="section-label" data-ar="المميزات" data-en="Features">المميزات</div>
     <h2 class="section-title" data-ar="كل ما تحتاجينه لمتابعة صحة طفلك" data-en="Everything you need to track your child's health">كل ما تحتاجينه لمتابعة صحة طفلك</h2>
-    <p class="section-sub" data-ar="من الإمساك إلى التغذية الشاملة — حِنا تغطي جميع جوانب صحة طفلك" data-en="From constipation to comprehensive nutrition — Hina covers every aspect of your child's health">من الإمساك إلى التغذية الشاملة — حِنا تغطي جميع جوانب صحة طفلك</p>
+    <p class="section-sub" data-ar="متابعة يومية منظمة تنمو مع احتياجات طفلك" data-en="Organized daily tracking that grows with your child's needs">متابعة يومية منظمة تنمو مع احتياجات طفلك</p>
     <div class="features-grid">
 
       <div class="feature-card">
-        <div class="feature-icon icon-orange">💩</div>
+        <div class="feature-icon icon-orange">🗓️</div>
+        <h3 data-ar="السجل اليومي الشامل" data-en="Complete Daily Log">السجل اليومي الشامل</h3>
+        <p data-ar="سجّلي الوجبات والرضاعة والسوائل والنوم والنشاط والإخراج والأدوية — وما يناسب عمر طفلك فقط." data-en="Log meals, feeding, fluids, sleep, activity, bowel habits and medications — tailored to your child's age.">سجّلي الوجبات والرضاعة والسوائل والنوم والنشاط والإخراج والأدوية — وما يناسب عمر طفلك فقط.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon icon-green">💩</div>
         <h3 data-ar="متابعة التبرز والتبول" data-en="Bowel &amp; Urination Tracking">متابعة التبرز والتبول</h3>
-        <p data-ar="سجّلي عادات التبرز بمقياس Bristol، وعدد مرات التبول اليومية، مع تنبيهات فورية عند الإمساك أو الجفاف." data-en="Log bowel habits using the Bristol Scale and daily urination frequency, with instant alerts for constipation or dehydration.">سجّلي عادات التبرز بمقياس Bristol، وعدد مرات التبول اليومية، مع تنبيهات فورية عند الإمساك أو الجفاف.</p>
+        <p data-ar="سجل منظم لعادات الإخراج اليومية ومقياس Bristol لتسهيل متابعة التغيّرات." data-en="An organized daily bowel and urination log with the Bristol Scale to make changes easier to review.">سجل منظم لعادات الإخراج اليومية ومقياس Bristol لتسهيل متابعة التغيّرات.</p>
       </div>
 
       <div class="feature-card">
-        <div class="feature-icon icon-green">🥗</div>
-        <h3 data-ar="دليل التغذية الشامل" data-en="Comprehensive Nutrition Guide">دليل التغذية الشامل</h3>
-        <p data-ar="تغذية مخصصة لكل مرحلة عمرية من الرضاعة حتى سن المدرسة، مع اقتراحات غذائية ذكية، وتنبيهات فورية لمسببات الحساسية الـ 14 المعتمدة دولياً، وبدائل آمنة مقترحة." data-en="Age-specific nutrition from infancy to school age, with smart food suggestions, instant alerts for all 14 internationally recognized allergens, and safe alternatives.">تغذية مخصصة لكل مرحلة عمرية من الرضاعة حتى سن المدرسة، مع اقتراحات غذائية ذكية، وتنبيهات فورية لمسببات الحساسية الـ 14 المعتمدة دولياً، وبدائل آمنة مقترحة.</p>
+        <div class="feature-icon icon-purple">🍼</div>
+        <h3 data-ar="التغذية والرضاعة" data-en="Nutrition &amp; Feeding">التغذية والرضاعة</h3>
+        <p data-ar="وثّقي الرضاعة والحليب والوجبات والسوائل، مع مراعاة الحساسية المسجلة لطفلك." data-en="Document breastfeeding, milk, meals and fluids while keeping your child's recorded allergies in view.">وثّقي الرضاعة والحليب والوجبات والسوائل، مع مراعاة الحساسية المسجلة لطفلك.</p>
       </div>
 
       <div class="feature-card">
-        <div class="feature-icon icon-purple">⚖️</div>
-        <h3 data-ar="متابعة الوزن والسمنة" data-en="Weight &amp; Obesity Monitoring">متابعة الوزن والسمنة</h3>
-        <p data-ar="تتبع وزن طفلك وطوله مع منحنيات نمو WHO، وتنبيهات ملونة عند الخروج عن النطاق الطبيعي." data-en="Track your child's weight and height against WHO growth curves, with color-coded alerts when outside normal range.">تتبع وزن طفلك وطوله مع منحنيات نمو WHO، وتنبيهات ملونة عند الخروج عن النطاق الطبيعي.</p>
+        <div class="feature-icon icon-blue">⚖️</div>
+        <h3 data-ar="النمو والوزن ومراحل النمو" data-en="Growth, Weight &amp; Milestones">النمو والوزن ومراحل النمو</h3>
+        <p data-ar="تابعي الطول والوزن ومراحل النمو واعرضي التغيّرات بوضوح مع مرور الوقت." data-en="Track height, weight and developmental milestones, then review changes clearly over time.">تابعي الطول والوزن ومراحل النمو واعرضي التغيّرات بوضوح مع مرور الوقت.</p>
       </div>
 
       <div class="feature-card">
-        <div class="feature-icon icon-blue">🚽</div>
-        <h3 data-ar="التحكم بالإخراج" data-en="Excretion Control Tracking">التحكم بالإخراج</h3>
-        <p data-ar="تتبع مراحل تحكم الطفل في التبرز والتبول، مع رسوم بيانية شهرية تُظهر التقدم للطبيب." data-en="Track your child's bowel and urination control stages, with monthly charts showing progress for the doctor.">تتبع مراحل تحكم الطفل في التبرز والتبول، مع رسوم بيانية شهرية تُظهر التقدم للطبيب.</p>
+        <div class="feature-icon icon-orange">🌙</div>
+        <h3 data-ar="متابعة النوم والنشاط" data-en="Sleep &amp; Activity Tracking">متابعة النوم والنشاط</h3>
+        <p data-ar="وثّقي القيلولات والنوم الليلي والنشاط اليومي لتكوين صورة أوضح عن الروتين." data-en="Record naps, night sleep and daily activity to build a clearer picture of your child's routine.">وثّقي القيلولات والنوم الليلي والنشاط اليومي لتكوين صورة أوضح عن الروتين.</p>
       </div>
 
       <div class="feature-card">
-        <div class="feature-icon icon-orange">💊</div>
-        <h3 data-ar="متابعة الأدوية" data-en="Medication Tracking">متابعة الأدوية</h3>
-        <p data-ar="سجّلي أدوية طفلك وجرعاتها ومواعيدها، مع تنبيهات للجرعات الفائتة وسجل كامل للتاريخ الدوائي." data-en="Log your child's medications, dosages, and schedules, with missed-dose alerts and a complete medication history.">سجّلي أدوية طفلك وجرعاتها ومواعيدها، مع تنبيهات للجرعات الفائتة وسجل كامل للتاريخ الدوائي.</p>
+        <div class="feature-icon icon-green">💊</div>
+        <h3 data-ar="الأدوية والجرعات" data-en="Medications &amp; Doses">الأدوية والجرعات</h3>
+        <p data-ar="نظّمي الأدوية والجرعات ومواعيدها وسجلّها في مكان واضح وسهل المراجعة." data-en="Organize medications, doses and schedules in one clear, easy-to-review record.">نظّمي الأدوية والجرعات ومواعيدها وسجلّها في مكان واضح وسهل المراجعة.</p>
       </div>
 
       <div class="feature-card">
-        <div class="feature-icon icon-green">📊</div>
-        <h3 data-ar="تقارير أسبوعية وشهرية" data-en="Weekly &amp; Monthly Reports">تقارير أسبوعية وشهرية</h3>
-        <p data-ar="تقارير PDF احترافية تشمل إحصائيات التبرز، التغذية، النمو، والأدوية — جاهزة للمشاركة مع الجهات الطبية." data-en="Professional PDF reports covering bowel stats, nutrition, growth, and medications — ready to share with your medical team.">تقارير PDF احترافية تشمل إحصائيات التبرز، التغذية، النمو، والأدوية — جاهزة للمشاركة مع الجهات الطبية.</p>
+        <div class="feature-icon icon-purple">💉</div>
+        <h3 data-ar="التطعيمات" data-en="Vaccinations">التطعيمات</h3>
+        <p data-ar="تابعي الجرعات وسجل التطعيمات والوقاية والتذكيرات المرتبطة بالمواعيد." data-en="Keep track of doses, vaccination and prevention records, and related appointment reminders.">تابعي الجرعات وسجل التطعيمات والوقاية والتذكيرات المرتبطة بالمواعيد.</p>
       </div>
 
       <div class="feature-card">
-        <div class="feature-icon icon-purple">👨‍⚠️</div>
-        <h3 data-ar="سجل الجهات الطبية" data-en="Medical Contacts &amp; Visits">سجل الجهات الطبية</h3>
-        <p data-ar="احفظي بيانات الأطباء والأخصائيين، سجّلي ملاحظات الزيارة، وتتبعي مواعيد المتابعة القادمة." data-en="Save doctor and specialist details, log visit notes, and track upcoming follow-up appointments.">احفظي بيانات الأطباء والأخصائيين، سجّلي ملاحظات الزيارة، وتتبعي مواعيد المتابعة القادمة.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon icon-blue">📸</div>
-        <h3 data-ar="سجل الصور الصحي" data-en="Health Photo Records">سجل الصور الصحي</h3>
-        <p data-ar="أضيفي صوراً لحالات طفلك الصحية وأرفقيها بالتقارير لتوثيق التطور مع مرور الوقت." data-en="Add photos of your child's health conditions and attach them to reports to document progress over time.">أضيفي صوراً لحالات طفلك الصحية وأرفقيها بالتقارير لتوثيق التطور مع مرور الوقت.</p>
+        <div class="feature-icon icon-blue">🩺</div>
+        <h3 data-ar="المواعيد والتقارير والسجل الصحي" data-en="Visits, Reports &amp; Health Record">المواعيد والتقارير والسجل الصحي</h3>
+        <p data-ar="نظّمي الزيارات والجهات الطبية والصور الصحية، وراجعي تقارير منظمة عند الحاجة." data-en="Organize visits, medical contacts and health photos, then review organized reports whenever needed.">نظّمي الزيارات والجهات الطبية والصور الصحية، وراجعي تقارير منظمة عند الحاجة.</p>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon icon-orange">🔔</div>
         <h3 data-ar="إشعارات ذكية" data-en="Smart Reminders">إشعارات ذكية</h3>
-        <p data-ar="تذكيرات تلقائية للوجبات، الأدوية، المواعيد، وتسجيل الحالة اليومية — حتى لا يفوتك شيء." data-en="Automatic reminders for meals, medications, appointments, and daily logging — so nothing slips through.">تذكيرات تلقائية للوجبات، الأدوية، المواعيد، وتسجيل الحالة اليومية — حتى لا يفوتك شيء.</p>
+        <p data-ar="تذكيرات قابلة للتخصيص للوجبات والرضاعة والأدوية والمواعيد والتطعيمات والتسجيل اليومي." data-en="Customizable reminders for meals, feeding, medications, appointments, vaccinations and daily logging.">تذكيرات قابلة للتخصيص للوجبات والرضاعة والأدوية والمواعيد والتطعيمات والتسجيل اليومي.</p>
       </div>
 
     </div>
@@ -818,47 +881,47 @@
   <div class="max-w">
     <div class="section-label" data-ar="من داخل التطبيق" data-en="Inside the App">من داخل التطبيق</div>
     <h2 class="section-title" data-ar="تجربة مصممة لراحتك" data-en="An experience designed for your comfort">تجربة مصممة لراحتك</h2>
-    <p class="section-sub" data-ar="واجهة سهلة وبسيطة، تدعم العربية والإنجليزية، مصممة للأمهات" data-en="A simple, intuitive interface supporting Arabic and English, designed for mothers">واجهة سهلة وبسيطة، تدعم العربية والإنجليزية، مصممة للأمهات</p>
+    <p class="section-sub" data-ar="واجهة سهلة وبسيطة بالعربية والإنجليزية، مصممة لروتين الأم اليومي" data-en="A simple, intuitive interface in Arabic and English, designed for everyday parenting routines">واجهة سهلة وبسيطة بالعربية والإنجليزية، مصممة لروتين الأم اليومي</p>
     <div class="screenshots-grid">
       <div class="screenshot-card">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/UNUxMvoQauIOqAvf.jpg" alt="Home Screen" loading="lazy" />
-        <div class="screenshot-label" data-ar="الشاشة الرئيسية" data-en="Home Screen">الشاشة الرئيسية</div>
-      </div>
-      <div class="screenshot-card">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/BvTZoMnBOHfOlTln.jpg" alt="Daily Log" loading="lazy" />
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/ACAqCRMriAkcSkKg.jpg" data-src-ar="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/iAiUsmvWZVyDLDPC.jpg" data-src-en="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/ACAqCRMriAkcSkKg.jpg" data-alt-ar="السجل اليومي" data-alt-en="Daily Log" alt="السجل اليومي" loading="lazy" />
         <div class="screenshot-label" data-ar="السجل اليومي" data-en="Daily Log">السجل اليومي</div>
       </div>
       <div class="screenshot-card">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/juxbhkmXOvlhmyir.jpg" alt="Bowel Tracking" loading="lazy" />
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/JwkUHAgmOFOMgSvR.jpg" data-src-ar="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/iKRyputKUhUaYlso.jpg" data-src-en="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/JwkUHAgmOFOMgSvR.jpg" data-alt-ar="متابعة التبرز والتبول" data-alt-en="Bowel Habits" alt="متابعة التبرز والتبول" loading="lazy" />
         <div class="screenshot-label" data-ar="متابعة التبرز والتبول" data-en="Bowel &amp; Urination">متابعة التبرز والتبول</div>
       </div>
       <div class="screenshot-card">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/lqrfWUUDwTTXMnfL.jpg" alt="Monthly Report AR" loading="lazy" />
-        <div class="screenshot-label" data-ar="التقرير الشهري" data-en="Monthly Report">التقرير الشهري</div>
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/gNIHrpuShLDZNNfW.jpg" data-src-ar="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/GWJgSzykQZCdNArx.jpg" data-src-en="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/gNIHrpuShLDZNNfW.jpg" data-alt-ar="التغذية والرضاعة" data-alt-en="Feeding" alt="التغذية والرضاعة" loading="lazy" />
+        <div class="screenshot-label" data-ar="التغذية والرضاعة" data-en="Feeding">التغذية والرضاعة</div>
       </div>
       <div class="screenshot-card">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/ntztDvlYBvuWsvJh.jpg" alt="Weekly Report EN" loading="lazy" />
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/tURxRjtCOOhiwWef.jpg" data-src-ar="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/mHhEZKIndPpfJTkD.jpg" data-src-en="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/tURxRjtCOOhiwWef.jpg" data-alt-ar="الوجبات والنشاط" data-alt-en="Meals and physical activity" alt="الوجبات والنشاط" loading="lazy" />
+        <div class="screenshot-label" data-ar="الوجبات والنشاط" data-en="Meals &amp; Activity">الوجبات والنشاط</div>
+      </div>
+      <div class="screenshot-card">
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/ZyftFckAwqvZqIsC.jpg" data-src-ar="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/iaULuthORorkJyKT.jpg" data-src-en="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/ZyftFckAwqvZqIsC.jpg" data-alt-ar="سجل النوم" data-alt-en="Sleep Log" alt="سجل النوم" loading="lazy" />
+        <div class="screenshot-label" data-ar="متابعة النوم" data-en="Sleep Log">متابعة النوم</div>
+      </div>
+      <div class="screenshot-card">
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/LkFGKlAtZqHzpujO.jpg" data-src-ar="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/KTxCVHavYFyWVOmO.jpg" data-src-en="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/LkFGKlAtZqHzpujO.jpg" data-alt-ar="سجل الأدوية" data-alt-en="Medication Log" alt="سجل الأدوية" loading="lazy" />
+        <div class="screenshot-label" data-ar="الأدوية والجرعات" data-en="Medication Log">الأدوية والجرعات</div>
+      </div>
+      <div class="screenshot-card">
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/XtXmjUBJVgoVplTo.jpg" data-src-ar="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/aGiVQOwtTUtveIyY.jpg" data-src-en="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/XtXmjUBJVgoVplTo.jpg" data-alt-ar="سجل التطعيمات والوقاية" data-alt-en="Vaccinations and prevention record" alt="سجل التطعيمات والوقاية" loading="lazy" />
+        <div class="screenshot-label" data-ar="التطعيمات" data-en="Vaccinations">التطعيمات</div>
+      </div>
+      <div class="screenshot-card">
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/yyQfvYbrnKQahykY.jpg" data-src-ar="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/qonXfCvXVlFrmtbK.jpg" data-src-en="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/yyQfvYbrnKQahykY.jpg" data-alt-ar="سجل الزيارات الطبية" data-alt-en="Visit Log" alt="سجل الزيارات الطبية" loading="lazy" />
+        <div class="screenshot-label" data-ar="الزيارات الطبية" data-en="Medical Visits">الزيارات الطبية</div>
+      </div>
+      <div class="screenshot-card">
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/uhNCSltCDvSnjDEP.jpg" data-src-ar="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/grgAprYIfvcWyDRm.jpg" data-src-en="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/uhNCSltCDvSnjDEP.jpg" data-alt-ar="التقرير الأسبوعي" data-alt-en="Weekly Report" alt="التقرير الأسبوعي" loading="lazy" />
         <div class="screenshot-label" data-ar="التقرير الأسبوعي" data-en="Weekly Report">التقرير الأسبوعي</div>
       </div>
       <div class="screenshot-card">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/zqjXzcFSbhEDNPKj.jpg" alt="Monthly Report EN" loading="lazy" />
-        <div class="screenshot-label" data-ar="إحصائيات شهرية" data-en="Monthly Statistics">إحصائيات شهرية</div>
-      </div>
-      <div class="screenshot-card">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/laglHfIyHmTMxMIr.jpg" alt="Daily Log EN" loading="lazy" />
-        <div class="screenshot-label" data-ar="السجل اليومي (إنجليزي)" data-en="Daily Log (English)">السجل اليومي (إنجليزي)</div>
-      </div>
-      <div class="screenshot-card">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/FIAnLEKXYMUFqTSK.jpg" alt="Weight &amp; Obesity" loading="lazy" />
-        <div class="screenshot-label" data-ar="متابعة الوزن والسمنة" data-en="Weight &amp; Obesity">متابعة الوزن والسمنة</div>
-      </div>
-      <div class="screenshot-card">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/RLNhxltfeycysDAg.jpg" alt="Medications &amp; Appointments" loading="lazy" />
-        <div class="screenshot-label" data-ar="الأدوية والمواعيد" data-en="Medications &amp; Appointments">الأدوية والمواعيد</div>
-      </div>
-      <div class="screenshot-card">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/XuAoZweuCZcFLzme.jpg" alt="Privacy Settings" loading="lazy" />
-        <div class="screenshot-label" data-ar="الخصوصية والأمان" data-en="Privacy &amp; Security">الخصوصية والأمان</div>
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/EHjYTdjCIvvEfJnn.jpg" data-src-ar="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/wCYdpzvezqdPEgXS.jpg" data-src-en="https://files.manuscdn.com/user_upload_by_module/session_file/310519663742383821/EHjYTdjCIvvEfJnn.jpg" data-alt-ar="التقرير الشهري" data-alt-en="Monthly Report" alt="التقرير الشهري" loading="lazy" />
+        <div class="screenshot-label" data-ar="التقرير الشهري" data-en="Monthly Report">التقرير الشهري</div>
       </div>
     </div>
   </div>
@@ -877,21 +940,21 @@
       <div class="step">
         <div>
           <h3 data-ar="أضيفي بيانات طفلك" data-en="Add your child's profile">أضيفي بيانات طفلك</h3>
-          <p data-ar="أدخلي اسم طفلك وتاريخ ميلاده ووزنه وطوله — التطبيق يتكيف تلقائياً مع مرحلته العمرية ويخصص التجربة له." data-en="Enter your child's name, date of birth, weight and height — the app automatically adapts to their age stage and personalizes the experience.">أدخلي اسم طفلك وتاريخ ميلاده ووزنه وطوله — التطبيق يتكيف تلقائياً مع مرحلته العمرية ويخصص التجربة له.</p>
+          <p data-ar="أدخلي الاسم وتاريخ الميلاد والطول والوزن، ثم يهيّئ حِنا المتابعة بما يلائم مرحلته العمرية." data-en="Enter your child's name, date of birth, height and weight, then Hina prepares tracking to match their age stage.">أدخلي الاسم وتاريخ الميلاد والطول والوزن، ثم يهيّئ حِنا المتابعة بما يلائم مرحلته العمرية.</p>
         </div>
         <div class="step-num">1</div>
       </div>
       <div class="step">
         <div>
-          <h3 data-ar="سجّلي يومياً" data-en="Log daily">سجّلي يومياً</h3>
-          <p data-ar="سجّلي الوجبات، النشاط اليومي، السوائل، التبرّز، التبوّل، الأدوية. يستغرق الأمر أقل من دقيقتين فقط في اليوم." data-en="Log meals, daily activity, fluids, bowel movements, urination, and medications. It takes less than 2 minutes a day.">سجّلي الوجبات، النشاط اليومي، السوائل، التبرّز، التبوّل، الأدوية. يستغرق الأمر أقل من دقيقتين فقط في اليوم.</p>
+          <h3 data-ar="سجّلي يومه في دقائق" data-en="Log their day in minutes">سجّلي يومه في دقائق</h3>
+          <p data-ar="سجّلي الوجبات والرضاعة والسوائل والنوم والنشاط والإخراج والأدوية — وما يناسب عمر طفلك فقط." data-en="Log meals, feeding, fluids, sleep, activity, bowel habits and medications — only what fits your child's age.">سجّلي الوجبات والرضاعة والسوائل والنوم والنشاط والإخراج والأدوية — وما يناسب عمر طفلك فقط.</p>
         </div>
         <div class="step-num">2</div>
       </div>
       <div class="step">
         <div>
-          <h3 data-ar="شاركي التقارير واحصلي على تحليل ذكي" data-en="Share Reports & Get Smart Insights">شاركي التقارير واحصلي على تحليل ذكي</h3>
-          <p data-ar="أنشئي تقريراً أسبوعياً أو شهرياً بضغطة واحدة، واحصلي على تقييم حِنا الذكي لصحة طفلك — جاهز للمشاركة مع الجهات الطبية من اختيارك." data-en="Generate a weekly or monthly report with one tap, get Hina's smart health assessment for your child — ready to share with any healthcare provider of your choice.">أنشئي تقريراً أسبوعياً أو شهرياً بضغطة واحدة، واحصلي على تقييم حِنا الذكي لصحة طفلك — جاهز للمشاركة مع الجهات الطبية من اختيارك.</p>
+          <h3 data-ar="راجعي وشاركي الملخص" data-en="Review & Share the Summary">راجعي وشاركي الملخص</h3>
+          <p data-ar="اطلعي على التقارير الأسبوعية والشهرية وصدّري ملخصاً منظماً لمناقشته مع الطبيب أو الأخصائي/الأخصائية عند الحاجة." data-en="Review weekly and monthly reports and export an organized summary to discuss with a doctor, specialist or dietitian when needed.">اطلعي على التقارير الأسبوعية والشهرية وصدّري ملخصاً منظماً لمناقشته مع الطبيب أو الأخصائي/الأخصائية عند الحاجة.</p>
         </div>
         <div class="step-num">3</div>
       </div>
@@ -1000,9 +1063,17 @@
     document.body.classList.toggle('en', isEn);
     document.documentElement.setAttribute('lang', isEn ? 'en' : 'ar');
     document.documentElement.setAttribute('dir', isEn ? 'ltr' : 'rtl');
-    document.getElementById('langBtn').textContent = isEn ? 'العربية' : 'English';
+    document.querySelectorAll('.lang-btn').forEach(button => {
+      button.textContent = isEn ? 'العربية' : 'English';
+    });
     document.querySelectorAll('[data-ar][data-en]').forEach(el => {
       el.textContent = isEn ? el.getAttribute('data-en') : el.getAttribute('data-ar');
+    });
+    document.querySelectorAll('img[data-src-ar][data-src-en]').forEach(image => {
+      const nextSource = isEn ? image.getAttribute('data-src-en') : image.getAttribute('data-src-ar');
+      const nextAlt = isEn ? image.getAttribute('data-alt-en') : image.getAttribute('data-alt-ar');
+      if (nextSource && image.getAttribute('src') !== nextSource) image.setAttribute('src', nextSource);
+      if (nextAlt) image.setAttribute('alt', nextAlt);
     });
     // Tagline name: Arabic = حِنا only, English = Hina | حِنا
     const taglineName = document.getElementById('tagline-name');
@@ -1019,6 +1090,22 @@
     applyLang(!isEn);
     localStorage.setItem('hina_lang', isEn ? 'en' : 'ar');
   }
+
+  function openMobileMenu() {
+    document.body.classList.add('mobile-menu-open');
+    document.getElementById('mobileMenu').setAttribute('aria-hidden', 'false');
+    document.getElementById('menuToggle').setAttribute('aria-expanded', 'true');
+  }
+
+  function closeMobileMenu() {
+    document.body.classList.remove('mobile-menu-open');
+    document.getElementById('mobileMenu').setAttribute('aria-hidden', 'true');
+    document.getElementById('menuToggle').setAttribute('aria-expanded', 'false');
+  }
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeMobileMenu();
+  });
 
   // Restore saved language on page load
   if (localStorage.getItem('hina_lang') === 'en') applyLang(true);

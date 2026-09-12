@@ -521,7 +521,7 @@
     .btn-white:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,0.2); }
     .store-buttons {
       --store-badge-height: 56px;
-      display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+      display: flex; align-items: flex-end; justify-content: center; flex-wrap: wrap;
       gap: 24px; margin-top: 28px; direction: ltr; position: relative;
     }
     .store-badge {
@@ -530,7 +530,7 @@
       border-radius: 8px; text-decoration: none;
     }
     .app-store-wrap {
-      display: inline-flex; flex-direction: column; align-items: center;
+      display: inline-flex; flex-direction: column; align-items: center; justify-content: flex-end;
       height: var(--store-badge-height); position: relative; flex: 0 0 auto;
     }
     .google-play-badge {
@@ -542,18 +542,15 @@
     .google-play-badge:focus-visible { outline: 3px solid rgba(255,255,255,0.95); outline-offset: 4px; }
     .google-play-badge img { display: block; width: auto; height: 100%; object-fit: contain; }
     .app-store-soon {
-      background: rgba(28,25,23,0.82); border: 1px solid rgba(255,255,255,0.35);
-      color: rgba(255,255,255,0.9); gap: 8px; opacity: 0.82; aspect-ratio: 2.85 / 1;
-      height: calc(var(--store-badge-height) * 0.86);
+      opacity: 0.78;
+      height: var(--store-badge-height);
       cursor: not-allowed; user-select: none;
     }
-    .app-store-soon svg { width: 20px; height: 24px; flex: 0 0 auto; fill: currentColor; }
-    .store-copy { display: flex; flex-direction: column; align-items: flex-start; line-height: 1; }
-    .store-copy strong { font-size: 14px; font-weight: 700; letter-spacing: 0; }
+    .app-store-soon img { display: block; width: auto; height: 100%; object-fit: contain; }
     .store-soon-label {
-      position: absolute; top: calc(var(--store-badge-height) * 0.86 + 4px);
-      font-size: 10px; font-weight: 700; line-height: 1; color: rgba(255,255,255,0.84);
-      white-space: nowrap;
+      position: absolute; bottom: calc(var(--store-badge-height) + 2px);
+      padding: 3px 8px; border-radius: 999px; background: rgba(255,255,255,0.94);
+      font-size: 9px; font-weight: 700; line-height: 1; color: var(--orange-dark); white-space: nowrap;
     }
 
     /* ── FOOTER ── */
@@ -677,7 +674,10 @@
       .store-buttons { --store-badge-height: 52px; gap: 20px; margin-top: 24px; }
     }
     @media (min-width: 390px) and (max-width: 767px) {
-      .store-buttons { --store-badge-height: 48px; column-gap: 16px; row-gap: 12px; margin-top: 22px; }
+      .store-buttons {
+        --store-badge-height: 48px; column-gap: 16px; row-gap: 12px; margin-top: 22px;
+        width: calc(100% + 8px); margin-inline: -4px;
+      }
     }
     @media (max-width: 389px) {
       .store-buttons { --store-badge-height: 44px; gap: 12px; margin-top: 22px; }
@@ -1069,8 +1069,7 @@
         </a>
         <div class="app-store-wrap" role="status" aria-label="App Store coming soon">
           <div class="store-badge app-store-soon" aria-hidden="true">
-            <svg viewBox="0 0 24 29" focusable="false"><path d="M19.67 15.3c.03-2.57 2.1-3.81 2.2-3.87-1.2-1.76-3.07-2-3.72-2.03-1.57-.17-3.1.94-3.9.94-.82 0-2.05-.92-3.38-.9-1.72.03-3.33 1.02-4.21 2.59-1.82 3.15-.46 7.78 1.28 10.33.87 1.25 1.88 2.64 3.2 2.59 1.29-.05 1.77-.82 3.33-.82 1.55 0 2 .82 3.34.79 1.39-.03 2.27-1.25 3.11-2.51 1.01-1.44 1.42-2.86 1.44-2.94-.03-.01-2.73-1.04-2.69-4.17ZM17.1 7.73c.7-.88 1.18-2.07 1.04-3.28-1.02.05-2.3.71-3.03 1.57-.65.76-1.23 1.99-1.07 3.15 1.15.09 2.34-.59 3.06-1.44Z"/></svg>
-            <span class="store-copy" dir="auto"><strong>App Store</strong></span>
+            <img src="assets/app-store-badge-official.svg" alt="Download on the App Store" />
           </div>
           <span class="store-soon-label" data-ar="قريبًا" data-en="Coming Soon">قريبًا</span>
         </div>

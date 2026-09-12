@@ -529,6 +529,10 @@
       display: inline-flex; align-items: center; justify-content: center;
       border-radius: 8px; text-decoration: none;
     }
+    .app-store-wrap {
+      display: inline-flex; flex-direction: column; align-items: center;
+      height: var(--store-badge-height); position: relative; flex: 0 0 auto;
+    }
     .google-play-badge {
       position: relative; transition: transform 0.2s ease, filter 0.2s ease;
       filter: drop-shadow(0 3px 8px rgba(0,0,0,0.14));
@@ -539,13 +543,18 @@
     .google-play-badge img { display: block; width: auto; height: 100%; object-fit: contain; }
     .app-store-soon {
       background: rgba(28,25,23,0.82); border: 1px solid rgba(255,255,255,0.35);
-      color: rgba(255,255,255,0.9); gap: 9px; opacity: 0.82; aspect-ratio: 2.85 / 1;
+      color: rgba(255,255,255,0.9); gap: 8px; opacity: 0.82; aspect-ratio: 2.85 / 1;
+      height: calc(var(--store-badge-height) * 0.86);
       cursor: not-allowed; user-select: none;
     }
-    .app-store-soon svg { width: 22px; height: 26px; flex: 0 0 auto; fill: currentColor; }
-    .store-copy { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.05; }
-    .store-copy strong { font-size: 15px; font-weight: 700; letter-spacing: 0; }
-    .store-copy small { margin-top: 3px; font-size: 9px; font-weight: 600; letter-spacing: 0.01em; }
+    .app-store-soon svg { width: 20px; height: 24px; flex: 0 0 auto; fill: currentColor; }
+    .store-copy { display: flex; flex-direction: column; align-items: flex-start; line-height: 1; }
+    .store-copy strong { font-size: 14px; font-weight: 700; letter-spacing: 0; }
+    .store-soon-label {
+      position: absolute; top: calc(var(--store-badge-height) * 0.86 + 4px);
+      font-size: 10px; font-weight: 700; line-height: 1; color: rgba(255,255,255,0.84);
+      white-space: nowrap;
+    }
 
     /* ── FOOTER ── */
     footer {
@@ -1058,9 +1067,12 @@
         <a class="store-badge google-play-badge" href="https://play.google.com/store/apps/details?id=com.majid.hina" target="_blank" rel="noopener noreferrer" aria-label="Get Hina on Google Play">
           <img src="assets/google-play-badge-official.png" alt="Get it on Google Play" />
         </a>
-        <div class="store-badge app-store-soon" role="status" aria-label="App Store coming soon">
-          <svg viewBox="0 0 24 29" aria-hidden="true" focusable="false"><path d="M19.67 15.3c.03-2.57 2.1-3.81 2.2-3.87-1.2-1.76-3.07-2-3.72-2.03-1.57-.17-3.1.94-3.9.94-.82 0-2.05-.92-3.38-.9-1.72.03-3.33 1.02-4.21 2.59-1.82 3.15-.46 7.78 1.28 10.33.87 1.25 1.88 2.64 3.2 2.59 1.29-.05 1.77-.82 3.33-.82 1.55 0 2 .82 3.34.79 1.39-.03 2.27-1.25 3.11-2.51 1.01-1.44 1.42-2.86 1.44-2.94-.03-.01-2.73-1.04-2.69-4.17ZM17.1 7.73c.7-.88 1.18-2.07 1.04-3.28-1.02.05-2.3.71-3.03 1.57-.65.76-1.23 1.99-1.07 3.15 1.15.09 2.34-.59 3.06-1.44Z"/></svg>
-          <span class="store-copy" dir="auto"><strong>App Store</strong><small data-ar="قريبًا" data-en="Coming Soon">قريبًا</small></span>
+        <div class="app-store-wrap" role="status" aria-label="App Store coming soon">
+          <div class="store-badge app-store-soon" aria-hidden="true">
+            <svg viewBox="0 0 24 29" focusable="false"><path d="M19.67 15.3c.03-2.57 2.1-3.81 2.2-3.87-1.2-1.76-3.07-2-3.72-2.03-1.57-.17-3.1.94-3.9.94-.82 0-2.05-.92-3.38-.9-1.72.03-3.33 1.02-4.21 2.59-1.82 3.15-.46 7.78 1.28 10.33.87 1.25 1.88 2.64 3.2 2.59 1.29-.05 1.77-.82 3.33-.82 1.55 0 2 .82 3.34.79 1.39-.03 2.27-1.25 3.11-2.51 1.01-1.44 1.42-2.86 1.44-2.94-.03-.01-2.73-1.04-2.69-4.17ZM17.1 7.73c.7-.88 1.18-2.07 1.04-3.28-1.02.05-2.3.71-3.03 1.57-.65.76-1.23 1.99-1.07 3.15 1.15.09 2.34-.59 3.06-1.44Z"/></svg>
+            <span class="store-copy" dir="auto"><strong>App Store</strong></span>
+          </div>
+          <span class="store-soon-label" data-ar="قريبًا" data-en="Coming Soon">قريبًا</span>
         </div>
       </div>
     </div>

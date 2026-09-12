@@ -519,6 +519,31 @@
       box-shadow: 0 4px 16px rgba(0,0,0,0.12);
     }
     .btn-white:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,0.2); }
+    .store-buttons {
+      display: flex; align-items: center; justify-content: center; gap: 14px;
+      direction: ltr; position: relative;
+    }
+    .store-badge {
+      width: 172px; height: 50px; box-sizing: border-box;
+      display: inline-flex; align-items: center; justify-content: center;
+      border-radius: 8px; text-decoration: none;
+    }
+    .google-play-badge {
+      transition: transform 0.2s ease, filter 0.2s ease;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.18));
+    }
+    .google-play-badge:hover { transform: translateY(-2px); filter: drop-shadow(0 8px 16px rgba(0,0,0,0.24)); }
+    .google-play-badge:focus-visible { outline: 3px solid rgba(255,255,255,0.95); outline-offset: 4px; }
+    .google-play-badge img { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .app-store-soon {
+      background: rgba(28,25,23,0.82); border: 1px solid rgba(255,255,255,0.35);
+      color: rgba(255,255,255,0.9); gap: 9px; opacity: 0.82;
+      cursor: not-allowed; user-select: none;
+    }
+    .app-store-soon svg { width: 22px; height: 26px; flex: 0 0 auto; fill: currentColor; }
+    .store-copy { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.05; }
+    .store-copy strong { font-size: 15px; font-weight: 700; letter-spacing: 0; }
+    .store-copy small { margin-top: 3px; font-size: 9px; font-weight: 600; letter-spacing: 0.01em; }
 
     /* ── FOOTER ── */
     footer {
@@ -620,6 +645,8 @@
       .contact-inner p { font-size: 15px; }
       .cta-banner h2 { font-size: 22px; }
       .cta-banner p { font-size: 15px; }
+      .store-buttons { gap: 10px; }
+      .store-badge { width: min(172px, calc((100% - 10px) / 2)); height: auto; aspect-ratio: 172 / 50; }
       /* Mobile padding improvements */
       .hero-inner { padding: 40px 20px 0; }
       section { padding: 64px 20px; }
@@ -636,6 +663,10 @@
       .btn-primary, .btn-secondary { padding: 12px 22px; font-size: 15px; }
       .contact-email-btn { padding: 14px 28px; font-size: 15px; }
       section { padding: 52px 16px; }
+    }
+    @media (max-width: 350px) {
+      .store-buttons { flex-direction: column; gap: 10px; }
+      .store-badge { width: min(172px, 100%); }
     }
 
     /* ── RTL/LTR FLIP ── */
@@ -1018,7 +1049,15 @@
     <div class="cta-banner">
       <h2 data-ar="ابدئي متابعة صحة طفلك اليوم" data-en="Start tracking your child's health today">ابدئي متابعة صحة طفلك اليوم</h2>
       <p data-ar="مجاني تماماً. أداة موثوقة تساعدك كل يوم" data-en="Completely free. A trusted tool that helps you every day">مجاني تماماً. أداة موثوقة تساعدك كل يوم</p>
-      <a href="#" class="btn-white" data-ar="⬇️ حمّلي حِنا الآن" data-en="⬇️ Download Hina Now">⬇️ حمّلي حِنا الآن</a>
+      <div class="store-buttons" aria-label="Store download options">
+        <a class="store-badge google-play-badge" href="https://play.google.com/store/apps/details?id=com.majid.hina" target="_blank" rel="noopener noreferrer" aria-label="Get Hina on Google Play">
+          <img src="assets/google-play-badge-official.png" alt="Get it on Google Play" />
+        </a>
+        <div class="store-badge app-store-soon" role="status" aria-label="App Store coming soon">
+          <svg viewBox="0 0 24 29" aria-hidden="true" focusable="false"><path d="M19.67 15.3c.03-2.57 2.1-3.81 2.2-3.87-1.2-1.76-3.07-2-3.72-2.03-1.57-.17-3.1.94-3.9.94-.82 0-2.05-.92-3.38-.9-1.72.03-3.33 1.02-4.21 2.59-1.82 3.15-.46 7.78 1.28 10.33.87 1.25 1.88 2.64 3.2 2.59 1.29-.05 1.77-.82 3.33-.82 1.55 0 2 .82 3.34.79 1.39-.03 2.27-1.25 3.11-2.51 1.01-1.44 1.42-2.86 1.44-2.94-.03-.01-2.73-1.04-2.69-4.17ZM17.1 7.73c.7-.88 1.18-2.07 1.04-3.28-1.02.05-2.3.71-3.03 1.57-.65.76-1.23 1.99-1.07 3.15 1.15.09 2.34-.59 3.06-1.44Z"/></svg>
+          <span class="store-copy" dir="auto"><strong>App Store</strong><small data-ar="قريبًا" data-en="Coming Soon">قريبًا</small></span>
+        </div>
+      </div>
     </div>
   </div>
 </section>

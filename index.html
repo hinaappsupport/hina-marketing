@@ -548,7 +548,7 @@
     }
     .app-store-soon {
       opacity: 0.78;
-      height: var(--store-badge-height);
+      height: calc(var(--store-badge-height) * 1.07);
       cursor: not-allowed; user-select: none;
     }
     .app-store-soon img { display: block; width: auto; height: 100%; object-fit: contain; }
@@ -681,13 +681,13 @@
     @media (min-width: 390px) and (max-width: 767px) {
       .store-buttons {
         --store-badge-height: 48px; column-gap: 16px; row-gap: 12px; margin-top: 22px;
-        width: calc(100% + 44px); margin-inline: -22px;
+        width: calc(100% + 52px); margin-inline: -26px;
       }
     }
     @media (max-width: 389px) {
       .store-buttons {
         --store-badge-height: 44px; gap: 12px; margin-top: 22px;
-        width: calc(100% + 16px); margin-inline: -8px;
+        width: calc(100% + 24px); margin-inline: -12px;
       }
     }
 

@@ -534,13 +534,18 @@
       height: var(--store-badge-height); position: relative; flex: 0 0 auto;
     }
     .google-play-badge {
-      position: relative; transition: transform 0.2s ease, filter 0.2s ease;
+      position: relative; width: auto; overflow: hidden; aspect-ratio: 564 / 168;
+      transition: transform 0.2s ease, filter 0.2s ease;
       filter: drop-shadow(0 3px 8px rgba(0,0,0,0.14));
     }
     .google-play-badge::before { content: ''; position: absolute; inset: -4px; }
     .google-play-badge:hover { transform: translateY(-2px); filter: drop-shadow(0 5px 12px rgba(0,0,0,0.18)); }
     .google-play-badge:focus-visible { outline: 3px solid rgba(255,255,255,0.95); outline-offset: 4px; }
-    .google-play-badge img { display: block; width: auto; height: 100%; object-fit: contain; }
+    .google-play-badge img {
+      position: absolute; top: 50%; left: 50%; display: block; width: auto;
+      height: calc(var(--store-badge-height) * 1.4881); max-width: none;
+      transform: translate(-50%, -50%);
+    }
     .app-store-soon {
       opacity: 0.78;
       height: var(--store-badge-height);
@@ -676,11 +681,14 @@
     @media (min-width: 390px) and (max-width: 767px) {
       .store-buttons {
         --store-badge-height: 48px; column-gap: 16px; row-gap: 12px; margin-top: 22px;
-        width: calc(100% + 8px); margin-inline: -4px;
+        width: calc(100% + 44px); margin-inline: -22px;
       }
     }
     @media (max-width: 389px) {
-      .store-buttons { --store-badge-height: 44px; gap: 12px; margin-top: 22px; }
+      .store-buttons {
+        --store-badge-height: 44px; gap: 12px; margin-top: 22px;
+        width: calc(100% + 16px); margin-inline: -8px;
+      }
     }
 
     /* ── RTL/LTR FLIP ── */
